@@ -67,3 +67,16 @@ that could be verified.
   (CC BY-SA 4.0). Note the share-alike obligation: redistributing this data or
   adaptations of it (including glosses derived from it) requires attribution
   and the same license.
+
+## `hsk30-chars.csv`
+
+- **Contents:** the 3,088-character HSK 3.0 (2025) reading syllabus, with the
+  first HSK band in which each character appears. The official syllabus has
+  separate bands 1–6 and one combined advanced band, 7–9.
+- **Source:** level files from
+  [`becky82/mteh` `sources/HSK3.1`](https://github.com/becky82/mteh/tree/main/sources/HSK3.1)
+  (community name for the 2025 revision of the HSK 3.0 syllabus), combined into
+  this CSV. Upstream files include
+  `HSK3.1_chars_level1.txt` … `HSK3.1_chars_level6.txt` and
+  `HSK3.1_chars_level7-9.txt`.
+- **License:** The underlying syllabus is PRC Ministry of Education / CTI material.

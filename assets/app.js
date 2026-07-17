@@ -178,13 +178,13 @@ function applyGloss(source) {
   document.querySelectorAll(".cell-gloss").forEach((el) => applyGlossToEl(el, source));
 }
 
-function createToneTable(tone, data, logMin, logMax) {
+function createToneTable(tone, data, tones, logMin, logMax) {
   const block = document.createElement("section");
   block.className = "tone-block";
   block.id = `tone-${tone}`;
 
   const filled = data.onsets.reduce((n, onset) => {
-    const row = data.tones[tone]?.[onset] || {};
+    const row = tones[tone]?.[onset] || {};
     return n + Object.keys(row).length;
   }, 0);
 
@@ -223,7 +223,7 @@ function createToneTable(tone, data, logMin, logMax) {
     tr.appendChild(th);
 
     for (const onset of data.onsets) {
-      const cell = data.tones[tone]?.[onset]?.[final];
+      const cell = tones[tone]?.[onset]?.[final];
       tr.appendChild(createCell(cell, logMin, logMax));
     }
     tbody.appendChild(tr);
@@ -235,21 +235,34 @@ function createToneTable(tone, data, logMin, logMax) {
   return block;
 }
 
+let currentHskFilter = "all";
+let loadedData = null;
+
 function render(data) {
   const counts = collectCounts(data);
   const logMin = Math.log(Math.min(...counts));
   const logMax = Math.log(Math.max(...counts));
+  const tones =
+    currentHskFilter === "all"
+      ? data.tones
+      : data.hsk_tones?.[currentHskFilter] || data.tones;
 
   const root = document.getElementById("tables");
   root.replaceChildren();
   for (const tone of ["1", "2", "3", "4"]) {
-    root.appendChild(createToneTable(tone, data, logMin, logMax));
+    root.appendChild(createToneTable(tone, data, tones, logMin, logMax));
   }
 
   document.getElementById("corpus-label").textContent = data.corpus;
   const stats = data.stats;
+  const filled =
+    currentHskFilter === "all"
+      ? stats.filled_cells
+      : stats.filled_cells_by_hsk?.[currentHskFilter] || 0;
+  const filterLabel =
+    currentHskFilter === "all" ? "" : `HSK ${currentHskFilter} and below · `;
   document.getElementById("status").textContent =
-    `${stats.filled_cells} filled cells from ${stats.characters_in_corpus.toLocaleString()} corpus characters.`;
+    `${filterLabel}${filled} filled cells from ${stats.characters_in_corpus.toLocaleString()} corpus characters.`;
 
   requestAnimationFrame(() => fitAllPinyin(root));
 }
@@ -271,14 +284,28 @@ function initGlossToggle() {
   });
 }
 
+function initHskToggle() {
+  const inputs = document.querySelectorAll('input[name="hsk"]');
+  const checked = document.querySelector('input[name="hsk"]:checked');
+  if (checked) currentHskFilter = checked.value;
+  inputs.forEach((input) => {
+    input.addEventListener("change", (event) => {
+      if (!event.target.checked) return;
+      currentHskFilter = event.target.value;
+      if (loadedData) render(loadedData);
+    });
+  });
+}
+
 async function main() {
   const status = document.getElementById("status");
   initGlossToggle();
+  initHskToggle();
   try {
     const res = await fetch("./data/tables.json");
     if (!res.ok) throw new Error(`Failed to load tables.json (${res.status})`);
-    const data = await res.json();
-    render(data);
+    loadedData = await res.json();
+    render(loadedData);
   } catch (err) {
     console.error(err);
     status.textContent =

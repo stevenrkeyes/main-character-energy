@@ -266,6 +266,7 @@ table.pinyin-table {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
+  overflow-y: auto;
 }
 
 .panel-section h2 {
@@ -302,6 +303,21 @@ table.pinyin-table {
 
 .radio span {
   font-size: 0.95rem;
+}
+
+.radio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+}
+
+.radio-grid .radio {
+  gap: 0.3rem;
+  padding: 0.35rem;
+}
+
+.radio-grid .radio-wide {
+  grid-column: span 3;
 }
 
 .panel-footer {

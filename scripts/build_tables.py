@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import csv
 import json
 import re
 import unicodedata
@@ -10,6 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+
+HSK_FILTERS = ("1", "2", "3", "4", "5", "6", "7-9")
 
 ONSETS = [
     "b",
@@ -301,6 +304,24 @@ def load_cedict_glosses() -> dict[str, str]:
     return mapping
 
 
+def load_hsk_levels() -> dict[str, int]:
+    """Map character → first HSK 3.0 band (7 represents combined 7–9)."""
+    mapping: dict[str, int] = {}
+    path = DATA / "hsk30-chars.csv"
+    with path.open(encoding="utf-8", newline="") as file:
+        for row in csv.DictReader(file):
+            char = row.get("Hanzi", "").strip()
+            level_text = row.get("Level", "").strip()
+            if len(char) != 1:
+                continue
+            try:
+                level = 7 if level_text == "7-9" else int(level_text)
+            except ValueError:
+                continue
+            mapping[char] = level
+    return mapping
+
+
 def load_subtlex() -> list[tuple[str, int]]:
     rows: list[tuple[str, int]] = []
     for line in (DATA / "SUBTLEX-CH-CHR.txt").read_text(encoding="utf-8").splitlines():
@@ -321,14 +342,48 @@ def load_subtlex() -> list[tuple[str, int]]:
     return rows
 
 
+def build_tones(
+    best: dict[tuple[int, str, str], tuple[int, str, str]],
+    unihan_glosses: dict[str, str],
+    cedict_glosses: dict[str, str],
+) -> dict[str, dict[str, dict[str, dict]]]:
+    """Convert best-hit tuples into the JSON-ready four-tone structure."""
+    tones: dict[str, dict[str, dict[str, dict]]] = {}
+    for tone in (1, 2, 3, 4):
+        grid: dict[str, dict[str, dict]] = {}
+        for onset in ONSETS:
+            row: dict[str, dict] = {}
+            for final in FINALS:
+                hit = best.get((tone, onset, final))
+                if not hit:
+                    continue
+                count, char, syllable = hit
+                row[final] = {
+                    "char": char,
+                    "count": count,
+                    "pinyin": syllable,
+                    "gloss": {
+                        "unihan": unihan_glosses.get(char, ""),
+                        "cedict": cedict_glosses.get(char, ""),
+                    },
+                }
+            if row:
+                grid[onset] = row
+        tones[str(tone)] = grid
+    return tones
+
+
 def main() -> None:
     pinyin_map = load_pinyin_map()
     subtlex = load_subtlex()
+    hsk_levels = load_hsk_levels()
     unihan_glosses = load_unihan_glosses()
     cedict_glosses = load_cedict_glosses()
 
-    # best[(tone, onset, final)] = (count, char, syllable)
-    best: dict[tuple[int, str, str], tuple[int, str, str]] = {}
+    # Each HSK cutoff gets its own winner per (tone, onset, final).
+    best_by_filter: dict[
+        str, dict[tuple[int, str, str], tuple[int, str, str]]
+    ] = {"all": {}, **{level: {} for level in HSK_FILTERS}}
     missing_pinyin = 0
     bad_split = 0
 
@@ -339,7 +394,7 @@ def main() -> None:
             continue
         toneless, tone = strip_tone(reading)
         if tone not in (1, 2, 3, 4):
-            # skip neutral tone for the four main tables
+            # Skip neutral tone for the four main tables.
             continue
         split = split_onset_final(toneless)
         if not split:
@@ -349,34 +404,34 @@ def main() -> None:
         if final not in FINALS or onset not in ONSETS:
             bad_split += 1
             continue
+
         key = (tone, onset, final)
-        prev = best.get(key)
-        if prev is None or count > prev[0]:
-            best[key] = (count, char, f"{toneless}{tone}")
+        hit = (count, char, f"{toneless}{tone}")
+        targets = ["all"]
+        char_level = hsk_levels.get(char)
+        if char_level is not None:
+            targets.extend(
+                label
+                for label in HSK_FILTERS
+                if char_level <= (7 if label == "7-9" else int(label))
+            )
 
-    tones: dict[str, dict[str, dict[str, dict]]] = {}
-    for tone in (1, 2, 3, 4):
-        grid: dict[str, dict[str, dict]] = {}
-        for onset in ONSETS:
-            row: dict[str, dict] = {}
-            for final in FINALS:
-                hit = best.get((tone, onset, final))
-                if hit:
-                    count, char, syl = hit
-                    row[final] = {
-                        "char": char,
-                        "count": count,
-                        "pinyin": syl,
-                        "gloss": {
-                            "unihan": unihan_glosses.get(char, ""),
-                            "cedict": cedict_glosses.get(char, ""),
-                        },
-                    }
-            if row:
-                grid[onset] = row
-        tones[str(tone)] = grid
+        for target in targets:
+            previous = best_by_filter[target].get(key)
+            if previous is None or count > previous[0]:
+                best_by_filter[target][key] = hit
 
-    filled = [cell for grid in tones.values() for row in grid.values() for cell in row.values()]
+    tones = build_tones(best_by_filter["all"], unihan_glosses, cedict_glosses)
+    hsk_tones = {
+        level: build_tones(best_by_filter[level], unihan_glosses, cedict_glosses)
+        for level in HSK_FILTERS
+    }
+    filled = [
+        cell
+        for grid in tones.values()
+        for row in grid.values()
+        for cell in row.values()
+    ]
 
     out = {
         "corpus": "SUBTLEX-CH",
@@ -386,16 +441,27 @@ def main() -> None:
             "unihan": "Unihan Database (kDefinition)",
             "cedict": "CC-CEDICT (CC BY-SA 4.0)",
         },
+        "hsk_source": "HSK 3.0 (2025 character syllabus)",
+        "hsk_filter_options": [*HSK_FILTERS, "all"],
         "onsets": ONSETS,
         "finals": FINALS,
         "tones": tones,
+        "hsk_tones": hsk_tones,
         "stats": {
             "characters_in_corpus": len(subtlex),
-            "filled_cells": len(best),
+            "characters_in_hsk": len(hsk_levels),
+            "filled_cells": len(best_by_filter["all"]),
+            "filled_cells_by_hsk": {
+                level: len(best_by_filter[level]) for level in HSK_FILTERS
+            },
             "missing_pinyin": missing_pinyin,
             "bad_split": bad_split,
-            "missing_gloss_unihan": sum(1 for c in filled if not c["gloss"]["unihan"]),
-            "missing_gloss_cedict": sum(1 for c in filled if not c["gloss"]["cedict"]),
+            "missing_gloss_unihan": sum(
+                1 for cell in filled if not cell["gloss"]["unihan"]
+            ),
+            "missing_gloss_cedict": sum(
+                1 for cell in filled if not cell["gloss"]["cedict"]
+            ),
         },
     }
 
