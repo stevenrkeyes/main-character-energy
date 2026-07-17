@@ -123,9 +123,20 @@ function fitAllPinyin(root = document) {
   root.querySelectorAll(".cell-pinyin").forEach(fitPinyinEl);
 }
 
+function isCellVisible(cell, logMin, logMax) {
+  if (!cell) return false;
+  if (
+    hideLowestFreq &&
+    frequencyStep(cell.count, logMin, logMax) === 0
+  ) {
+    return false;
+  }
+  return true;
+}
+
 function createCell(cell, logMin, logMax) {
   const td = document.createElement("td");
-  if (!cell) {
+  if (!isCellVisible(cell, logMin, logMax)) {
     td.className = "empty";
     return td;
   }
@@ -200,18 +211,42 @@ function applyGloss(source) {
   document.querySelectorAll(".cell-gloss").forEach((el) => applyGlossToEl(el, source));
 }
 
+function visibleAxes(tone, data, tones, logMin, logMax) {
+  const onsetHas = new Set();
+  const finalHas = new Set();
+  let filled = 0;
+
+  for (const onset of data.onsets) {
+    for (const final of data.finals) {
+      const cell = tones[tone]?.[onset]?.[final];
+      if (!isCellVisible(cell, logMin, logMax)) continue;
+      filled += 1;
+      onsetHas.add(onset);
+      finalHas.add(final);
+    }
+  }
+
+  return {
+    onsets: hideEmptyAxes
+      ? data.onsets.filter((onset) => onsetHas.has(onset))
+      : data.onsets,
+    finals: hideEmptyAxes
+      ? data.finals.filter((final) => finalHas.has(final))
+      : data.finals,
+    filled,
+  };
+}
+
 function createToneTable(tone, data, tones, logMin, logMax) {
   const block = document.createElement("section");
   block.className = "tone-block";
   block.id = `tone-${tone}`;
 
-  const filled = data.onsets.reduce((n, onset) => {
-    const row = tones[tone]?.[onset] || {};
-    return n + Object.keys(row).length;
-  }, 0);
+  const axes = visibleAxes(tone, data, tones, logMin, logMax);
+  block.dataset.filled = String(axes.filled);
 
   const heading = document.createElement("h2");
-  heading.innerHTML = `${TONE_NAMES[tone]} <span class="tone-meta">${filled} syllables</span>`;
+  heading.innerHTML = `${TONE_NAMES[tone]} <span class="tone-meta">${axes.filled} syllables</span>`;
   block.appendChild(heading);
 
   const scroll = document.createElement("div");
@@ -228,7 +263,7 @@ function createToneTable(tone, data, tones, logMin, logMax) {
   corner.textContent = "coda \\ onset";
   headRow.appendChild(corner);
 
-  for (const onset of data.onsets) {
+  for (const onset of axes.onsets) {
     const th = document.createElement("th");
     th.textContent = onsetLabel(onset);
     headRow.appendChild(th);
@@ -237,14 +272,14 @@ function createToneTable(tone, data, tones, logMin, logMax) {
   table.appendChild(thead);
 
   const tbody = document.createElement("tbody");
-  for (const final of data.finals) {
+  for (const final of axes.finals) {
     const tr = document.createElement("tr");
     const th = document.createElement("th");
     th.scope = "row";
     th.textContent = finalLabel(final);
     tr.appendChild(th);
 
-    for (const onset of data.onsets) {
+    for (const onset of axes.onsets) {
       const cell = tones[tone]?.[onset]?.[final];
       tr.appendChild(createCell(cell, logMin, logMax));
     }
@@ -258,6 +293,8 @@ function createToneTable(tone, data, tones, logMin, logMax) {
 }
 
 let currentHskFilter = "all";
+let hideLowestFreq = false;
+let hideEmptyAxes = false;
 let loadedData = null;
 
 function render(data) {
@@ -271,18 +308,20 @@ function render(data) {
 
   const root = document.getElementById("tables");
   root.replaceChildren();
+  let filled = 0;
   for (const tone of ["1", "2", "3", "4"]) {
-    root.appendChild(createToneTable(tone, data, tones, logMin, logMax));
+    const table = createToneTable(tone, data, tones, logMin, logMax);
+    filled += Number(table.dataset.filled || 0);
+    root.appendChild(table);
   }
 
   document.getElementById("corpus-label").textContent = data.corpus;
   const stats = data.stats;
-  const filled =
-    currentHskFilter === "all"
-      ? stats.filled_cells
-      : stats.filled_cells_by_hsk?.[currentHskFilter] || 0;
-  const filterLabel =
-    currentHskFilter === "all" ? "" : `HSK ${currentHskFilter} and below · `;
+  const parts = [];
+  if (currentHskFilter !== "all") parts.push(`HSK ${currentHskFilter} and below`);
+  if (hideLowestFreq) parts.push("lowest frequency hidden");
+  if (hideEmptyAxes) parts.push("empty rows/columns hidden");
+  const filterLabel = parts.length ? `${parts.join(" · ")} · ` : "";
   document.getElementById("status").textContent =
     `${filterLabel}${filled} filled cells from ${stats.characters_in_corpus.toLocaleString()} corpus characters.`;
 
@@ -319,10 +358,30 @@ function initHskToggle() {
   });
 }
 
+function initDisplayToggles() {
+  const lowest = document.getElementById("hide-lowest-freq");
+  const emptyAxes = document.getElementById("hide-empty-axes");
+  if (lowest) {
+    hideLowestFreq = lowest.checked;
+    lowest.addEventListener("change", () => {
+      hideLowestFreq = lowest.checked;
+      if (loadedData) render(loadedData);
+    });
+  }
+  if (emptyAxes) {
+    hideEmptyAxes = emptyAxes.checked;
+    emptyAxes.addEventListener("change", () => {
+      hideEmptyAxes = emptyAxes.checked;
+      if (loadedData) render(loadedData);
+    });
+  }
+}
+
 async function main() {
   const status = document.getElementById("status");
   initGlossToggle();
   initHskToggle();
+  initDisplayToggles();
   try {
     const res = await fetch("./data/tables.json");
     if (!res.ok) throw new Error(`Failed to load tables.json (${res.status})`);
