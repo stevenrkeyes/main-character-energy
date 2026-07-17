@@ -177,14 +177,17 @@ let currentGlossSource = "custom";
 function applyGlossToEl(el, source) {
   const topWordShare = Number(el.dataset.topWordShare);
   const simpleGloss = el.dataset.custom || "";
+  const topWordGloss = el.dataset.topWordGloss || "";
   const useTopWord =
     source === "custom" &&
     el.dataset.topWord &&
-    el.dataset.topWordGloss &&
+    topWordGloss &&
     Number.isFinite(topWordShare) &&
     topWordShare >= DOMINANT_WORD_MIN_SHARE;
+  const showSimpleWithWord =
+    simpleGloss && simpleGloss.toLowerCase() !== topWordGloss.toLowerCase();
   const text = useTopWord
-    ? `${simpleGloss ? `${simpleGloss}, ` : ""}in ${el.dataset.topWord}, ${el.dataset.topWordGloss}`
+    ? `${showSimpleWithWord ? `${simpleGloss}, ` : ""}in ${el.dataset.topWord}, ${topWordGloss}`
     : el.dataset[source] || "";
   el.textContent = text;
   el.title = useTopWord
