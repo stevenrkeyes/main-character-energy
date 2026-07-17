@@ -177,7 +177,7 @@ table.pinyin-table {
 .pinyin-table td.filled:hover {
   filter: brightness(1.08);
   transform: scale(1.30);
-  z-index: 1;
+  z-index: 4;
   position: relative;
 }
 
