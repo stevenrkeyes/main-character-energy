@@ -176,6 +176,7 @@ let currentGlossSource = "custom";
 
 function applyGlossToEl(el, source) {
   const topWordShare = Number(el.dataset.topWordShare);
+  const simpleGloss = el.dataset.custom || "";
   const useTopWord =
     source === "custom" &&
     el.dataset.topWord &&
@@ -183,7 +184,7 @@ function applyGlossToEl(el, source) {
     Number.isFinite(topWordShare) &&
     topWordShare >= DOMINANT_WORD_MIN_SHARE;
   const text = useTopWord
-    ? `in ${el.dataset.topWord}, ${el.dataset.topWordGloss}`
+    ? `${simpleGloss ? `${simpleGloss}, ` : ""}in ${el.dataset.topWord}, ${el.dataset.topWordGloss}`
     : el.dataset[source] || "";
   el.textContent = text;
   el.title = useTopWord
