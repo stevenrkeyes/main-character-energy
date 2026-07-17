@@ -1,0 +1,6112 @@
+{
+  "corpus": "SUBTLEX-CH",
+  "citation": "Cai, Q., & Brysbaert, M. (2010). SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles. PLoS ONE.",
+  "analysis": "pinyin",
+  "onsets": [
+    "b",
+    "p",
+    "m",
+    "f",
+    "d",
+    "t",
+    "n",
+    "l",
+    "g",
+    "k",
+    "h",
+    "j",
+    "q",
+    "x",
+    "zh",
+    "ch",
+    "sh",
+    "r",
+    "z",
+    "c",
+    "s",
+    ""
+  ],
+  "finals": [
+    "a",
+    "e",
+    "ai",
+    "ei",
+    "ao",
+    "ou",
+    "an",
+    "en",
+    "ang",
+    "eng",
+    "i",
+    "ia",
+    "ie",
+    "iao",
+    "iu",
+    "ian",
+    "in",
+    "iang",
+    "ing",
+    "iong",
+    "u",
+    "ua",
+    "uo",
+    "uai",
+    "ui",
+    "uan",
+    "un",
+    "uang",
+    "ong",
+    "ü",
+    "üe",
+    "üan",
+    "ün",
+    "er"
+  ],
+  "tones": {
+    "1": {
+      "b": {
+        "a": {
+          "char": "巴",
+          "count": 14445,
+          "pinyin": "ba1"
+        },
+        "ai": {
+          "char": "掰",
+          "count": 158,
+          "pinyin": "bai1"
+        },
+        "ei": {
+          "char": "杯",
+          "count": 10466,
+          "pinyin": "bei1"
+        },
+        "ao": {
+          "char": "包",
+          "count": 13742,
+          "pinyin": "bao1"
+        },
+        "an": {
+          "char": "班",
+          "count": 11120,
+          "pinyin": "ban1"
+        },
+        "en": {
+          "char": "奔",
+          "count": 1170,
+          "pinyin": "ben1"
+        },
+        "ang": {
+          "char": "帮",
+          "count": 51013,
+          "pinyin": "bang1"
+        },
+        "eng": {
+          "char": "崩",
+          "count": 1246,
+          "pinyin": "beng1"
+        },
+        "i": {
+          "char": "逼",
+          "count": 3090,
+          "pinyin": "bi1"
+        },
+        "ie": {
+          "char": "憋",
+          "count": 285,
+          "pinyin": "bie1"
+        },
+        "iao": {
+          "char": "标",
+          "count": 9572,
+          "pinyin": "biao1"
+        },
+        "ian": {
+          "char": "边",
+          "count": 30972,
+          "pinyin": "bian1"
+        },
+        "in": {
+          "char": "宾",
+          "count": 2536,
+          "pinyin": "bin1"
+        },
+        "ing": {
+          "char": "冰",
+          "count": 6145,
+          "pinyin": "bing1"
+        },
+        "u": {
+          "char": "钸",
+          "count": 11,
+          "pinyin": "bu1"
+        },
+        "uo": {
+          "char": "波",
+          "count": 7341,
+          "pinyin": "bo1"
+        }
+      },
+      "p": {
+        "a": {
+          "char": "趴",
+          "count": 1739,
+          "pinyin": "pa1"
+        },
+        "ai": {
+          "char": "拍",
+          "count": 11578,
+          "pinyin": "pai1"
+        },
+        "ei": {
+          "char": "胚",
+          "count": 99,
+          "pinyin": "pei1"
+        },
+        "ao": {
+          "char": "抛",
+          "count": 2455,
+          "pinyin": "pao1"
+        },
+        "ou": {
+          "char": "剖",
+          "count": 509,
+          "pinyin": "pou1"
+        },
+        "an": {
+          "char": "潘",
+          "count": 478,
+          "pinyin": "pan1"
+        },
+        "en": {
+          "char": "喷",
+          "count": 1883,
+          "pinyin": "pen1"
+        },
+        "ang": {
+          "char": "乓",
+          "count": 197,
+          "pinyin": "pang1"
+        },
+        "eng": {
+          "char": "砰",
+          "count": 402,
+          "pinyin": "peng1"
+        },
+        "i": {
+          "char": "批",
+          "count": 2313,
+          "pinyin": "pi1"
+        },
+        "ie": {
+          "char": "撇",
+          "count": 387,
+          "pinyin": "pie1"
+        },
+        "iao": {
+          "char": "漂",
+          "count": 11710,
+          "pinyin": "piao1"
+        },
+        "ian": {
+          "char": "偏",
+          "count": 2042,
+          "pinyin": "pian1"
+        },
+        "in": {
+          "char": "拼",
+          "count": 2387,
+          "pinyin": "pin1"
+        },
+        "ing": {
+          "char": "乒",
+          "count": 157,
+          "pinyin": "ping1"
+        },
+        "u": {
+          "char": "扑",
+          "count": 950,
+          "pinyin": "pu1"
+        },
+        "uo": {
+          "char": "泼",
+          "count": 588,
+          "pinyin": "po1"
+        }
+      },
+      "m": {
+        "a": {
+          "char": "妈",
+          "count": 79529,
+          "pinyin": "ma1"
+        },
+        "ao": {
+          "char": "猫",
+          "count": 4131,
+          "pinyin": "mao1"
+        },
+        "ou": {
+          "char": "哞",
+          "count": 46,
+          "pinyin": "mou1"
+        },
+        "an": {
+          "char": "嫚",
+          "count": 1,
+          "pinyin": "man1"
+        },
+        "i": {
+          "char": "咪",
+          "count": 1967,
+          "pinyin": "mi1"
+        },
+        "ie": {
+          "char": "咩",
+          "count": 59,
+          "pinyin": "mie1"
+        },
+        "iao": {
+          "char": "喵",
+          "count": 129,
+          "pinyin": "miao1"
+        },
+        "uo": {
+          "char": "摸",
+          "count": 2739,
+          "pinyin": "mo1"
+        }
+      },
+      "f": {
+        "a": {
+          "char": "发",
+          "count": 87630,
+          "pinyin": "fa1"
+        },
+        "ei": {
+          "char": "非",
+          "count": 39443,
+          "pinyin": "fei1"
+        },
+        "an": {
+          "char": "翻",
+          "count": 3382,
+          "pinyin": "fan1"
+        },
+        "en": {
+          "char": "分",
+          "count": 48396,
+          "pinyin": "fen1"
+        },
+        "ang": {
+          "char": "方",
+          "count": 52743,
+          "pinyin": "fang1"
+        },
+        "eng": {
+          "char": "疯",
+          "count": 14752,
+          "pinyin": "feng1"
+        },
+        "u": {
+          "char": "夫",
+          "count": 23767,
+          "pinyin": "fu1"
+        }
+      },
+      "d": {
+        "a": {
+          "char": "搭",
+          "count": 4736,
+          "pinyin": "da1"
+        },
+        "e": {
+          "char": "嘚",
+          "count": 10,
+          "pinyin": "de1"
+        },
+        "ai": {
+          "char": "呆",
+          "count": 7712,
+          "pinyin": "dai1"
+        },
+        "ao": {
+          "char": "刀",
+          "count": 4999,
+          "pinyin": "dao1"
+        },
+        "ou": {
+          "char": "都",
+          "count": 180587,
+          "pinyin": "dou1"
+        },
+        "an": {
+          "char": "单",
+          "count": 18894,
+          "pinyin": "dan1"
+        },
+        "ang": {
+          "char": "当",
+          "count": 80228,
+          "pinyin": "dang1"
+        },
+        "eng": {
+          "char": "登",
+          "count": 5456,
+          "pinyin": "deng1"
+        },
+        "i": {
+          "char": "低",
+          "count": 5249,
+          "pinyin": "di1"
+        },
+        "ie": {
+          "char": "爹",
+          "count": 1182,
+          "pinyin": "die1"
+        },
+        "iao": {
+          "char": "雕",
+          "count": 858,
+          "pinyin": "diao1"
+        },
+        "iu": {
+          "char": "丢",
+          "count": 6145,
+          "pinyin": "diu1"
+        },
+        "ian": {
+          "char": "颠",
+          "count": 664,
+          "pinyin": "dian1"
+        },
+        "ing": {
+          "char": "丁",
+          "count": 3640,
+          "pinyin": "ding1"
+        },
+        "u": {
+          "char": "督",
+          "count": 2282,
+          "pinyin": "du1"
+        },
+        "uo": {
+          "char": "多",
+          "count": 104049,
+          "pinyin": "duo1"
+        },
+        "ui": {
+          "char": "堆",
+          "count": 2888,
+          "pinyin": "dui1"
+        },
+        "uan": {
+          "char": "端",
+          "count": 2113,
+          "pinyin": "duan1"
+        },
+        "un": {
+          "char": "敦",
+          "count": 1858,
+          "pinyin": "dun1"
+        },
+        "ong": {
+          "char": "东",
+          "count": 44037,
+          "pinyin": "dong1"
+        }
+      },
+      "t": {
+        "a": {
+          "char": "他",
+          "count": 564477,
+          "pinyin": "ta1"
+        },
+        "ai": {
+          "char": "胎",
+          "count": 2470,
+          "pinyin": "tai1"
+        },
+        "ao": {
+          "char": "掏",
+          "count": 470,
+          "pinyin": "tao1"
+        },
+        "ou": {
+          "char": "偷",
+          "count": 10591,
+          "pinyin": "tou1"
+        },
+        "an": {
+          "char": "滩",
+          "count": 1865,
+          "pinyin": "tan1"
+        },
+        "ang": {
+          "char": "汤",
+          "count": 4519,
+          "pinyin": "tang1"
+        },
+        "i": {
+          "char": "踢",
+          "count": 2616,
+          "pinyin": "ti1"
+        },
+        "ie": {
+          "char": "贴",
+          "count": 2216,
+          "pinyin": "tie1"
+        },
+        "iao": {
+          "char": "挑",
+          "count": 5673,
+          "pinyin": "tiao1"
+        },
+        "ian": {
+          "char": "天",
+          "count": 127053,
+          "pinyin": "tian1"
+        },
+        "ing": {
+          "char": "听",
+          "count": 81570,
+          "pinyin": "ting1"
+        },
+        "u": {
+          "char": "突",
+          "count": 7044,
+          "pinyin": "tu1"
+        },
+        "uo": {
+          "char": "托",
+          "count": 16277,
+          "pinyin": "tuo1"
+        },
+        "ui": {
+          "char": "推",
+          "count": 6553,
+          "pinyin": "tui1"
+        },
+        "uan": {
+          "char": "湍",
+          "count": 31,
+          "pinyin": "tuan1"
+        },
+        "un": {
+          "char": "吞",
+          "count": 1176,
+          "pinyin": "tun1"
+        },
+        "ong": {
+          "char": "通",
+          "count": 26617,
+          "pinyin": "tong1"
+        }
+      },
+      "n": {
+        "ao": {
+          "char": "孬",
+          "count": 129,
+          "pinyin": "nao1"
+        },
+        "an": {
+          "char": "囡",
+          "count": 2,
+          "pinyin": "nan1"
+        },
+        "ang": {
+          "char": "囔",
+          "count": 53,
+          "pinyin": "nang1"
+        },
+        "i": {
+          "char": "妮",
+          "count": 4937,
+          "pinyin": "ni1"
+        },
+        "ie": {
+          "char": "捏",
+          "count": 511,
+          "pinyin": "nie1"
+        },
+        "iu": {
+          "char": "妞",
+          "count": 1772,
+          "pinyin": "niu1"
+        },
+        "ian": {
+          "char": "拈",
+          "count": 28,
+          "pinyin": "nian1"
+        }
+      },
+      "l": {
+        "a": {
+          "char": "拉",
+          "count": 31007,
+          "pinyin": "la1"
+        },
+        "e": {
+          "char": "肋",
+          "count": 405,
+          "pinyin": "le1"
+        },
+        "ei": {
+          "char": "勒",
+          "count": 6193,
+          "pinyin": "lei1"
+        },
+        "ao": {
+          "char": "捞",
+          "count": 420,
+          "pinyin": "lao1"
+        },
+        "ang": {
+          "char": "啷",
+          "count": 3,
+          "pinyin": "lang1"
+        },
+        "i": {
+          "char": "哩",
+          "count": 345,
+          "pinyin": "li1"
+        },
+        "iao": {
+          "char": "撩",
+          "count": 53,
+          "pinyin": "liao1"
+        },
+        "iu": {
+          "char": "溜",
+          "count": 1731,
+          "pinyin": "liu1"
+        },
+        "in": {
+          "char": "拎",
+          "count": 87,
+          "pinyin": "lin1"
+        },
+        "u": {
+          "char": "噜",
+          "count": 167,
+          "pinyin": "lu1"
+        },
+        "uo": {
+          "char": "啰",
+          "count": 616,
+          "pinyin": "luo1"
+        },
+        "un": {
+          "char": "抡",
+          "count": 35,
+          "pinyin": "lun1"
+        }
+      },
+      "g": {
+        "a": {
+          "char": "伽",
+          "count": 382,
+          "pinyin": "ga1"
+        },
+        "e": {
+          "char": "哥",
+          "count": 18845,
+          "pinyin": "ge1"
+        },
+        "ai": {
+          "char": "该",
+          "count": 80641,
+          "pinyin": "gai1"
+        },
+        "ao": {
+          "char": "高",
+          "count": 40044,
+          "pinyin": "gao1"
+        },
+        "ou": {
+          "char": "勾",
+          "count": 1240,
+          "pinyin": "gou1"
+        },
+        "an": {
+          "char": "杆",
+          "count": 1300,
+          "pinyin": "gan1"
+        },
+        "en": {
+          "char": "跟",
+          "count": 67347,
+          "pinyin": "gen1"
+        },
+        "ang": {
+          "char": "刚",
+          "count": 31325,
+          "pinyin": "gang1"
+        },
+        "eng": {
+          "char": "耕",
+          "count": 115,
+          "pinyin": "geng1"
+        },
+        "u": {
+          "char": "姑",
+          "count": 5640,
+          "pinyin": "gu1"
+        },
+        "ua": {
+          "char": "瓜",
+          "count": 3315,
+          "pinyin": "gua1"
+        },
+        "uo": {
+          "char": "锅",
+          "count": 682,
+          "pinyin": "guo1"
+        },
+        "uai": {
+          "char": "乖",
+          "count": 2424,
+          "pinyin": "guai1"
+        },
+        "ui": {
+          "char": "规",
+          "count": 7030,
+          "pinyin": "gui1"
+        },
+        "uan": {
+          "char": "关",
+          "count": 55693,
+          "pinyin": "guan1"
+        },
+        "uang": {
+          "char": "光",
+          "count": 17286,
+          "pinyin": "guang1"
+        },
+        "ong": {
+          "char": "工",
+          "count": 44548,
+          "pinyin": "gong1"
+        }
+      },
+      "k": {
+        "a": {
+          "char": "咖",
+          "count": 5252,
+          "pinyin": "ka1"
+        },
+        "e": {
+          "char": "科",
+          "count": 11967,
+          "pinyin": "ke1"
+        },
+        "ai": {
+          "char": "开",
+          "count": 126802,
+          "pinyin": "kai1"
+        },
+        "ao": {
+          "char": "尻",
+          "count": 28,
+          "pinyin": "kao1"
+        },
+        "ou": {
+          "char": "抠",
+          "count": 77,
+          "pinyin": "kou1"
+        },
+        "an": {
+          "char": "堪",
+          "count": 1331,
+          "pinyin": "kan1"
+        },
+        "ang": {
+          "char": "康",
+          "count": 4721,
+          "pinyin": "kang1"
+        },
+        "eng": {
+          "char": "坑",
+          "count": 574,
+          "pinyin": "keng1"
+        },
+        "u": {
+          "char": "哭",
+          "count": 4774,
+          "pinyin": "ku1"
+        },
+        "ua": {
+          "char": "夸",
+          "count": 1406,
+          "pinyin": "kua1"
+        },
+        "ui": {
+          "char": "亏",
+          "count": 897,
+          "pinyin": "kui1"
+        },
+        "uan": {
+          "char": "宽",
+          "count": 1795,
+          "pinyin": "kuan1"
+        },
+        "un": {
+          "char": "昆",
+          "count": 532,
+          "pinyin": "kun1"
+        },
+        "uang": {
+          "char": "框",
+          "count": 352,
+          "pinyin": "kuang1"
+        },
+        "ong": {
+          "char": "空",
+          "count": 15517,
+          "pinyin": "kong1"
+        }
+      },
+      "h": {
+        "a": {
+          "char": "哈",
+          "count": 16487,
+          "pinyin": "ha1"
+        },
+        "e": {
+          "char": "喝",
+          "count": 16744,
+          "pinyin": "he1"
+        },
+        "ai": {
+          "char": "嗨",
+          "count": 25345,
+          "pinyin": "hai1"
+        },
+        "ei": {
+          "char": "嘿",
+          "count": 42007,
+          "pinyin": "hei1"
+        },
+        "ao": {
+          "char": "蒿",
+          "count": 2,
+          "pinyin": "hao1"
+        },
+        "an": {
+          "char": "鼾",
+          "count": 100,
+          "pinyin": "han1"
+        },
+        "ang": {
+          "char": "夯",
+          "count": 2,
+          "pinyin": "hang1"
+        },
+        "eng": {
+          "char": "亨",
+          "count": 1584,
+          "pinyin": "heng1"
+        },
+        "u": {
+          "char": "乎",
+          "count": 11683,
+          "pinyin": "hu1"
+        },
+        "ua": {
+          "char": "花",
+          "count": 17379,
+          "pinyin": "hua1"
+        },
+        "uo": {
+          "char": "豁",
+          "count": 1663,
+          "pinyin": "huo1"
+        },
+        "ui": {
+          "char": "挥",
+          "count": 3793,
+          "pinyin": "hui1"
+        },
+        "uan": {
+          "char": "欢",
+          "count": 57817,
+          "pinyin": "huan1"
+        },
+        "un": {
+          "char": "婚",
+          "count": 19494,
+          "pinyin": "hun1"
+        },
+        "uang": {
+          "char": "荒",
+          "count": 2284,
+          "pinyin": "huang1"
+        },
+        "ong": {
+          "char": "轰",
+          "count": 882,
+          "pinyin": "hong1"
+        }
+      },
+      "j": {
+        "i": {
+          "char": "机",
+          "count": 48902,
+          "pinyin": "ji1"
+        },
+        "ia": {
+          "char": "家",
+          "count": 112387,
+          "pinyin": "jia1"
+        },
+        "ie": {
+          "char": "接",
+          "count": 37114,
+          "pinyin": "jie1"
+        },
+        "iao": {
+          "char": "交",
+          "count": 19619,
+          "pinyin": "jiao1"
+        },
+        "iu": {
+          "char": "究",
+          "count": 6461,
+          "pinyin": "jiu1"
+        },
+        "ian": {
+          "char": "间",
+          "count": 60047,
+          "pinyin": "jian1"
+        },
+        "in": {
+          "char": "今",
+          "count": 44976,
+          "pinyin": "jin1"
+        },
+        "iang": {
+          "char": "将",
+          "count": 30460,
+          "pinyin": "jiang1"
+        },
+        "ing": {
+          "char": "经",
+          "count": 80207,
+          "pinyin": "jing1"
+        },
+        "ü": {
+          "char": "居",
+          "count": 7197,
+          "pinyin": "ju1"
+        },
+        "üe": {
+          "char": "撅",
+          "count": 62,
+          "pinyin": "jue1"
+        },
+        "üan": {
+          "char": "捐",
+          "count": 1816,
+          "pinyin": "juan1"
+        },
+        "ün": {
+          "char": "军",
+          "count": 15516,
+          "pinyin": "jun1"
+        }
+      },
+      "q": {
+        "i": {
+          "char": "期",
+          "count": 18143,
+          "pinyin": "qi1"
+        },
+        "ia": {
+          "char": "掐",
+          "count": 382,
+          "pinyin": "qia1"
+        },
+        "iao": {
+          "char": "敲",
+          "count": 2037,
+          "pinyin": "qiao1"
+        },
+        "iu": {
+          "char": "秋",
+          "count": 1195,
+          "pinyin": "qiu1"
+        },
+        "ian": {
+          "char": "千",
+          "count": 7954,
+          "pinyin": "qian1"
+        },
+        "in": {
+          "char": "亲",
+          "count": 42501,
+          "pinyin": "qin1"
+        },
+        "iang": {
+          "char": "枪",
+          "count": 21732,
+          "pinyin": "qiang1"
+        },
+        "ing": {
+          "char": "清",
+          "count": 21660,
+          "pinyin": "qing1"
+        },
+        "ü": {
+          "char": "区",
+          "count": 11770,
+          "pinyin": "qu1"
+        },
+        "üe": {
+          "char": "缺",
+          "count": 3186,
+          "pinyin": "que1"
+        },
+        "üan": {
+          "char": "圈",
+          "count": 3847,
+          "pinyin": "quan1"
+        },
+        "ün": {
+          "char": "逡",
+          "count": 8,
+          "pinyin": "qun1"
+        }
+      },
+      "x": {
+        "i": {
+          "char": "西",
+          "count": 59024,
+          "pinyin": "xi1"
+        },
+        "ia": {
+          "char": "瞎",
+          "count": 1674,
+          "pinyin": "xia1"
+        },
+        "ie": {
+          "char": "些",
+          "count": 113122,
+          "pinyin": "xie1"
+        },
+        "iao": {
+          "char": "消",
+          "count": 18103,
+          "pinyin": "xiao1"
+        },
+        "iu": {
+          "char": "休",
+          "count": 8504,
+          "pinyin": "xiu1"
+        },
+        "ian": {
+          "char": "先",
+          "count": 71253,
+          "pinyin": "xian1"
+        },
+        "in": {
+          "char": "心",
+          "count": 83418,
+          "pinyin": "xin1"
+        },
+        "iang": {
+          "char": "相",
+          "count": 47856,
+          "pinyin": "xiang1"
+        },
+        "ing": {
+          "char": "兴",
+          "count": 24438,
+          "pinyin": "xing1"
+        },
+        "iong": {
+          "char": "兄",
+          "count": 14373,
+          "pinyin": "xiong1"
+        },
+        "ü": {
+          "char": "需",
+          "count": 46611,
+          "pinyin": "xu1"
+        },
+        "üe": {
+          "char": "靴",
+          "count": 685,
+          "pinyin": "xue1"
+        },
+        "üan": {
+          "char": "宣",
+          "count": 3934,
+          "pinyin": "xuan1"
+        },
+        "ün": {
+          "char": "勋",
+          "count": 725,
+          "pinyin": "xun1"
+        }
+      },
+      "zh": {
+        "a": {
+          "char": "扎",
+          "count": 2561,
+          "pinyin": "zha1"
+        },
+        "e": {
+          "char": "遮",
+          "count": 704,
+          "pinyin": "zhe1"
+        },
+        "ai": {
+          "char": "摘",
+          "count": 750,
+          "pinyin": "zhai1"
+        },
+        "ao": {
+          "char": "招",
+          "count": 5342,
+          "pinyin": "zhao1"
+        },
+        "ou": {
+          "char": "周",
+          "count": 21092,
+          "pinyin": "zhou1"
+        },
+        "an": {
+          "char": "詹",
+          "count": 1881,
+          "pinyin": "zhan1"
+        },
+        "en": {
+          "char": "真",
+          "count": 140928,
+          "pinyin": "zhen1"
+        },
+        "ang": {
+          "char": "张",
+          "count": 18739,
+          "pinyin": "zhang1"
+        },
+        "eng": {
+          "char": "争",
+          "count": 9959,
+          "pinyin": "zheng1"
+        },
+        "i": {
+          "char": "知",
+          "count": 211542,
+          "pinyin": "zhi1"
+        },
+        "u": {
+          "char": "猪",
+          "count": 3020,
+          "pinyin": "zhu1"
+        },
+        "ua": {
+          "char": "抓",
+          "count": 14157,
+          "pinyin": "zhua1"
+        },
+        "uo": {
+          "char": "桌",
+          "count": 3653,
+          "pinyin": "zhuo1"
+        },
+        "uai": {
+          "char": "拽",
+          "count": 431,
+          "pinyin": "zhuai1"
+        },
+        "ui": {
+          "char": "追",
+          "count": 7908,
+          "pinyin": "zhui1"
+        },
+        "uan": {
+          "char": "专",
+          "count": 7712,
+          "pinyin": "zhuan1"
+        },
+        "un": {
+          "char": "谆",
+          "count": 14,
+          "pinyin": "zhun1"
+        },
+        "uang": {
+          "char": "装",
+          "count": 17633,
+          "pinyin": "zhuang1"
+        },
+        "ong": {
+          "char": "中",
+          "count": 69745,
+          "pinyin": "zhong1"
+        }
+      },
+      "ch": {
+        "a": {
+          "char": "插",
+          "count": 2597,
+          "pinyin": "cha1"
+        },
+        "e": {
+          "char": "车",
+          "count": 55587,
+          "pinyin": "che1"
+        },
+        "ai": {
+          "char": "拆",
+          "count": 1243,
+          "pinyin": "chai1"
+        },
+        "ao": {
+          "char": "超",
+          "count": 11589,
+          "pinyin": "chao1"
+        },
+        "ou": {
+          "char": "抽",
+          "count": 4423,
+          "pinyin": "chou1"
+        },
+        "an": {
+          "char": "搀",
+          "count": 62,
+          "pinyin": "chan1"
+        },
+        "en": {
+          "char": "琛",
+          "count": 53,
+          "pinyin": "chen1"
+        },
+        "ang": {
+          "char": "昌",
+          "count": 232,
+          "pinyin": "chang1"
+        },
+        "eng": {
+          "char": "称",
+          "count": 6188,
+          "pinyin": "cheng1"
+        },
+        "i": {
+          "char": "吃",
+          "count": 33829,
+          "pinyin": "chi1"
+        },
+        "u": {
+          "char": "出",
+          "count": 129404,
+          "pinyin": "chu1"
+        },
+        "uo": {
+          "char": "戳",
+          "count": 488,
+          "pinyin": "chuo1"
+        },
+        "uai": {
+          "char": "揣",
+          "count": 113,
+          "pinyin": "chuai1"
+        },
+        "ui": {
+          "char": "吹",
+          "count": 2540,
+          "pinyin": "chui1"
+        },
+        "uan": {
+          "char": "穿",
+          "count": 17175,
+          "pinyin": "chuan1"
+        },
+        "un": {
+          "char": "春",
+          "count": 2060,
+          "pinyin": "chun1"
+        },
+        "uang": {
+          "char": "窗",
+          "count": 3573,
+          "pinyin": "chuang1"
+        },
+        "ong": {
+          "char": "冲",
+          "count": 7521,
+          "pinyin": "chong1"
+        }
+      },
+      "sh": {
+        "a": {
+          "char": "杀",
+          "count": 47122,
+          "pinyin": "sha1"
+        },
+        "e": {
+          "char": "奢",
+          "count": 387,
+          "pinyin": "she1"
+        },
+        "ai": {
+          "char": "筛",
+          "count": 144,
+          "pinyin": "shai1"
+        },
+        "ao": {
+          "char": "烧",
+          "count": 5192,
+          "pinyin": "shao1"
+        },
+        "ou": {
+          "char": "收",
+          "count": 19712,
+          "pinyin": "shou1"
+        },
+        "an": {
+          "char": "山",
+          "count": 8779,
+          "pinyin": "shan1"
+        },
+        "en": {
+          "char": "身",
+          "count": 38760,
+          "pinyin": "shen1"
+        },
+        "ang": {
+          "char": "伤",
+          "count": 22147,
+          "pinyin": "shang1"
+        },
+        "eng": {
+          "char": "生",
+          "count": 162725,
+          "pinyin": "sheng1"
+        },
+        "i": {
+          "char": "失",
+          "count": 28189,
+          "pinyin": "shi1"
+        },
+        "u": {
+          "char": "书",
+          "count": 13360,
+          "pinyin": "shu1"
+        },
+        "ua": {
+          "char": "刷",
+          "count": 1394,
+          "pinyin": "shua1"
+        },
+        "uo": {
+          "char": "说",
+          "count": 281841,
+          "pinyin": "shuo1"
+        },
+        "uai": {
+          "char": "摔",
+          "count": 2137,
+          "pinyin": "shuai1"
+        },
+        "uan": {
+          "char": "栓",
+          "count": 266,
+          "pinyin": "shuan1"
+        },
+        "uang": {
+          "char": "双",
+          "count": 6381,
+          "pinyin": "shuang1"
+        }
+      },
+      "r": {
+        "eng": {
+          "char": "扔",
+          "count": 5106,
+          "pinyin": "reng1"
+        },
+        "ong": {
+          "char": "茸",
+          "count": 220,
+          "pinyin": "rong1"
+        }
+      },
+      "z": {
+        "a": {
+          "char": "咂",
+          "count": 35,
+          "pinyin": "za1"
+        },
+        "ai": {
+          "char": "灾",
+          "count": 1870,
+          "pinyin": "zai1"
+        },
+        "ao": {
+          "char": "糟",
+          "count": 12328,
+          "pinyin": "zao1"
+        },
+        "ou": {
+          "char": "邹",
+          "count": 17,
+          "pinyin": "zou1"
+        },
+        "an": {
+          "char": "簪",
+          "count": 15,
+          "pinyin": "zan1"
+        },
+        "ang": {
+          "char": "赃",
+          "count": 296,
+          "pinyin": "zang1"
+        },
+        "eng": {
+          "char": "增",
+          "count": 2270,
+          "pinyin": "zeng1"
+        },
+        "i": {
+          "char": "资",
+          "count": 7880,
+          "pinyin": "zi1"
+        },
+        "u": {
+          "char": "租",
+          "count": 4187,
+          "pinyin": "zu1"
+        },
+        "uan": {
+          "char": "钻",
+          "count": 2373,
+          "pinyin": "zuan1"
+        },
+        "un": {
+          "char": "尊",
+          "count": 4525,
+          "pinyin": "zun1"
+        },
+        "ong": {
+          "char": "踪",
+          "count": 7876,
+          "pinyin": "zong1"
+        }
+      },
+      "c": {
+        "a": {
+          "char": "擦",
+          "count": 2260,
+          "pinyin": "ca1"
+        },
+        "ai": {
+          "char": "猜",
+          "count": 9953,
+          "pinyin": "cai1"
+        },
+        "ao": {
+          "char": "操",
+          "count": 6027,
+          "pinyin": "cao1"
+        },
+        "an": {
+          "char": "参",
+          "count": 13574,
+          "pinyin": "can1"
+        },
+        "ang": {
+          "char": "仓",
+          "count": 1321,
+          "pinyin": "cang1"
+        },
+        "eng": {
+          "char": "噌",
+          "count": 13,
+          "pinyin": "ceng1"
+        },
+        "i": {
+          "char": "疵",
+          "count": 130,
+          "pinyin": "ci1"
+        },
+        "u": {
+          "char": "粗",
+          "count": 1709,
+          "pinyin": "cu1"
+        },
+        "uo": {
+          "char": "撮",
+          "count": 122,
+          "pinyin": "cuo1"
+        },
+        "ui": {
+          "char": "崔",
+          "count": 996,
+          "pinyin": "cui1"
+        },
+        "uan": {
+          "char": "蹿",
+          "count": 35,
+          "pinyin": "cuan1"
+        },
+        "un": {
+          "char": "村",
+          "count": 2907,
+          "pinyin": "cun1"
+        },
+        "ong": {
+          "char": "聪",
+          "count": 5073,
+          "pinyin": "cong1"
+        }
+      },
+      "s": {
+        "a": {
+          "char": "撒",
+          "count": 7095,
+          "pinyin": "sa1"
+        },
+        "ai": {
+          "char": "塞",
+          "count": 5309,
+          "pinyin": "sai1"
+        },
+        "ao": {
+          "char": "骚",
+          "count": 1585,
+          "pinyin": "sao1"
+        },
+        "ou": {
+          "char": "搜",
+          "count": 4219,
+          "pinyin": "sou1"
+        },
+        "an": {
+          "char": "三",
+          "count": 26275,
+          "pinyin": "san1"
+        },
+        "en": {
+          "char": "森",
+          "count": 6955,
+          "pinyin": "sen1"
+        },
+        "ang": {
+          "char": "桑",
+          "count": 2366,
+          "pinyin": "sang1"
+        },
+        "eng": {
+          "char": "僧",
+          "count": 153,
+          "pinyin": "seng1"
+        },
+        "i": {
+          "char": "斯",
+          "count": 61882,
+          "pinyin": "si1"
+        },
+        "u": {
+          "char": "苏",
+          "count": 4462,
+          "pinyin": "su1"
+        },
+        "uo": {
+          "char": "缩",
+          "count": 1736,
+          "pinyin": "suo1"
+        },
+        "ui": {
+          "char": "虽",
+          "count": 5507,
+          "pinyin": "sui1"
+        },
+        "uan": {
+          "char": "酸",
+          "count": 1527,
+          "pinyin": "suan1"
+        },
+        "un": {
+          "char": "孙",
+          "count": 1239,
+          "pinyin": "sun1"
+        },
+        "ong": {
+          "char": "松",
+          "count": 9051,
+          "pinyin": "song1"
+        }
+      },
+      "": {
+        "a": {
+          "char": "阿",
+          "count": 15489,
+          "pinyin": "a1"
+        },
+        "e": {
+          "char": "婀",
+          "count": 6,
+          "pinyin": "e1"
+        },
+        "ai": {
+          "char": "埃",
+          "count": 4434,
+          "pinyin": "ai1"
+        },
+        "ao": {
+          "char": "凹",
+          "count": 150,
+          "pinyin": "ao1"
+        },
+        "ou": {
+          "char": "欧",
+          "count": 3677,
+          "pinyin": "ou1"
+        },
+        "an": {
+          "char": "安",
+          "count": 41719,
+          "pinyin": "an1"
+        },
+        "en": {
+          "char": "恩",
+          "count": 13365,
+          "pinyin": "en1"
+        },
+        "ang": {
+          "char": "肮",
+          "count": 658,
+          "pinyin": "ang1"
+        },
+        "eng": {
+          "char": "翁",
+          "count": 558,
+          "pinyin": "weng1"
+        },
+        "i": {
+          "char": "一",
+          "count": 604056,
+          "pinyin": "yi1"
+        },
+        "ia": {
+          "char": "压",
+          "count": 6483,
+          "pinyin": "ya1"
+        },
+        "ie": {
+          "char": "椰",
+          "count": 290,
+          "pinyin": "ye1"
+        },
+        "iao": {
+          "char": "邀",
+          "count": 3066,
+          "pinyin": "yao1"
+        },
+        "iu": {
+          "char": "优",
+          "count": 4514,
+          "pinyin": "you1"
+        },
+        "ian": {
+          "char": "烟",
+          "count": 5276,
+          "pinyin": "yan1"
+        },
+        "in": {
+          "char": "因",
+          "count": 77540,
+          "pinyin": "yin1"
+        },
+        "iang": {
+          "char": "央",
+          "count": 891,
+          "pinyin": "yang1"
+        },
+        "ing": {
+          "char": "应",
+          "count": 52206,
+          "pinyin": "ying1"
+        },
+        "iong": {
+          "char": "拥",
+          "count": 5738,
+          "pinyin": "yong1"
+        },
+        "u": {
+          "char": "屋",
+          "count": 6385,
+          "pinyin": "wu1"
+        },
+        "ua": {
+          "char": "挖",
+          "count": 2184,
+          "pinyin": "wa1"
+        },
+        "uo": {
+          "char": "噢",
+          "count": 29338,
+          "pinyin": "o1"
+        },
+        "uai": {
+          "char": "歪",
+          "count": 583,
+          "pinyin": "wai1"
+        },
+        "ui": {
+          "char": "威",
+          "count": 11142,
+          "pinyin": "wei1"
+        },
+        "uan": {
+          "char": "弯",
+          "count": 1189,
+          "pinyin": "wan1"
+        },
+        "un": {
+          "char": "温",
+          "count": 4828,
+          "pinyin": "wen1"
+        },
+        "uang": {
+          "char": "汪",
+          "count": 254,
+          "pinyin": "wang1"
+        },
+        "ü": {
+          "char": "淤",
+          "count": 198,
+          "pinyin": "yu1"
+        },
+        "üe": {
+          "char": "约",
+          "count": 22765,
+          "pinyin": "yue1"
+        },
+        "üan": {
+          "char": "冤",
+          "count": 322,
+          "pinyin": "yuan1"
+        },
+        "ün": {
+          "char": "晕",
+          "count": 1697,
+          "pinyin": "yun1"
+        }
+      }
+    },
+    "2": {
+      "b": {
+        "a": {
+          "char": "拔",
+          "count": 1529,
+          "pinyin": "ba2"
+        },
+        "ai": {
+          "char": "白",
+          "count": 41987,
+          "pinyin": "bai2"
+        },
+        "ao": {
+          "char": "薄",
+          "count": 1674,
+          "pinyin": "bao2"
+        },
+        "eng": {
+          "char": "甭",
+          "count": 107,
+          "pinyin": "beng2"
+        },
+        "i": {
+          "char": "鼻",
+          "count": 2373,
+          "pinyin": "bi2"
+        },
+        "ie": {
+          "char": "别",
+          "count": 102034,
+          "pinyin": "bie2"
+        },
+        "uo": {
+          "char": "博",
+          "count": 9033,
+          "pinyin": "bo2"
+        }
+      },
+      "p": {
+        "a": {
+          "char": "爬",
+          "count": 2192,
+          "pinyin": "pa2"
+        },
+        "ai": {
+          "char": "排",
+          "count": 10684,
+          "pinyin": "pai2"
+        },
+        "ei": {
+          "char": "陪",
+          "count": 7005,
+          "pinyin": "pei2"
+        },
+        "ao": {
+          "char": "袍",
+          "count": 454,
+          "pinyin": "pao2"
+        },
+        "an": {
+          "char": "盘",
+          "count": 4299,
+          "pinyin": "pan2"
+        },
+        "en": {
+          "char": "盆",
+          "count": 581,
+          "pinyin": "pen2"
+        },
+        "ang": {
+          "char": "旁",
+          "count": 3900,
+          "pinyin": "pang2"
+        },
+        "eng": {
+          "char": "朋",
+          "count": 32843,
+          "pinyin": "peng2"
+        },
+        "i": {
+          "char": "皮",
+          "count": 9160,
+          "pinyin": "pi2"
+        },
+        "iao": {
+          "char": "嫖",
+          "count": 105,
+          "pinyin": "piao2"
+        },
+        "ian": {
+          "char": "胼",
+          "count": 6,
+          "pinyin": "pian2"
+        },
+        "in": {
+          "char": "频",
+          "count": 2361,
+          "pinyin": "pin2"
+        },
+        "ing": {
+          "char": "平",
+          "count": 14739,
+          "pinyin": "ping2"
+        },
+        "u": {
+          "char": "葡",
+          "count": 1098,
+          "pinyin": "pu2"
+        },
+        "uo": {
+          "char": "婆",
+          "count": 5323,
+          "pinyin": "po2"
+        }
+      },
+      "m": {
+        "a": {
+          "char": "麻",
+          "count": 11963,
+          "pinyin": "ma2"
+        },
+        "ai": {
+          "char": "埋",
+          "count": 2239,
+          "pinyin": "mai2"
+        },
+        "ei": {
+          "char": "没",
+          "count": 293874,
+          "pinyin": "mei2"
+        },
+        "ao": {
+          "char": "毛",
+          "count": 6487,
+          "pinyin": "mao2"
+        },
+        "ou": {
+          "char": "谋",
+          "count": 7434,
+          "pinyin": "mou2"
+        },
+        "an": {
+          "char": "瞒",
+          "count": 1664,
+          "pinyin": "man2"
+        },
+        "en": {
+          "char": "门",
+          "count": 25908,
+          "pinyin": "men2"
+        },
+        "ang": {
+          "char": "忙",
+          "count": 15130,
+          "pinyin": "mang2"
+        },
+        "eng": {
+          "char": "蒙",
+          "count": 4498,
+          "pinyin": "meng2"
+        },
+        "i": {
+          "char": "迷",
+          "count": 8172,
+          "pinyin": "mi2"
+        },
+        "iao": {
+          "char": "描",
+          "count": 2242,
+          "pinyin": "miao2"
+        },
+        "ian": {
+          "char": "眠",
+          "count": 1508,
+          "pinyin": "mian2"
+        },
+        "in": {
+          "char": "民",
+          "count": 9468,
+          "pinyin": "min2"
+        },
+        "ing": {
+          "char": "明",
+          "count": 69749,
+          "pinyin": "ming2"
+        },
+        "uo": {
+          "char": "模",
+          "count": 8644,
+          "pinyin": "mo2"
+        }
+      },
+      "f": {
+        "a": {
+          "char": "罚",
+          "count": 2516,
+          "pinyin": "fa2"
+        },
+        "ei": {
+          "char": "肥",
+          "count": 2292,
+          "pinyin": "fei2"
+        },
+        "an": {
+          "char": "烦",
+          "count": 12442,
+          "pinyin": "fan2"
+        },
+        "en": {
+          "char": "坟",
+          "count": 631,
+          "pinyin": "fen2"
+        },
+        "ang": {
+          "char": "房",
+          "count": 25246,
+          "pinyin": "fang2"
+        },
+        "eng": {
+          "char": "逢",
+          "count": 388,
+          "pinyin": "feng2"
+        },
+        "u": {
+          "char": "服",
+          "count": 24279,
+          "pinyin": "fu2"
+        }
+      },
+      "d": {
+        "a": {
+          "char": "达",
+          "count": 16413,
+          "pinyin": "da2"
+        },
+        "e": {
+          "char": "得",
+          "count": 208054,
+          "pinyin": "de2"
+        },
+        "ao": {
+          "char": "捯",
+          "count": 1,
+          "pinyin": "dao2"
+        },
+        "i": {
+          "char": "迪",
+          "count": 11033,
+          "pinyin": "di2"
+        },
+        "ie": {
+          "char": "谍",
+          "count": 1336,
+          "pinyin": "die2"
+        },
+        "u": {
+          "char": "毒",
+          "count": 12056,
+          "pinyin": "du2"
+        },
+        "uo": {
+          "char": "夺",
+          "count": 2672,
+          "pinyin": "duo2"
+        }
+      },
+      "t": {
+        "ai": {
+          "char": "台",
+          "count": 13404,
+          "pinyin": "tai2"
+        },
+        "ao": {
+          "char": "逃",
+          "count": 9009,
+          "pinyin": "tao2"
+        },
+        "ou": {
+          "char": "头",
+          "count": 49069,
+          "pinyin": "tou2"
+        },
+        "an": {
+          "char": "谈",
+          "count": 35703,
+          "pinyin": "tan2"
+        },
+        "ang": {
+          "char": "堂",
+          "count": 5777,
+          "pinyin": "tang2"
+        },
+        "eng": {
+          "char": "疼",
+          "count": 3529,
+          "pinyin": "teng2"
+        },
+        "i": {
+          "char": "题",
+          "count": 37524,
+          "pinyin": "ti2"
+        },
+        "iao": {
+          "char": "条",
+          "count": 18134,
+          "pinyin": "tiao2"
+        },
+        "ian": {
+          "char": "甜",
+          "count": 5726,
+          "pinyin": "tian2"
+        },
+        "ing": {
+          "char": "停",
+          "count": 19564,
+          "pinyin": "ting2"
+        },
+        "u": {
+          "char": "图",
+          "count": 10910,
+          "pinyin": "tu2"
+        },
+        "uo": {
+          "char": "驼",
+          "count": 419,
+          "pinyin": "tuo2"
+        },
+        "ui": {
+          "char": "颓",
+          "count": 71,
+          "pinyin": "tui2"
+        },
+        "uan": {
+          "char": "团",
+          "count": 9748,
+          "pinyin": "tuan2"
+        },
+        "un": {
+          "char": "臀",
+          "count": 549,
+          "pinyin": "tun2"
+        },
+        "ong": {
+          "char": "同",
+          "count": 42995,
+          "pinyin": "tong2"
+        }
+      },
+      "n": {
+        "a": {
+          "char": "拿",
+          "count": 37054,
+          "pinyin": "na2"
+        },
+        "ao": {
+          "char": "挠",
+          "count": 307,
+          "pinyin": "nao2"
+        },
+        "an": {
+          "char": "难",
+          "count": 31433,
+          "pinyin": "nan2"
+        },
+        "ang": {
+          "char": "囊",
+          "count": 743,
+          "pinyin": "nang2"
+        },
+        "eng": {
+          "char": "能",
+          "count": 241617,
+          "pinyin": "neng2"
+        },
+        "i": {
+          "char": "尼",
+          "count": 19533,
+          "pinyin": "ni2"
+        },
+        "iu": {
+          "char": "牛",
+          "count": 7043,
+          "pinyin": "niu2"
+        },
+        "ian": {
+          "char": "年",
+          "count": 54824,
+          "pinyin": "nian2"
+        },
+        "in": {
+          "char": "您",
+          "count": 17561,
+          "pinyin": "nin2"
+        },
+        "iang": {
+          "char": "娘",
+          "count": 9115,
+          "pinyin": "niang2"
+        },
+        "ing": {
+          "char": "宁",
+          "count": 2523,
+          "pinyin": "ning2"
+        },
+        "u": {
+          "char": "奴",
+          "count": 1224,
+          "pinyin": "nu2"
+        },
+        "uo": {
+          "char": "挪",
+          "count": 878,
+          "pinyin": "nuo2"
+        },
+        "ong": {
+          "char": "农",
+          "count": 2255,
+          "pinyin": "nong2"
+        }
+      },
+      "l": {
+        "a": {
+          "char": "剌",
+          "count": 55,
+          "pinyin": "la2"
+        },
+        "ai": {
+          "char": "来",
+          "count": 377902,
+          "pinyin": "lai2"
+        },
+        "ei": {
+          "char": "雷",
+          "count": 9848,
+          "pinyin": "lei2"
+        },
+        "ao": {
+          "char": "劳",
+          "count": 4575,
+          "pinyin": "lao2"
+        },
+        "ou": {
+          "char": "楼",
+          "count": 9176,
+          "pinyin": "lou2"
+        },
+        "an": {
+          "char": "兰",
+          "count": 12472,
+          "pinyin": "lan2"
+        },
+        "ang": {
+          "char": "郎",
+          "count": 2267,
+          "pinyin": "lang2"
+        },
+        "eng": {
+          "char": "棱",
+          "count": 76,
+          "pinyin": "leng2"
+        },
+        "i": {
+          "char": "离",
+          "count": 35725,
+          "pinyin": "li2"
+        },
+        "iao": {
+          "char": "聊",
+          "count": 7323,
+          "pinyin": "liao2"
+        },
+        "iu": {
+          "char": "留",
+          "count": 21859,
+          "pinyin": "liu2"
+        },
+        "ian": {
+          "char": "联",
+          "count": 14117,
+          "pinyin": "lian2"
+        },
+        "in": {
+          "char": "林",
+          "count": 9991,
+          "pinyin": "lin2"
+        },
+        "iang": {
+          "char": "良",
+          "count": 3045,
+          "pinyin": "liang2"
+        },
+        "ing": {
+          "char": "灵",
+          "count": 8472,
+          "pinyin": "ling2"
+        },
+        "u": {
+          "char": "卢",
+          "count": 1924,
+          "pinyin": "lu2"
+        },
+        "uo": {
+          "char": "罗",
+          "count": 18448,
+          "pinyin": "luo2"
+        },
+        "uan": {
+          "char": "挛",
+          "count": 164,
+          "pinyin": "luan2"
+        },
+        "un": {
+          "char": "伦",
+          "count": 7904,
+          "pinyin": "lun2"
+        },
+        "ong": {
+          "char": "龙",
+          "count": 3798,
+          "pinyin": "long2"
+        }
+      },
+      "g": {
+        "a": {
+          "char": "噶",
+          "count": 3,
+          "pinyin": "ga2"
+        },
+        "e": {
+          "char": "格",
+          "count": 19477,
+          "pinyin": "ge2"
+        },
+        "en": {
+          "char": "哏",
+          "count": 5,
+          "pinyin": "gen2"
+        },
+        "uo": {
+          "char": "国",
+          "count": 40712,
+          "pinyin": "guo2"
+        }
+      },
+      "k": {
+        "e": {
+          "char": "壳",
+          "count": 1002,
+          "pinyin": "ke2"
+        },
+        "ang": {
+          "char": "扛",
+          "count": 159,
+          "pinyin": "kang2"
+        },
+        "ui": {
+          "char": "奎",
+          "count": 697,
+          "pinyin": "kui2"
+        },
+        "uang": {
+          "char": "狂",
+          "count": 8951,
+          "pinyin": "kuang2"
+        }
+      },
+      "h": {
+        "a": {
+          "char": "蛤",
+          "count": 200,
+          "pinyin": "ha2"
+        },
+        "e": {
+          "char": "和",
+          "count": 155937,
+          "pinyin": "he2"
+        },
+        "ai": {
+          "char": "还",
+          "count": 192389,
+          "pinyin": "hai2"
+        },
+        "ao": {
+          "char": "毫",
+          "count": 4785,
+          "pinyin": "hao2"
+        },
+        "ou": {
+          "char": "猴",
+          "count": 1320,
+          "pinyin": "hou2"
+        },
+        "an": {
+          "char": "含",
+          "count": 1726,
+          "pinyin": "han2"
+        },
+        "en": {
+          "char": "痕",
+          "count": 2316,
+          "pinyin": "hen2"
+        },
+        "ang": {
+          "char": "航",
+          "count": 3991,
+          "pinyin": "hang2"
+        },
+        "eng": {
+          "char": "横",
+          "count": 1071,
+          "pinyin": "heng2"
+        },
+        "u": {
+          "char": "胡",
+          "count": 5787,
+          "pinyin": "hu2"
+        },
+        "ua": {
+          "char": "华",
+          "count": 7527,
+          "pinyin": "hua2"
+        },
+        "uo": {
+          "char": "活",
+          "count": 38236,
+          "pinyin": "huo2"
+        },
+        "uai": {
+          "char": "怀",
+          "count": 8726,
+          "pinyin": "huai2"
+        },
+        "ui": {
+          "char": "回",
+          "count": 92711,
+          "pinyin": "hui2"
+        },
+        "uan": {
+          "char": "环",
+          "count": 4848,
+          "pinyin": "huan2"
+        },
+        "un": {
+          "char": "魂",
+          "count": 4389,
+          "pinyin": "hun2"
+        },
+        "uang": {
+          "char": "黄",
+          "count": 3694,
+          "pinyin": "huang2"
+        },
+        "ong": {
+          "char": "红",
+          "count": 7485,
+          "pinyin": "hong2"
+        }
+      },
+      "j": {
+        "i": {
+          "char": "集",
+          "count": 11403,
+          "pinyin": "ji2"
+        },
+        "ia": {
+          "char": "颊",
+          "count": 193,
+          "pinyin": "jia2"
+        },
+        "ie": {
+          "char": "结",
+          "count": 32979,
+          "pinyin": "jie2"
+        },
+        "ü": {
+          "char": "局",
+          "count": 12836,
+          "pinyin": "ju2"
+        },
+        "üe": {
+          "char": "觉",
+          "count": 81155,
+          "pinyin": "jue2"
+        }
+      },
+      "q": {
+        "i": {
+          "char": "其",
+          "count": 36285,
+          "pinyin": "qi2"
+        },
+        "iao": {
+          "char": "瞧",
+          "count": 7800,
+          "pinyin": "qiao2"
+        },
+        "iu": {
+          "char": "球",
+          "count": 24351,
+          "pinyin": "qiu2"
+        },
+        "ian": {
+          "char": "前",
+          "count": 75236,
+          "pinyin": "qian2"
+        },
+        "in": {
+          "char": "琴",
+          "count": 1955,
+          "pinyin": "qin2"
+        },
+        "iang": {
+          "char": "强",
+          "count": 15755,
+          "pinyin": "qiang2"
+        },
+        "ing": {
+          "char": "情",
+          "count": 69279,
+          "pinyin": "qing2"
+        },
+        "iong": {
+          "char": "穷",
+          "count": 1429,
+          "pinyin": "qiong2"
+        },
+        "ü": {
+          "char": "渠",
+          "count": 229,
+          "pinyin": "qu2"
+        },
+        "üe": {
+          "char": "瘸",
+          "count": 231,
+          "pinyin": "que2"
+        },
+        "üan": {
+          "char": "全",
+          "count": 47545,
+          "pinyin": "quan2"
+        },
+        "ün": {
+          "char": "群",
+          "count": 4880,
+          "pinyin": "qun2"
+        }
+      },
+      "x": {
+        "i": {
+          "char": "习",
+          "count": 8048,
+          "pinyin": "xi2"
+        },
+        "ia": {
+          "char": "侠",
+          "count": 1188,
+          "pinyin": "xia2"
+        },
+        "ie": {
+          "char": "鞋",
+          "count": 4954,
+          "pinyin": "xie2"
+        },
+        "iao": {
+          "char": "淆",
+          "count": 120,
+          "pinyin": "xiao2"
+        },
+        "ian": {
+          "char": "嫌",
+          "count": 3209,
+          "pinyin": "xian2"
+        },
+        "iang": {
+          "char": "详",
+          "count": 1172,
+          "pinyin": "xiang2"
+        },
+        "ing": {
+          "char": "行",
+          "count": 73109,
+          "pinyin": "xing2"
+        },
+        "iong": {
+          "char": "雄",
+          "count": 3641,
+          "pinyin": "xiong2"
+        },
+        "ü": {
+          "char": "徐",
+          "count": 113,
+          "pinyin": "xu2"
+        },
+        "üe": {
+          "char": "学",
+          "count": 41964,
+          "pinyin": "xue2"
+        },
+        "üan": {
+          "char": "旋",
+          "count": 1420,
+          "pinyin": "xuan2"
+        },
+        "ün": {
+          "char": "寻",
+          "count": 5832,
+          "pinyin": "xun2"
+        }
+      },
+      "zh": {
+        "a": {
+          "char": "闸",
+          "count": 189,
+          "pinyin": "zha2"
+        },
+        "e": {
+          "char": "折",
+          "count": 3775,
+          "pinyin": "zhe2"
+        },
+        "ai": {
+          "char": "宅",
+          "count": 610,
+          "pinyin": "zhai2"
+        },
+        "ou": {
+          "char": "轴",
+          "count": 319,
+          "pinyin": "zhou2"
+        },
+        "i": {
+          "char": "直",
+          "count": 46163,
+          "pinyin": "zhi2"
+        },
+        "u": {
+          "char": "逐",
+          "count": 1663,
+          "pinyin": "zhu2"
+        },
+        "uo": {
+          "char": "卓",
+          "count": 450,
+          "pinyin": "zhuo2"
+        }
+      },
+      "ch": {
+        "a": {
+          "char": "查",
+          "count": 31095,
+          "pinyin": "cha2"
+        },
+        "ai": {
+          "char": "柴",
+          "count": 601,
+          "pinyin": "chai2"
+        },
+        "ao": {
+          "char": "朝",
+          "count": 3629,
+          "pinyin": "chao2"
+        },
+        "ou": {
+          "char": "仇",
+          "count": 2085,
+          "pinyin": "chou2"
+        },
+        "an": {
+          "char": "缠",
+          "count": 1425,
+          "pinyin": "chan2"
+        },
+        "en": {
+          "char": "沉",
+          "count": 3347,
+          "pinyin": "chen2"
+        },
+        "ang": {
+          "char": "常",
+          "count": 46383,
+          "pinyin": "chang2"
+        },
+        "eng": {
+          "char": "成",
+          "count": 61348,
+          "pinyin": "cheng2"
+        },
+        "i": {
+          "char": "持",
+          "count": 17301,
+          "pinyin": "chi2"
+        },
+        "u": {
+          "char": "除",
+          "count": 16235,
+          "pinyin": "chu2"
+        },
+        "ui": {
+          "char": "垂",
+          "count": 668,
+          "pinyin": "chui2"
+        },
+        "uan": {
+          "char": "传",
+          "count": 13084,
+          "pinyin": "chuan2"
+        },
+        "un": {
+          "char": "纯",
+          "count": 2224,
+          "pinyin": "chun2"
+        },
+        "uang": {
+          "char": "床",
+          "count": 8706,
+          "pinyin": "chuang2"
+        },
+        "ong": {
+          "char": "虫",
+          "count": 3228,
+          "pinyin": "chong2"
+        }
+      },
+      "sh": {
+        "a": {
+          "char": "啥",
+          "count": 4369,
+          "pinyin": "sha2"
+        },
+        "e": {
+          "char": "蛇",
+          "count": 1676,
+          "pinyin": "she2"
+        },
+        "ao": {
+          "char": "勺",
+          "count": 344,
+          "pinyin": "shao2"
+        },
+        "en": {
+          "char": "什",
+          "count": 307184,
+          "pinyin": "shen2"
+        },
+        "eng": {
+          "char": "绳",
+          "count": 1679,
+          "pinyin": "sheng2"
+        },
+        "i": {
+          "char": "时",
+          "count": 162611,
+          "pinyin": "shi2"
+        },
+        "u": {
+          "char": "熟",
+          "count": 4472,
+          "pinyin": "shu2"
+        },
+        "ui": {
+          "char": "谁",
+          "count": 52864,
+          "pinyin": "shui2"
+        }
+      },
+      "r": {
+        "ao": {
+          "char": "饶",
+          "count": 690,
+          "pinyin": "rao2"
+        },
+        "ou": {
+          "char": "柔",
+          "count": 1542,
+          "pinyin": "rou2"
+        },
+        "an": {
+          "char": "然",
+          "count": 91514,
+          "pinyin": "ran2"
+        },
+        "en": {
+          "char": "人",
+          "count": 373292,
+          "pinyin": "ren2"
+        },
+        "ang": {
+          "char": "瓤",
+          "count": 6,
+          "pinyin": "rang2"
+        },
+        "eng": {
+          "char": "仍",
+          "count": 5117,
+          "pinyin": "reng2"
+        },
+        "u": {
+          "char": "如",
+          "count": 113103,
+          "pinyin": "ru2"
+        },
+        "ong": {
+          "char": "容",
+          "count": 11265,
+          "pinyin": "rong2"
+        }
+      },
+      "z": {
+        "a": {
+          "char": "杂",
+          "count": 7200,
+          "pinyin": "za2"
+        },
+        "e": {
+          "char": "责",
+          "count": 10100,
+          "pinyin": "ze2"
+        },
+        "ei": {
+          "char": "贼",
+          "count": 1065,
+          "pinyin": "zei2"
+        },
+        "ao": {
+          "char": "凿",
+          "count": 268,
+          "pinyin": "zao2"
+        },
+        "an": {
+          "char": "咱",
+          "count": 7352,
+          "pinyin": "zan2"
+        },
+        "u": {
+          "char": "足",
+          "count": 8917,
+          "pinyin": "zu2"
+        },
+        "uo": {
+          "char": "昨",
+          "count": 10063,
+          "pinyin": "zuo2"
+        }
+      },
+      "c": {
+        "ai": {
+          "char": "才",
+          "count": 46044,
+          "pinyin": "cai2"
+        },
+        "ao": {
+          "char": "槽",
+          "count": 329,
+          "pinyin": "cao2"
+        },
+        "an": {
+          "char": "残",
+          "count": 3409,
+          "pinyin": "can2"
+        },
+        "en": {
+          "char": "岑",
+          "count": 11,
+          "pinyin": "cen2"
+        },
+        "ang": {
+          "char": "藏",
+          "count": 7826,
+          "pinyin": "cang2"
+        },
+        "eng": {
+          "char": "曾",
+          "count": 11274,
+          "pinyin": "ceng2"
+        },
+        "i": {
+          "char": "词",
+          "count": 7178,
+          "pinyin": "ci2"
+        },
+        "u": {
+          "char": "殂",
+          "count": 1,
+          "pinyin": "cu2"
+        },
+        "uo": {
+          "char": "矬",
+          "count": 17,
+          "pinyin": "cuo2"
+        },
+        "un": {
+          "char": "存",
+          "count": 9155,
+          "pinyin": "cun2"
+        },
+        "ong": {
+          "char": "从",
+          "count": 69789,
+          "pinyin": "cong2"
+        }
+      },
+      "s": {
+        "u": {
+          "char": "俗",
+          "count": 1194,
+          "pinyin": "su2"
+        },
+        "ui": {
+          "char": "随",
+          "count": 12248,
+          "pinyin": "sui2"
+        }
+      },
+      "": {
+        "a": {
+          "char": "嗄",
+          "count": 27,
+          "pinyin": "a2"
+        },
+        "e": {
+          "char": "俄",
+          "count": 3021,
+          "pinyin": "e2"
+        },
+        "ai": {
+          "char": "癌",
+          "count": 1610,
+          "pinyin": "ai2"
+        },
+        "ei": {
+          "char": "诶",
+          "count": 283,
+          "pinyin": "ei2"
+        },
+        "ao": {
+          "char": "熬",
+          "count": 1014,
+          "pinyin": "ao2"
+        },
+        "ang": {
+          "char": "昂",
+          "count": 1104,
+          "pinyin": "ang2"
+        },
+        "i": {
+          "char": "疑",
+          "count": 9259,
+          "pinyin": "yi2"
+        },
+        "ia": {
+          "char": "牙",
+          "count": 6365,
+          "pinyin": "ya2"
+        },
+        "ie": {
+          "char": "耶",
+          "count": 6967,
+          "pinyin": "ye2"
+        },
+        "iao": {
+          "char": "摇",
+          "count": 3589,
+          "pinyin": "yao2"
+        },
+        "iu": {
+          "char": "由",
+          "count": 15733,
+          "pinyin": "you2"
+        },
+        "ian": {
+          "char": "言",
+          "count": 13176,
+          "pinyin": "yan2"
+        },
+        "in": {
+          "char": "银",
+          "count": 4885,
+          "pinyin": "yin2"
+        },
+        "iang": {
+          "char": "阳",
+          "count": 4200,
+          "pinyin": "yang2"
+        },
+        "ing": {
+          "char": "赢",
+          "count": 11052,
+          "pinyin": "ying2"
+        },
+        "u": {
+          "char": "无",
+          "count": 50908,
+          "pinyin": "wu2"
+        },
+        "ua": {
+          "char": "娃",
+          "count": 2802,
+          "pinyin": "wa2"
+        },
+        "uo": {
+          "char": "哦",
+          "count": 69380,
+          "pinyin": "o2"
+        },
+        "ui": {
+          "char": "维",
+          "count": 12745,
+          "pinyin": "wei2"
+        },
+        "uan": {
+          "char": "完",
+          "count": 37488,
+          "pinyin": "wan2"
+        },
+        "un": {
+          "char": "文",
+          "count": 14196,
+          "pinyin": "wen2"
+        },
+        "uang": {
+          "char": "王",
+          "count": 9733,
+          "pinyin": "wang2"
+        },
+        "ü": {
+          "char": "于",
+          "count": 45429,
+          "pinyin": "yu2"
+        },
+        "üan": {
+          "char": "员",
+          "count": 29907,
+          "pinyin": "yuan2"
+        },
+        "ün": {
+          "char": "云",
+          "count": 1609,
+          "pinyin": "yun2"
+        },
+        "er": {
+          "char": "儿",
+          "count": 105402,
+          "pinyin": "er2"
+        }
+      }
+    },
+    "3": {
+      "b": {
+        "a": {
+          "char": "把",
+          "count": 126881,
+          "pinyin": "ba3"
+        },
+        "ai": {
+          "char": "百",
+          "count": 9469,
+          "pinyin": "bai3"
+        },
+        "ei": {
+          "char": "北",
+          "count": 3768,
+          "pinyin": "bei3"
+        },
+        "ao": {
+          "char": "保",
+          "count": 39731,
+          "pinyin": "bao3"
+        },
+        "an": {
+          "char": "板",
+          "count": 8354,
+          "pinyin": "ban3"
+        },
+        "en": {
+          "char": "本",
+          "count": 41063,
+          "pinyin": "ben3"
+        },
+        "ang": {
+          "char": "绑",
+          "count": 3810,
+          "pinyin": "bang3"
+        },
+        "i": {
+          "char": "比",
+          "count": 51838,
+          "pinyin": "bi3"
+        },
+        "ie": {
+          "char": "瘪",
+          "count": 119,
+          "pinyin": "bie3"
+        },
+        "iao": {
+          "char": "表",
+          "count": 31395,
+          "pinyin": "biao3"
+        },
+        "ian": {
+          "char": "扁",
+          "count": 641,
+          "pinyin": "bian3"
+        },
+        "ing": {
+          "char": "饼",
+          "count": 4137,
+          "pinyin": "bing3"
+        },
+        "u": {
+          "char": "捕",
+          "count": 5410,
+          "pinyin": "bu3"
+        },
+        "uo": {
+          "char": "簸",
+          "count": 85,
+          "pinyin": "bo3"
+        }
+      },
+      "p": {
+        "ai": {
+          "char": "廹",
+          "count": 1,
+          "pinyin": "pai3"
+        },
+        "ao": {
+          "char": "跑",
+          "count": 15495,
+          "pinyin": "pao3"
+        },
+        "ang": {
+          "char": "嗙",
+          "count": 16,
+          "pinyin": "pang3"
+        },
+        "eng": {
+          "char": "捧",
+          "count": 274,
+          "pinyin": "peng3"
+        },
+        "i": {
+          "char": "匹",
+          "count": 2240,
+          "pinyin": "pi3"
+        },
+        "iao": {
+          "char": "瞟",
+          "count": 26,
+          "pinyin": "piao3"
+        },
+        "in": {
+          "char": "品",
+          "count": 14318,
+          "pinyin": "pin3"
+        },
+        "u": {
+          "char": "普",
+          "count": 8777,
+          "pinyin": "pu3"
+        },
+        "uo": {
+          "char": "颇",
+          "count": 297,
+          "pinyin": "po3"
+        }
+      },
+      "m": {
+        "a": {
+          "char": "马",
+          "count": 34892,
+          "pinyin": "ma3"
+        },
+        "ai": {
+          "char": "买",
+          "count": 18045,
+          "pinyin": "mai3"
+        },
+        "ei": {
+          "char": "美",
+          "count": 45561,
+          "pinyin": "mei3"
+        },
+        "ao": {
+          "char": "卯",
+          "count": 25,
+          "pinyin": "mao3"
+        },
+        "ou": {
+          "char": "某",
+          "count": 10247,
+          "pinyin": "mou3"
+        },
+        "an": {
+          "char": "满",
+          "count": 11463,
+          "pinyin": "man3"
+        },
+        "ang": {
+          "char": "莽",
+          "count": 280,
+          "pinyin": "mang3"
+        },
+        "eng": {
+          "char": "猛",
+          "count": 1386,
+          "pinyin": "meng3"
+        },
+        "i": {
+          "char": "米",
+          "count": 13160,
+          "pinyin": "mi3"
+        },
+        "iao": {
+          "char": "秒",
+          "count": 3925,
+          "pinyin": "miao3"
+        },
+        "ian": {
+          "char": "免",
+          "count": 6707,
+          "pinyin": "mian3"
+        },
+        "in": {
+          "char": "敏",
+          "count": 2718,
+          "pinyin": "min3"
+        },
+        "ing": {
+          "char": "酩",
+          "count": 63,
+          "pinyin": "ming3"
+        },
+        "u": {
+          "char": "母",
+          "count": 15556,
+          "pinyin": "mu3"
+        },
+        "uo": {
+          "char": "抹",
+          "count": 867,
+          "pinyin": "mo3"
+        }
+      },
+      "f": {
+        "a": {
+          "char": "法",
+          "count": 60750,
+          "pinyin": "fa3"
+        },
+        "ei": {
+          "char": "匪",
+          "count": 820,
+          "pinyin": "fei3"
+        },
+        "ou": {
+          "char": "否",
+          "count": 13209,
+          "pinyin": "fou3"
+        },
+        "an": {
+          "char": "反",
+          "count": 15920,
+          "pinyin": "fan3"
+        },
+        "en": {
+          "char": "粉",
+          "count": 3634,
+          "pinyin": "fen3"
+        },
+        "ang": {
+          "char": "访",
+          "count": 3050,
+          "pinyin": "fang3"
+        },
+        "eng": {
+          "char": "讽",
+          "count": 872,
+          "pinyin": "feng3"
+        },
+        "u": {
+          "char": "府",
+          "count": 4402,
+          "pinyin": "fu3"
+        }
+      },
+      "d": {
+        "a": {
+          "char": "打",
+          "count": 79262,
+          "pinyin": "da3"
+        },
+        "ai": {
+          "char": "逮",
+          "count": 3247,
+          "pinyin": "dai3"
+        },
+        "ao": {
+          "char": "导",
+          "count": 7275,
+          "pinyin": "dao3"
+        },
+        "ou": {
+          "char": "抖",
+          "count": 766,
+          "pinyin": "dou3"
+        },
+        "an": {
+          "char": "胆",
+          "count": 2487,
+          "pinyin": "dan3"
+        },
+        "ang": {
+          "char": "挡",
+          "count": 2043,
+          "pinyin": "dang3"
+        },
+        "eng": {
+          "char": "等",
+          "count": 71184,
+          "pinyin": "deng3"
+        },
+        "i": {
+          "char": "底",
+          "count": 20210,
+          "pinyin": "di3"
+        },
+        "iao": {
+          "char": "屌",
+          "count": 71,
+          "pinyin": "diao3"
+        },
+        "ian": {
+          "char": "点",
+          "count": 128025,
+          "pinyin": "dian3"
+        },
+        "ing": {
+          "char": "顶",
+          "count": 5080,
+          "pinyin": "ding3"
+        },
+        "u": {
+          "char": "赌",
+          "count": 5398,
+          "pinyin": "du3"
+        },
+        "uo": {
+          "char": "躲",
+          "count": 3583,
+          "pinyin": "duo3"
+        },
+        "uan": {
+          "char": "短",
+          "count": 4871,
+          "pinyin": "duan3"
+        },
+        "un": {
+          "char": "盹",
+          "count": 147,
+          "pinyin": "dun3"
+        },
+        "ong": {
+          "char": "懂",
+          "count": 7758,
+          "pinyin": "dong3"
+        }
+      },
+      "t": {
+        "a": {
+          "char": "塔",
+          "count": 6158,
+          "pinyin": "ta3"
+        },
+        "ao": {
+          "char": "讨",
+          "count": 10151,
+          "pinyin": "tao3"
+        },
+        "an": {
+          "char": "坦",
+          "count": 4880,
+          "pinyin": "tan3"
+        },
+        "ang": {
+          "char": "躺",
+          "count": 2294,
+          "pinyin": "tang3"
+        },
+        "i": {
+          "char": "体",
+          "count": 26590,
+          "pinyin": "ti3"
+        },
+        "ie": {
+          "char": "铁",
+          "count": 3741,
+          "pinyin": "tie3"
+        },
+        "iao": {
+          "char": "窕",
+          "count": 36,
+          "pinyin": "tiao3"
+        },
+        "ian": {
+          "char": "舔",
+          "count": 669,
+          "pinyin": "tian3"
+        },
+        "ing": {
+          "char": "挺",
+          "count": 8004,
+          "pinyin": "ting3"
+        },
+        "u": {
+          "char": "土",
+          "count": 4871,
+          "pinyin": "tu3"
+        },
+        "uo": {
+          "char": "妥",
+          "count": 979,
+          "pinyin": "tuo3"
+        },
+        "ui": {
+          "char": "腿",
+          "count": 4983,
+          "pinyin": "tui3"
+        },
+        "un": {
+          "char": "氽",
+          "count": 1,
+          "pinyin": "tun3"
+        },
+        "ong": {
+          "char": "统",
+          "count": 13355,
+          "pinyin": "tong3"
+        }
+      },
+      "n": {
+        "a": {
+          "char": "哪",
+          "count": 59479,
+          "pinyin": "na3"
+        },
+        "ai": {
+          "char": "奶",
+          "count": 8037,
+          "pinyin": "nai3"
+        },
+        "ei": {
+          "char": "馁",
+          "count": 56,
+          "pinyin": "nei3"
+        },
+        "ao": {
+          "char": "脑",
+          "count": 13934,
+          "pinyin": "nao3"
+        },
+        "an": {
+          "char": "蝻",
+          "count": 5,
+          "pinyin": "nan3"
+        },
+        "i": {
+          "char": "你",
+          "count": 1444831,
+          "pinyin": "ni3"
+        },
+        "iao": {
+          "char": "鸟",
+          "count": 3408,
+          "pinyin": "niao3"
+        },
+        "iu": {
+          "char": "纽",
+          "count": 5492,
+          "pinyin": "niu3"
+        },
+        "ian": {
+          "char": "碾",
+          "count": 177,
+          "pinyin": "nian3"
+        },
+        "u": {
+          "char": "女",
+          "count": 76693,
+          "pinyin": "nu3"
+        },
+        "uan": {
+          "char": "暖",
+          "count": 1680,
+          "pinyin": "nuan3"
+        }
+      },
+      "l": {
+        "a": {
+          "char": "喇",
+          "count": 285,
+          "pinyin": "la3"
+        },
+        "ei": {
+          "char": "蕾",
+          "count": 1814,
+          "pinyin": "lei3"
+        },
+        "ao": {
+          "char": "老",
+          "count": 52688,
+          "pinyin": "lao3"
+        },
+        "ou": {
+          "char": "搂",
+          "count": 162,
+          "pinyin": "lou3"
+        },
+        "an": {
+          "char": "榄",
+          "count": 1069,
+          "pinyin": "lan3"
+        },
+        "ang": {
+          "char": "朗",
+          "count": 2968,
+          "pinyin": "lang3"
+        },
+        "eng": {
+          "char": "冷",
+          "count": 9199,
+          "pinyin": "leng3"
+        },
+        "i": {
+          "char": "里",
+          "count": 190694,
+          "pinyin": "li3"
+        },
+        "ia": {
+          "char": "俩",
+          "count": 9242,
+          "pinyin": "lia3"
+        },
+        "ie": {
+          "char": "咧",
+          "count": 176,
+          "pinyin": "lie3"
+        },
+        "iao": {
+          "char": "瞭",
+          "count": 48,
+          "pinyin": "liao3"
+        },
+        "iu": {
+          "char": "柳",
+          "count": 288,
+          "pinyin": "liu3"
+        },
+        "ian": {
+          "char": "脸",
+          "count": 9350,
+          "pinyin": "lian3"
+        },
+        "in": {
+          "char": "凛",
+          "count": 24,
+          "pinyin": "lin3"
+        },
+        "iang": {
+          "char": "两",
+          "count": 39972,
+          "pinyin": "liang3"
+        },
+        "ing": {
+          "char": "领",
+          "count": 8170,
+          "pinyin": "ling3"
+        },
+        "u": {
+          "char": "旅",
+          "count": 6759,
+          "pinyin": "lu3"
+        },
+        "uo": {
+          "char": "裸",
+          "count": 1513,
+          "pinyin": "luo3"
+        },
+        "uan": {
+          "char": "卵",
+          "count": 482,
+          "pinyin": "luan3"
+        },
+        "ong": {
+          "char": "拢",
+          "count": 167,
+          "pinyin": "long3"
+        }
+      },
+      "g": {
+        "a": {
+          "char": "尕",
+          "count": 8,
+          "pinyin": "ga3"
+        },
+        "ai": {
+          "char": "改",
+          "count": 12916,
+          "pinyin": "gai3"
+        },
+        "ei": {
+          "char": "给",
+          "count": 123887,
+          "pinyin": "gei3"
+        },
+        "ao": {
+          "char": "搞",
+          "count": 18599,
+          "pinyin": "gao3"
+        },
+        "ou": {
+          "char": "狗",
+          "count": 13978,
+          "pinyin": "gou3"
+        },
+        "an": {
+          "char": "感",
+          "count": 61054,
+          "pinyin": "gan3"
+        },
+        "en": {
+          "char": "艮",
+          "count": 51,
+          "pinyin": "gen3"
+        },
+        "ang": {
+          "char": "港",
+          "count": 1244,
+          "pinyin": "gang3"
+        },
+        "eng": {
+          "char": "耿",
+          "count": 251,
+          "pinyin": "geng3"
+        },
+        "u": {
+          "char": "古",
+          "count": 6114,
+          "pinyin": "gu3"
+        },
+        "ua": {
+          "char": "寡",
+          "count": 487,
+          "pinyin": "gua3"
+        },
+        "uo": {
+          "char": "果",
+          "count": 91471,
+          "pinyin": "guo3"
+        },
+        "uai": {
+          "char": "拐",
+          "count": 879,
+          "pinyin": "guai3"
+        },
+        "ui": {
+          "char": "鬼",
+          "count": 14646,
+          "pinyin": "gui3"
+        },
+        "uan": {
+          "char": "管",
+          "count": 29106,
+          "pinyin": "guan3"
+        },
+        "un": {
+          "char": "滚",
+          "count": 7213,
+          "pinyin": "gun3"
+        },
+        "uang": {
+          "char": "广",
+          "count": 4896,
+          "pinyin": "guang3"
+        },
+        "ong": {
+          "char": "拱",
+          "count": 148,
+          "pinyin": "gong3"
+        }
+      },
+      "k": {
+        "a": {
+          "char": "卡",
+          "count": 19536,
+          "pinyin": "ka3"
+        },
+        "e": {
+          "char": "可",
+          "count": 212670,
+          "pinyin": "ke3"
+        },
+        "ai": {
+          "char": "凯",
+          "count": 7371,
+          "pinyin": "kai3"
+        },
+        "ao": {
+          "char": "考",
+          "count": 11613,
+          "pinyin": "kao3"
+        },
+        "ou": {
+          "char": "口",
+          "count": 21385,
+          "pinyin": "kou3"
+        },
+        "an": {
+          "char": "砍",
+          "count": 1200,
+          "pinyin": "kan3"
+        },
+        "en": {
+          "char": "肯",
+          "count": 22710,
+          "pinyin": "ken3"
+        },
+        "u": {
+          "char": "苦",
+          "count": 7563,
+          "pinyin": "ku3"
+        },
+        "ua": {
+          "char": "垮",
+          "count": 690,
+          "pinyin": "kua3"
+        },
+        "ui": {
+          "char": "跬",
+          "count": 1,
+          "pinyin": "kui3"
+        },
+        "uan": {
+          "char": "款",
+          "count": 3486,
+          "pinyin": "kuan3"
+        },
+        "un": {
+          "char": "捆",
+          "count": 335,
+          "pinyin": "kun3"
+        },
+        "ong": {
+          "char": "恐",
+          "count": 8905,
+          "pinyin": "kong3"
+        }
+      },
+      "h": {
+        "ai": {
+          "char": "海",
+          "count": 16404,
+          "pinyin": "hai3"
+        },
+        "ao": {
+          "char": "好",
+          "count": 412760,
+          "pinyin": "hao3"
+        },
+        "ou": {
+          "char": "吼",
+          "count": 767,
+          "pinyin": "hou3"
+        },
+        "an": {
+          "char": "喊",
+          "count": 2156,
+          "pinyin": "han3"
+        },
+        "en": {
+          "char": "很",
+          "count": 219622,
+          "pinyin": "hen3"
+        },
+        "u": {
+          "char": "虎",
+          "count": 1745,
+          "pinyin": "hu3"
+        },
+        "uo": {
+          "char": "伙",
+          "count": 37637,
+          "pinyin": "huo3"
+        },
+        "ui": {
+          "char": "毁",
+          "count": 7225,
+          "pinyin": "hui3"
+        },
+        "uan": {
+          "char": "缓",
+          "count": 1150,
+          "pinyin": "huan3"
+        },
+        "uang": {
+          "char": "谎",
+          "count": 8144,
+          "pinyin": "huang3"
+        },
+        "ong": {
+          "char": "哄",
+          "count": 430,
+          "pinyin": "hong3"
+        }
+      },
+      "j": {
+        "i": {
+          "char": "己",
+          "count": 58674,
+          "pinyin": "ji3"
+        },
+        "ia": {
+          "char": "假",
+          "count": 12808,
+          "pinyin": "jia3"
+        },
+        "ie": {
+          "char": "解",
+          "count": 36622,
+          "pinyin": "jie3"
+        },
+        "iao": {
+          "char": "角",
+          "count": 8735,
+          "pinyin": "jiao3"
+        },
+        "iu": {
+          "char": "酒",
+          "count": 21171,
+          "pinyin": "jiu3"
+        },
+        "ian": {
+          "char": "简",
+          "count": 11953,
+          "pinyin": "jian3"
+        },
+        "in": {
+          "char": "尽",
+          "count": 15462,
+          "pinyin": "jin3"
+        },
+        "iang": {
+          "char": "讲",
+          "count": 11383,
+          "pinyin": "jiang3"
+        },
+        "ing": {
+          "char": "警",
+          "count": 32561,
+          "pinyin": "jing3"
+        },
+        "iong": {
+          "char": "窘",
+          "count": 101,
+          "pinyin": "jiong3"
+        },
+        "ü": {
+          "char": "举",
+          "count": 6853,
+          "pinyin": "ju3"
+        },
+        "üan": {
+          "char": "卷",
+          "count": 3334,
+          "pinyin": "juan3"
+        }
+      },
+      "q": {
+        "i": {
+          "char": "起",
+          "count": 127575,
+          "pinyin": "qi3"
+        },
+        "ie": {
+          "char": "且",
+          "count": 24774,
+          "pinyin": "qie3"
+        },
+        "iao": {
+          "char": "巧",
+          "count": 5321,
+          "pinyin": "qiao3"
+        },
+        "iu": {
+          "char": "糗",
+          "count": 143,
+          "pinyin": "qiu3"
+        },
+        "ian": {
+          "char": "浅",
+          "count": 728,
+          "pinyin": "qian3"
+        },
+        "in": {
+          "char": "寝",
+          "count": 170,
+          "pinyin": "qin3"
+        },
+        "iang": {
+          "char": "抢",
+          "count": 4907,
+          "pinyin": "qiang3"
+        },
+        "ing": {
+          "char": "请",
+          "count": 39590,
+          "pinyin": "qing3"
+        },
+        "ü": {
+          "char": "取",
+          "count": 12409,
+          "pinyin": "qu3"
+        },
+        "üan": {
+          "char": "犬",
+          "count": 1055,
+          "pinyin": "quan3"
+        }
+      },
+      "x": {
+        "i": {
+          "char": "喜",
+          "count": 54432,
+          "pinyin": "xi3"
+        },
+        "ie": {
+          "char": "写",
+          "count": 16083,
+          "pinyin": "xie3"
+        },
+        "iao": {
+          "char": "小",
+          "count": 99468,
+          "pinyin": "xiao3"
+        },
+        "iu": {
+          "char": "朽",
+          "count": 229,
+          "pinyin": "xiu3"
+        },
+        "ian": {
+          "char": "险",
+          "count": 13181,
+          "pinyin": "xian3"
+        },
+        "iang": {
+          "char": "想",
+          "count": 247453,
+          "pinyin": "xiang3"
+        },
+        "ing": {
+          "char": "醒",
+          "count": 11156,
+          "pinyin": "xing3"
+        },
+        "ü": {
+          "char": "许",
+          "count": 44190,
+          "pinyin": "xu3"
+        },
+        "üe": {
+          "char": "雪",
+          "count": 3731,
+          "pinyin": "xue3"
+        },
+        "üan": {
+          "char": "选",
+          "count": 25419,
+          "pinyin": "xuan3"
+        }
+      },
+      "zh": {
+        "a": {
+          "char": "眨",
+          "count": 438,
+          "pinyin": "zha3"
+        },
+        "e": {
+          "char": "者",
+          "count": 42245,
+          "pinyin": "zhe3"
+        },
+        "ai": {
+          "char": "窄",
+          "count": 173,
+          "pinyin": "zhai3"
+        },
+        "ao": {
+          "char": "找",
+          "count": 73582,
+          "pinyin": "zhao3"
+        },
+        "ou": {
+          "char": "肘",
+          "count": 223,
+          "pinyin": "zhou3"
+        },
+        "an": {
+          "char": "展",
+          "count": 8372,
+          "pinyin": "zhan3"
+        },
+        "en": {
+          "char": "诊",
+          "count": 2337,
+          "pinyin": "zhen3"
+        },
+        "ang": {
+          "char": "长",
+          "count": 42596,
+          "pinyin": "zhang3"
+        },
+        "eng": {
+          "char": "整",
+          "count": 18021,
+          "pinyin": "zheng3"
+        },
+        "i": {
+          "char": "只",
+          "count": 117406,
+          "pinyin": "zhi3"
+        },
+        "u": {
+          "char": "主",
+          "count": 28628,
+          "pinyin": "zhu3"
+        },
+        "uai": {
+          "char": "跩",
+          "count": 12,
+          "pinyin": "zhuai3"
+        },
+        "uan": {
+          "char": "转",
+          "count": 13740,
+          "pinyin": "zhuan3"
+        },
+        "un": {
+          "char": "准",
+          "count": 30289,
+          "pinyin": "zhun3"
+        },
+        "ong": {
+          "char": "种",
+          "count": 42396,
+          "pinyin": "zhong3"
+        }
+      },
+      "ch": {
+        "a": {
+          "char": "衩",
+          "count": 34,
+          "pinyin": "cha3"
+        },
+        "e": {
+          "char": "扯",
+          "count": 2952,
+          "pinyin": "che3"
+        },
+        "ao": {
+          "char": "吵",
+          "count": 3805,
+          "pinyin": "chao3"
+        },
+        "ou": {
+          "char": "丑",
+          "count": 2948,
+          "pinyin": "chou3"
+        },
+        "an": {
+          "char": "产",
+          "count": 8264,
+          "pinyin": "chan3"
+        },
+        "en": {
+          "char": "碜",
+          "count": 9,
+          "pinyin": "chen3"
+        },
+        "ang": {
+          "char": "场",
+          "count": 34746,
+          "pinyin": "chang3"
+        },
+        "eng": {
+          "char": "逞",
+          "count": 355,
+          "pinyin": "cheng3"
+        },
+        "i": {
+          "char": "尺",
+          "count": 2651,
+          "pinyin": "chi3"
+        },
+        "u": {
+          "char": "楚",
+          "count": 10683,
+          "pinyin": "chu3"
+        },
+        "uan": {
+          "char": "喘",
+          "count": 842,
+          "pinyin": "chuan3"
+        },
+        "un": {
+          "char": "蠢",
+          "count": 6273,
+          "pinyin": "chun3"
+        },
+        "uang": {
+          "char": "闯",
+          "count": 1844,
+          "pinyin": "chuang3"
+        },
+        "ong": {
+          "char": "宠",
+          "count": 1199,
+          "pinyin": "chong3"
+        }
+      },
+      "sh": {
+        "a": {
+          "char": "傻",
+          "count": 7842,
+          "pinyin": "sha3"
+        },
+        "e": {
+          "char": "舍",
+          "count": 1482,
+          "pinyin": "she3"
+        },
+        "ao": {
+          "char": "少",
+          "count": 28266,
+          "pinyin": "shao3"
+        },
+        "ou": {
+          "char": "手",
+          "count": 75608,
+          "pinyin": "shou3"
+        },
+        "an": {
+          "char": "闪",
+          "count": 3410,
+          "pinyin": "shan3"
+        },
+        "en": {
+          "char": "审",
+          "count": 6285,
+          "pinyin": "shen3"
+        },
+        "ang": {
+          "char": "赏",
+          "count": 2464,
+          "pinyin": "shang3"
+        },
+        "eng": {
+          "char": "省",
+          "count": 2285,
+          "pinyin": "sheng3"
+        },
+        "i": {
+          "char": "始",
+          "count": 33678,
+          "pinyin": "shi3"
+        },
+        "u": {
+          "char": "属",
+          "count": 5358,
+          "pinyin": "shu3"
+        },
+        "ua": {
+          "char": "耍",
+          "count": 2393,
+          "pinyin": "shua3"
+        },
+        "uai": {
+          "char": "甩",
+          "count": 1719,
+          "pinyin": "shuai3"
+        },
+        "ui": {
+          "char": "水",
+          "count": 21793,
+          "pinyin": "shui3"
+        },
+        "un": {
+          "char": "吮",
+          "count": 101,
+          "pinyin": "shun3"
+        },
+        "uang": {
+          "char": "爽",
+          "count": 2566,
+          "pinyin": "shuang3"
+        }
+      },
+      "r": {
+        "e": {
+          "char": "惹",
+          "count": 3253,
+          "pinyin": "re3"
+        },
+        "ao": {
+          "char": "扰",
+          "count": 5673,
+          "pinyin": "rao3"
+        },
+        "an": {
+          "char": "染",
+          "count": 3274,
+          "pinyin": "ran3"
+        },
+        "en": {
+          "char": "忍",
+          "count": 4557,
+          "pinyin": "ren3"
+        },
+        "ang": {
+          "char": "嚷",
+          "count": 647,
+          "pinyin": "rang3"
+        },
+        "u": {
+          "char": "辱",
+          "count": 1776,
+          "pinyin": "ru3"
+        },
+        "ui": {
+          "char": "蕊",
+          "count": 45,
+          "pinyin": "rui3"
+        },
+        "uan": {
+          "char": "软",
+          "count": 2239,
+          "pinyin": "ruan3"
+        },
+        "ong": {
+          "char": "冗",
+          "count": 66,
+          "pinyin": "rong3"
+        }
+      },
+      "z": {
+        "a": {
+          "char": "咋",
+          "count": 426,
+          "pinyin": "za3"
+        },
+        "ai": {
+          "char": "仔",
+          "count": 3497,
+          "pinyin": "zai3"
+        },
+        "ao": {
+          "char": "早",
+          "count": 26160,
+          "pinyin": "zao3"
+        },
+        "ou": {
+          "char": "走",
+          "count": 82765,
+          "pinyin": "zou3"
+        },
+        "an": {
+          "char": "攒",
+          "count": 143,
+          "pinyin": "zan3"
+        },
+        "en": {
+          "char": "怎",
+          "count": 129740,
+          "pinyin": "zen3"
+        },
+        "i": {
+          "char": "紫",
+          "count": 741,
+          "pinyin": "zi3"
+        },
+        "u": {
+          "char": "组",
+          "count": 11486,
+          "pinyin": "zu3"
+        },
+        "uo": {
+          "char": "左",
+          "count": 5160,
+          "pinyin": "zuo3"
+        },
+        "ui": {
+          "char": "嘴",
+          "count": 12089,
+          "pinyin": "zui3"
+        },
+        "uan": {
+          "char": "纂",
+          "count": 7,
+          "pinyin": "zuan3"
+        },
+        "ong": {
+          "char": "总",
+          "count": 29800,
+          "pinyin": "zong3"
+        }
+      },
+      "c": {
+        "ai": {
+          "char": "彩",
+          "count": 5381,
+          "pinyin": "cai3"
+        },
+        "ao": {
+          "char": "草",
+          "count": 3811,
+          "pinyin": "cao3"
+        },
+        "an": {
+          "char": "惨",
+          "count": 2232,
+          "pinyin": "can3"
+        },
+        "i": {
+          "char": "此",
+          "count": 28050,
+          "pinyin": "ci3"
+        },
+        "ui": {
+          "char": "璀",
+          "count": 31,
+          "pinyin": "cui3"
+        },
+        "un": {
+          "char": "忖",
+          "count": 9,
+          "pinyin": "cun3"
+        }
+      },
+      "s": {
+        "a": {
+          "char": "洒",
+          "count": 557,
+          "pinyin": "sa3"
+        },
+        "ao": {
+          "char": "扫",
+          "count": 2796,
+          "pinyin": "sao3"
+        },
+        "ou": {
+          "char": "叟",
+          "count": 31,
+          "pinyin": "sou3"
+        },
+        "an": {
+          "char": "伞",
+          "count": 768,
+          "pinyin": "san3"
+        },
+        "ang": {
+          "char": "嗓",
+          "count": 658,
+          "pinyin": "sang3"
+        },
+        "i": {
+          "char": "死",
+          "count": 71256,
+          "pinyin": "si3"
+        },
+        "uo": {
+          "char": "所",
+          "count": 100444,
+          "pinyin": "suo3"
+        },
+        "ui": {
+          "char": "髓",
+          "count": 313,
+          "pinyin": "sui3"
+        },
+        "un": {
+          "char": "损",
+          "count": 2774,
+          "pinyin": "sun3"
+        },
+        "ong": {
+          "char": "悚",
+          "count": 196,
+          "pinyin": "song3"
+        }
+      },
+      "": {
+        "e": {
+          "char": "噁",
+          "count": 4,
+          "pinyin": "e3"
+        },
+        "ai": {
+          "char": "矮",
+          "count": 884,
+          "pinyin": "ai3"
+        },
+        "ao": {
+          "char": "拗",
+          "count": 25,
+          "pinyin": "ao3"
+        },
+        "ou": {
+          "char": "偶",
+          "count": 4495,
+          "pinyin": "ou3"
+        },
+        "an": {
+          "char": "俺",
+          "count": 125,
+          "pinyin": "an3"
+        },
+        "i": {
+          "char": "以",
+          "count": 184508,
+          "pinyin": "yi3"
+        },
+        "ia": {
+          "char": "雅",
+          "count": 3113,
+          "pinyin": "ya3"
+        },
+        "ie": {
+          "char": "也",
+          "count": 159926,
+          "pinyin": "ye3"
+        },
+        "iao": {
+          "char": "咬",
+          "count": 2419,
+          "pinyin": "yao3"
+        },
+        "iu": {
+          "char": "有",
+          "count": 533631,
+          "pinyin": "you3"
+        },
+        "ian": {
+          "char": "演",
+          "count": 23373,
+          "pinyin": "yan3"
+        },
+        "in": {
+          "char": "引",
+          "count": 9297,
+          "pinyin": "yin3"
+        },
+        "iang": {
+          "char": "养",
+          "count": 7312,
+          "pinyin": "yang3"
+        },
+        "ing": {
+          "char": "影",
+          "count": 16924,
+          "pinyin": "ying3"
+        },
+        "iong": {
+          "char": "永",
+          "count": 12756,
+          "pinyin": "yong3"
+        },
+        "u": {
+          "char": "舞",
+          "count": 22832,
+          "pinyin": "wu3"
+        },
+        "ua": {
+          "char": "瓦",
+          "count": 3721,
+          "pinyin": "wa3"
+        },
+        "uo": {
+          "char": "我",
+          "count": 2058980,
+          "pinyin": "wo3"
+        },
+        "uai": {
+          "char": "崴",
+          "count": 43,
+          "pinyin": "wai3"
+        },
+        "ui": {
+          "char": "委",
+          "count": 5183,
+          "pinyin": "wei3"
+        },
+        "uan": {
+          "char": "晚",
+          "count": 50512,
+          "pinyin": "wan3"
+        },
+        "un": {
+          "char": "吻",
+          "count": 4521,
+          "pinyin": "wen3"
+        },
+        "uang": {
+          "char": "往",
+          "count": 11516,
+          "pinyin": "wang3"
+        },
+        "ü": {
+          "char": "与",
+          "count": 17262,
+          "pinyin": "yu3"
+        },
+        "üan": {
+          "char": "远",
+          "count": 21547,
+          "pinyin": "yuan3"
+        },
+        "ün": {
+          "char": "允",
+          "count": 2897,
+          "pinyin": "yun3"
+        },
+        "er": {
+          "char": "尔",
+          "count": 41284,
+          "pinyin": "er3"
+        }
+      }
+    },
+    "4": {
+      "b": {
+        "a": {
+          "char": "爸",
+          "count": 53025,
+          "pinyin": "ba4"
+        },
+        "ai": {
+          "char": "拜",
+          "count": 14722,
+          "pinyin": "bai4"
+        },
+        "ei": {
+          "char": "被",
+          "count": 70119,
+          "pinyin": "bei4"
+        },
+        "ao": {
+          "char": "抱",
+          "count": 26803,
+          "pinyin": "bao4"
+        },
+        "an": {
+          "char": "办",
+          "count": 28706,
+          "pinyin": "ban4"
+        },
+        "en": {
+          "char": "笨",
+          "count": 3993,
+          "pinyin": "ben4"
+        },
+        "ang": {
+          "char": "棒",
+          "count": 20010,
+          "pinyin": "bang4"
+        },
+        "eng": {
+          "char": "蹦",
+          "count": 429,
+          "pinyin": "beng4"
+        },
+        "i": {
+          "char": "必",
+          "count": 27960,
+          "pinyin": "bi4"
+        },
+        "iao": {
+          "char": "俵",
+          "count": 1,
+          "pinyin": "biao4"
+        },
+        "ian": {
+          "char": "变",
+          "count": 30205,
+          "pinyin": "bian4"
+        },
+        "in": {
+          "char": "殡",
+          "count": 176,
+          "pinyin": "bin4"
+        },
+        "ing": {
+          "char": "并",
+          "count": 26283,
+          "pinyin": "bing4"
+        },
+        "u": {
+          "char": "不",
+          "count": 904675,
+          "pinyin": "bu4"
+        }
+      },
+      "p": {
+        "a": {
+          "char": "怕",
+          "count": 17550,
+          "pinyin": "pa4"
+        },
+        "ai": {
+          "char": "派",
+          "count": 12704,
+          "pinyin": "pai4"
+        },
+        "ei": {
+          "char": "配",
+          "count": 5475,
+          "pinyin": "pei4"
+        },
+        "ao": {
+          "char": "泡",
+          "count": 2747,
+          "pinyin": "pao4"
+        },
+        "an": {
+          "char": "判",
+          "count": 5960,
+          "pinyin": "pan4"
+        },
+        "en": {
+          "char": "喯",
+          "count": 2,
+          "pinyin": "pen4"
+        },
+        "ang": {
+          "char": "胖",
+          "count": 2272,
+          "pinyin": "pang4"
+        },
+        "eng": {
+          "char": "碰",
+          "count": 7601,
+          "pinyin": "peng4"
+        },
+        "i": {
+          "char": "屁",
+          "count": 7805,
+          "pinyin": "pi4"
+        },
+        "iao": {
+          "char": "票",
+          "count": 12689,
+          "pinyin": "piao4"
+        },
+        "ian": {
+          "char": "片",
+          "count": 21431,
+          "pinyin": "pian4"
+        },
+        "in": {
+          "char": "聘",
+          "count": 455,
+          "pinyin": "pin4"
+        },
+        "u": {
+          "char": "铺",
+          "count": 997,
+          "pinyin": "pu4"
+        },
+        "uo": {
+          "char": "破",
+          "count": 10541,
+          "pinyin": "po4"
+        }
+      },
+      "m": {
+        "a": {
+          "char": "骂",
+          "count": 973,
+          "pinyin": "ma4"
+        },
+        "ai": {
+          "char": "卖",
+          "count": 10993,
+          "pinyin": "mai4"
+        },
+        "ei": {
+          "char": "妹",
+          "count": 9193,
+          "pinyin": "mei4"
+        },
+        "ao": {
+          "char": "冒",
+          "count": 5729,
+          "pinyin": "mao4"
+        },
+        "an": {
+          "char": "慢",
+          "count": 8810,
+          "pinyin": "man4"
+        },
+        "en": {
+          "char": "闷",
+          "count": 1183,
+          "pinyin": "men4"
+        },
+        "eng": {
+          "char": "梦",
+          "count": 11083,
+          "pinyin": "meng4"
+        },
+        "i": {
+          "char": "密",
+          "count": 15201,
+          "pinyin": "mi4"
+        },
+        "ie": {
+          "char": "灭",
+          "count": 3546,
+          "pinyin": "mie4"
+        },
+        "iao": {
+          "char": "妙",
+          "count": 3967,
+          "pinyin": "miao4"
+        },
+        "iu": {
+          "char": "谬",
+          "count": 1010,
+          "pinyin": "miu4"
+        },
+        "ian": {
+          "char": "面",
+          "count": 67015,
+          "pinyin": "mian4"
+        },
+        "ing": {
+          "char": "命",
+          "count": 25014,
+          "pinyin": "ming4"
+        },
+        "u": {
+          "char": "目",
+          "count": 22482,
+          "pinyin": "mu4"
+        },
+        "uo": {
+          "char": "莫",
+          "count": 4987,
+          "pinyin": "mo4"
+        }
+      },
+      "f": {
+        "a": {
+          "char": "珐",
+          "count": 7,
+          "pinyin": "fa4"
+        },
+        "ei": {
+          "char": "费",
+          "count": 12016,
+          "pinyin": "fei4"
+        },
+        "an": {
+          "char": "犯",
+          "count": 17722,
+          "pinyin": "fan4"
+        },
+        "en": {
+          "char": "份",
+          "count": 14754,
+          "pinyin": "fen4"
+        },
+        "ang": {
+          "char": "放",
+          "count": 46528,
+          "pinyin": "fang4"
+        },
+        "eng": {
+          "char": "缝",
+          "count": 1773,
+          "pinyin": "feng4"
+        },
+        "u": {
+          "char": "父",
+          "count": 22065,
+          "pinyin": "fu4"
+        }
+      },
+      "d": {
+        "a": {
+          "char": "大",
+          "count": 135159,
+          "pinyin": "da4"
+        },
+        "ai": {
+          "char": "带",
+          "count": 45283,
+          "pinyin": "dai4"
+        },
+        "ao": {
+          "char": "到",
+          "count": 290231,
+          "pinyin": "dao4"
+        },
+        "ou": {
+          "char": "斗",
+          "count": 6328,
+          "pinyin": "dou4"
+        },
+        "an": {
+          "char": "但",
+          "count": 122236,
+          "pinyin": "dan4"
+        },
+        "en": {
+          "char": "扽",
+          "count": 2,
+          "pinyin": "den4"
+        },
+        "ang": {
+          "char": "档",
+          "count": 4903,
+          "pinyin": "dang4"
+        },
+        "eng": {
+          "char": "凳",
+          "count": 402,
+          "pinyin": "deng4"
+        },
+        "i": {
+          "char": "地",
+          "count": 78129,
+          "pinyin": "di4"
+        },
+        "iao": {
+          "char": "掉",
+          "count": 23820,
+          "pinyin": "diao4"
+        },
+        "ian": {
+          "char": "电",
+          "count": 60278,
+          "pinyin": "dian4"
+        },
+        "ing": {
+          "char": "定",
+          "count": 81657,
+          "pinyin": "ding4"
+        },
+        "u": {
+          "char": "度",
+          "count": 17384,
+          "pinyin": "du4"
+        },
+        "uo": {
+          "char": "堕",
+          "count": 665,
+          "pinyin": "duo4"
+        },
+        "ui": {
+          "char": "对",
+          "count": 191793,
+          "pinyin": "dui4"
+        },
+        "uan": {
+          "char": "段",
+          "count": 9577,
+          "pinyin": "duan4"
+        },
+        "un": {
+          "char": "顿",
+          "count": 9106,
+          "pinyin": "dun4"
+        },
+        "ong": {
+          "char": "动",
+          "count": 49274,
+          "pinyin": "dong4"
+        }
+      },
+      "t": {
+        "a": {
+          "char": "踏",
+          "count": 1270,
+          "pinyin": "ta4"
+        },
+        "e": {
+          "char": "特",
+          "count": 48225,
+          "pinyin": "te4"
+        },
+        "ai": {
+          "char": "太",
+          "count": 80890,
+          "pinyin": "tai4"
+        },
+        "ao": {
+          "char": "套",
+          "count": 7409,
+          "pinyin": "tao4"
+        },
+        "ou": {
+          "char": "透",
+          "count": 4390,
+          "pinyin": "tou4"
+        },
+        "an": {
+          "char": "探",
+          "count": 12125,
+          "pinyin": "tan4"
+        },
+        "ang": {
+          "char": "趟",
+          "count": 1519,
+          "pinyin": "tang4"
+        },
+        "i": {
+          "char": "替",
+          "count": 5759,
+          "pinyin": "ti4"
+        },
+        "ie": {
+          "char": "餮",
+          "count": 1,
+          "pinyin": "tie4"
+        },
+        "iao": {
+          "char": "跳",
+          "count": 14132,
+          "pinyin": "tiao4"
+        },
+        "u": {
+          "char": "兔",
+          "count": 1452,
+          "pinyin": "tu4"
+        },
+        "uo": {
+          "char": "唾",
+          "count": 251,
+          "pinyin": "tuo4"
+        },
+        "ui": {
+          "char": "退",
+          "count": 8121,
+          "pinyin": "tui4"
+        },
+        "ong": {
+          "char": "痛",
+          "count": 8963,
+          "pinyin": "tong4"
+        }
+      },
+      "n": {
+        "a": {
+          "char": "那",
+          "count": 365024,
+          "pinyin": "na4"
+        },
+        "e": {
+          "char": "讷",
+          "count": 29,
+          "pinyin": "ne4"
+        },
+        "ai": {
+          "char": "耐",
+          "count": 1965,
+          "pinyin": "nai4"
+        },
+        "ei": {
+          "char": "内",
+          "count": 19071,
+          "pinyin": "nei4"
+        },
+        "ao": {
+          "char": "闹",
+          "count": 3057,
+          "pinyin": "nao4"
+        },
+        "ou": {
+          "char": "耨",
+          "count": 1,
+          "pinyin": "nou4"
+        },
+        "en": {
+          "char": "嫩",
+          "count": 349,
+          "pinyin": "nen4"
+        },
+        "i": {
+          "char": "匿",
+          "count": 615,
+          "pinyin": "ni4"
+        },
+        "ie": {
+          "char": "涅",
+          "count": 281,
+          "pinyin": "nie4"
+        },
+        "iao": {
+          "char": "尿",
+          "count": 2843,
+          "pinyin": "niao4"
+        },
+        "ian": {
+          "char": "念",
+          "count": 7530,
+          "pinyin": "nian4"
+        },
+        "iang": {
+          "char": "酿",
+          "count": 346,
+          "pinyin": "niang4"
+        },
+        "ing": {
+          "char": "泞",
+          "count": 26,
+          "pinyin": "ning4"
+        },
+        "u": {
+          "char": "怒",
+          "count": 2876,
+          "pinyin": "nu4"
+        },
+        "uo": {
+          "char": "诺",
+          "count": 7138,
+          "pinyin": "nuo4"
+        },
+        "ong": {
+          "char": "弄",
+          "count": 15246,
+          "pinyin": "nong4"
+        },
+        "üe": {
+          "char": "虐",
+          "count": 954,
+          "pinyin": "nue4"
+        }
+      },
+      "l": {
+        "a": {
+          "char": "辣",
+          "count": 2300,
+          "pinyin": "la4"
+        },
+        "e": {
+          "char": "乐",
+          "count": 26456,
+          "pinyin": "le4"
+        },
+        "ai": {
+          "char": "赖",
+          "count": 2485,
+          "pinyin": "lai4"
+        },
+        "ei": {
+          "char": "类",
+          "count": 11326,
+          "pinyin": "lei4"
+        },
+        "ao": {
+          "char": "酪",
+          "count": 1396,
+          "pinyin": "lao4"
+        },
+        "ou": {
+          "char": "漏",
+          "count": 1931,
+          "pinyin": "lou4"
+        },
+        "an": {
+          "char": "烂",
+          "count": 3934,
+          "pinyin": "lan4"
+        },
+        "ang": {
+          "char": "浪",
+          "count": 6911,
+          "pinyin": "lang4"
+        },
+        "eng": {
+          "char": "愣",
+          "count": 100,
+          "pinyin": "leng4"
+        },
+        "i": {
+          "char": "力",
+          "count": 44859,
+          "pinyin": "li4"
+        },
+        "ie": {
+          "char": "列",
+          "count": 4646,
+          "pinyin": "lie4"
+        },
+        "iao": {
+          "char": "料",
+          "count": 8527,
+          "pinyin": "liao4"
+        },
+        "iu": {
+          "char": "六",
+          "count": 7439,
+          "pinyin": "liu4"
+        },
+        "ian": {
+          "char": "练",
+          "count": 9125,
+          "pinyin": "lian4"
+        },
+        "in": {
+          "char": "吝",
+          "count": 114,
+          "pinyin": "lin4"
+        },
+        "iang": {
+          "char": "亮",
+          "count": 14157,
+          "pinyin": "liang4"
+        },
+        "ing": {
+          "char": "另",
+          "count": 13372,
+          "pinyin": "ling4"
+        },
+        "u": {
+          "char": "路",
+          "count": 23462,
+          "pinyin": "lu4"
+        },
+        "uo": {
+          "char": "落",
+          "count": 10041,
+          "pinyin": "luo4"
+        },
+        "uan": {
+          "char": "乱",
+          "count": 8384,
+          "pinyin": "luan4"
+        },
+        "un": {
+          "char": "论",
+          "count": 15732,
+          "pinyin": "lun4"
+        },
+        "üe": {
+          "char": "略",
+          "count": 2210,
+          "pinyin": "lue4"
+        }
+      },
+      "g": {
+        "a": {
+          "char": "尬",
+          "count": 1256,
+          "pinyin": "ga4"
+        },
+        "e": {
+          "char": "个",
+          "count": 452923,
+          "pinyin": "ge4"
+        },
+        "ai": {
+          "char": "概",
+          "count": 5532,
+          "pinyin": "gai4"
+        },
+        "ao": {
+          "char": "告",
+          "count": 76599,
+          "pinyin": "gao4"
+        },
+        "ou": {
+          "char": "够",
+          "count": 23259,
+          "pinyin": "gou4"
+        },
+        "an": {
+          "char": "干",
+          "count": 60971,
+          "pinyin": "gan4"
+        },
+        "en": {
+          "char": "亘",
+          "count": 31,
+          "pinyin": "gen4"
+        },
+        "ang": {
+          "char": "戆",
+          "count": 2,
+          "pinyin": "gang4"
+        },
+        "eng": {
+          "char": "更",
+          "count": 35397,
+          "pinyin": "geng4"
+        },
+        "u": {
+          "char": "故",
+          "count": 11435,
+          "pinyin": "gu4"
+        },
+        "ua": {
+          "char": "挂",
+          "count": 3913,
+          "pinyin": "gua4"
+        },
+        "uo": {
+          "char": "过",
+          "count": 198278,
+          "pinyin": "guo4"
+        },
+        "uai": {
+          "char": "怪",
+          "count": 17328,
+          "pinyin": "guai4"
+        },
+        "ui": {
+          "char": "贵",
+          "count": 3682,
+          "pinyin": "gui4"
+        },
+        "uan": {
+          "char": "惯",
+          "count": 2765,
+          "pinyin": "guan4"
+        },
+        "un": {
+          "char": "棍",
+          "count": 1366,
+          "pinyin": "gun4"
+        },
+        "uang": {
+          "char": "逛",
+          "count": 993,
+          "pinyin": "guang4"
+        },
+        "ong": {
+          "char": "共",
+          "count": 7769,
+          "pinyin": "gong4"
+        }
+      },
+      "k": {
+        "e": {
+          "char": "克",
+          "count": 53663,
+          "pinyin": "ke4"
+        },
+        "ai": {
+          "char": "忾",
+          "count": 6,
+          "pinyin": "kai4"
+        },
+        "ao": {
+          "char": "靠",
+          "count": 9411,
+          "pinyin": "kao4"
+        },
+        "ou": {
+          "char": "扣",
+          "count": 1912,
+          "pinyin": "kou4"
+        },
+        "an": {
+          "char": "看",
+          "count": 213974,
+          "pinyin": "kan4"
+        },
+        "ang": {
+          "char": "抗",
+          "count": 4009,
+          "pinyin": "kang4"
+        },
+        "u": {
+          "char": "酷",
+          "count": 5303,
+          "pinyin": "ku4"
+        },
+        "ua": {
+          "char": "跨",
+          "count": 642,
+          "pinyin": "kua4"
+        },
+        "uo": {
+          "char": "括",
+          "count": 2502,
+          "pinyin": "kuo4"
+        },
+        "uai": {
+          "char": "快",
+          "count": 72900,
+          "pinyin": "kuai4"
+        },
+        "ui": {
+          "char": "溃",
+          "count": 1064,
+          "pinyin": "kui4"
+        },
+        "un": {
+          "char": "困",
+          "count": 5538,
+          "pinyin": "kun4"
+        },
+        "uang": {
+          "char": "况",
+          "count": 13269,
+          "pinyin": "kuang4"
+        },
+        "ong": {
+          "char": "控",
+          "count": 11866,
+          "pinyin": "kong4"
+        }
+      },
+      "h": {
+        "e": {
+          "char": "贺",
+          "count": 2097,
+          "pinyin": "he4"
+        },
+        "ai": {
+          "char": "害",
+          "count": 25606,
+          "pinyin": "hai4"
+        },
+        "ao": {
+          "char": "号",
+          "count": 21571,
+          "pinyin": "hao4"
+        },
+        "ou": {
+          "char": "后",
+          "count": 109915,
+          "pinyin": "hou4"
+        },
+        "an": {
+          "char": "汉",
+          "count": 4874,
+          "pinyin": "han4"
+        },
+        "en": {
+          "char": "恨",
+          "count": 4848,
+          "pinyin": "hen4"
+        },
+        "ang": {
+          "char": "沆",
+          "count": 42,
+          "pinyin": "hang4"
+        },
+        "u": {
+          "char": "护",
+          "count": 17385,
+          "pinyin": "hu4"
+        },
+        "ua": {
+          "char": "话",
+          "count": 99879,
+          "pinyin": "hua4"
+        },
+        "uo": {
+          "char": "或",
+          "count": 30931,
+          "pinyin": "huo4"
+        },
+        "uai": {
+          "char": "坏",
+          "count": 15105,
+          "pinyin": "huai4"
+        },
+        "ui": {
+          "char": "会",
+          "count": 321488,
+          "pinyin": "hui4"
+        },
+        "uan": {
+          "char": "换",
+          "count": 9989,
+          "pinyin": "huan4"
+        },
+        "un": {
+          "char": "混",
+          "count": 14032,
+          "pinyin": "hun4"
+        },
+        "ong": {
+          "char": "讧",
+          "count": 39,
+          "pinyin": "hong4"
+        }
+      },
+      "j": {
+        "i": {
+          "char": "记",
+          "count": 39008,
+          "pinyin": "ji4"
+        },
+        "ia": {
+          "char": "价",
+          "count": 8767,
+          "pinyin": "jia4"
+        },
+        "ie": {
+          "char": "界",
+          "count": 15995,
+          "pinyin": "jie4"
+        },
+        "iao": {
+          "char": "叫",
+          "count": 41269,
+          "pinyin": "jiao4"
+        },
+        "iu": {
+          "char": "就",
+          "count": 313793,
+          "pinyin": "jiu4"
+        },
+        "ian": {
+          "char": "见",
+          "count": 85723,
+          "pinyin": "jian4"
+        },
+        "in": {
+          "char": "进",
+          "count": 55676,
+          "pinyin": "jin4"
+        },
+        "iang": {
+          "char": "降",
+          "count": 4045,
+          "pinyin": "jiang4"
+        },
+        "ing": {
+          "char": "静",
+          "count": 11447,
+          "pinyin": "jing4"
+        },
+        "ü": {
+          "char": "据",
+          "count": 12730,
+          "pinyin": "ju4"
+        },
+        "üan": {
+          "char": "倦",
+          "count": 937,
+          "pinyin": "juan4"
+        },
+        "ün": {
+          "char": "俊",
+          "count": 927,
+          "pinyin": "jun4"
+        }
+      },
+      "q": {
+        "i": {
+          "char": "气",
+          "count": 28334,
+          "pinyin": "qi4"
+        },
+        "ia": {
+          "char": "恰",
+          "count": 1544,
+          "pinyin": "qia4"
+        },
+        "ie": {
+          "char": "切",
+          "count": 28202,
+          "pinyin": "qie4"
+        },
+        "iao": {
+          "char": "翘",
+          "count": 558,
+          "pinyin": "qiao4"
+        },
+        "ian": {
+          "char": "歉",
+          "count": 25447,
+          "pinyin": "qian4"
+        },
+        "in": {
+          "char": "沁",
+          "count": 9,
+          "pinyin": "qin4"
+        },
+        "ing": {
+          "char": "庆",
+          "count": 2882,
+          "pinyin": "qing4"
+        },
+        "ü": {
+          "char": "去",
+          "count": 232346,
+          "pinyin": "qu4"
+        },
+        "üe": {
+          "char": "确",
+          "count": 34030,
+          "pinyin": "que4"
+        },
+        "üan": {
+          "char": "劝",
+          "count": 871,
+          "pinyin": "quan4"
+        }
+      },
+      "x": {
+        "i": {
+          "char": "系",
+          "count": 29334,
+          "pinyin": "xi4"
+        },
+        "ia": {
+          "char": "下",
+          "count": 153565,
+          "pinyin": "xia4"
+        },
+        "ie": {
+          "char": "谢",
+          "count": 120668,
+          "pinyin": "xie4"
+        },
+        "iao": {
+          "char": "笑",
+          "count": 22282,
+          "pinyin": "xiao4"
+        },
+        "iu": {
+          "char": "秀",
+          "count": 5062,
+          "pinyin": "xiu4"
+        },
+        "ian": {
+          "char": "现",
+          "count": 137777,
+          "pinyin": "xian4"
+        },
+        "in": {
+          "char": "信",
+          "count": 57928,
+          "pinyin": "xin4"
+        },
+        "iang": {
+          "char": "像",
+          "count": 71186,
+          "pinyin": "xiang4"
+        },
+        "ing": {
+          "char": "性",
+          "count": 28102,
+          "pinyin": "xing4"
+        },
+        "ü": {
+          "char": "续",
+          "count": 15616,
+          "pinyin": "xu4"
+        },
+        "üe": {
+          "char": "血",
+          "count": 14874,
+          "pinyin": "xue4"
+        },
+        "üan": {
+          "char": "炫",
+          "count": 531,
+          "pinyin": "xuan4"
+        },
+        "ün": {
+          "char": "训",
+          "count": 5113,
+          "pinyin": "xun4"
+        }
+      },
+      "zh": {
+        "a": {
+          "char": "炸",
+          "count": 7886,
+          "pinyin": "zha4"
+        },
+        "e": {
+          "char": "这",
+          "count": 633842,
+          "pinyin": "zhe4"
+        },
+        "ai": {
+          "char": "债",
+          "count": 1180,
+          "pinyin": "zhai4"
+        },
+        "ao": {
+          "char": "照",
+          "count": 24253,
+          "pinyin": "zhao4"
+        },
+        "ou": {
+          "char": "咒",
+          "count": 1840,
+          "pinyin": "zhou4"
+        },
+        "an": {
+          "char": "战",
+          "count": 18511,
+          "pinyin": "zhan4"
+        },
+        "en": {
+          "char": "镇",
+          "count": 5601,
+          "pinyin": "zhen4"
+        },
+        "ang": {
+          "char": "丈",
+          "count": 6238,
+          "pinyin": "zhang4"
+        },
+        "eng": {
+          "char": "正",
+          "count": 57215,
+          "pinyin": "zheng4"
+        },
+        "i": {
+          "char": "至",
+          "count": 18394,
+          "pinyin": "zhi4"
+        },
+        "u": {
+          "char": "住",
+          "count": 38482,
+          "pinyin": "zhu4"
+        },
+        "ui": {
+          "char": "坠",
+          "count": 1045,
+          "pinyin": "zhui4"
+        },
+        "uan": {
+          "char": "赚",
+          "count": 2694,
+          "pinyin": "zhuan4"
+        },
+        "uang": {
+          "char": "状",
+          "count": 6080,
+          "pinyin": "zhuang4"
+        },
+        "ong": {
+          "char": "重",
+          "count": 39372,
+          "pinyin": "zhong4"
+        }
+      },
+      "ch": {
+        "a": {
+          "char": "差",
+          "count": 11112,
+          "pinyin": "cha4"
+        },
+        "e": {
+          "char": "彻",
+          "count": 2605,
+          "pinyin": "che4"
+        },
+        "ou": {
+          "char": "臭",
+          "count": 3448,
+          "pinyin": "chou4"
+        },
+        "an": {
+          "char": "忏",
+          "count": 704,
+          "pinyin": "chan4"
+        },
+        "en": {
+          "char": "衬",
+          "count": 1392,
+          "pinyin": "chen4"
+        },
+        "ang": {
+          "char": "唱",
+          "count": 11922,
+          "pinyin": "chang4"
+        },
+        "eng": {
+          "char": "秤",
+          "count": 59,
+          "pinyin": "cheng4"
+        },
+        "i": {
+          "char": "赤",
+          "count": 694,
+          "pinyin": "chi4"
+        },
+        "u": {
+          "char": "处",
+          "count": 28742,
+          "pinyin": "chu4"
+        },
+        "uo": {
+          "char": "绰",
+          "count": 324,
+          "pinyin": "chuo4"
+        },
+        "uai": {
+          "char": "踹",
+          "count": 150,
+          "pinyin": "chuai4"
+        },
+        "uan": {
+          "char": "串",
+          "count": 699,
+          "pinyin": "chuan4"
+        },
+        "uang": {
+          "char": "创",
+          "count": 4667,
+          "pinyin": "chuang4"
+        },
+        "ong": {
+          "char": "铳",
+          "count": 2,
+          "pinyin": "chong4"
+        }
+      },
+      "sh": {
+        "a": {
+          "char": "厦",
+          "count": 414,
+          "pinyin": "sha4"
+        },
+        "e": {
+          "char": "设",
+          "count": 9056,
+          "pinyin": "she4"
+        },
+        "ai": {
+          "char": "晒",
+          "count": 595,
+          "pinyin": "shai4"
+        },
+        "ao": {
+          "char": "绍",
+          "count": 2811,
+          "pinyin": "shao4"
+        },
+        "ou": {
+          "char": "受",
+          "count": 38688,
+          "pinyin": "shou4"
+        },
+        "an": {
+          "char": "善",
+          "count": 5091,
+          "pinyin": "shan4"
+        },
+        "en": {
+          "char": "甚",
+          "count": 7600,
+          "pinyin": "shen4"
+        },
+        "ang": {
+          "char": "上",
+          "count": 236451,
+          "pinyin": "shang4"
+        },
+        "eng": {
+          "char": "圣",
+          "count": 12173,
+          "pinyin": "sheng4"
+        },
+        "i": {
+          "char": "是",
+          "count": 1172098,
+          "pinyin": "shi4"
+        },
+        "u": {
+          "char": "数",
+          "count": 14754,
+          "pinyin": "shu4"
+        },
+        "uo": {
+          "char": "硕",
+          "count": 280,
+          "pinyin": "shuo4"
+        },
+        "uai": {
+          "char": "帅",
+          "count": 2850,
+          "pinyin": "shuai4"
+        },
+        "ui": {
+          "char": "睡",
+          "count": 14599,
+          "pinyin": "shui4"
+        },
+        "uan": {
+          "char": "涮",
+          "count": 75,
+          "pinyin": "shuan4"
+        },
+        "un": {
+          "char": "顺",
+          "count": 6884,
+          "pinyin": "shun4"
+        }
+      },
+      "r": {
+        "e": {
+          "char": "热",
+          "count": 10701,
+          "pinyin": "re4"
+        },
+        "ao": {
+          "char": "绕",
+          "count": 1754,
+          "pinyin": "rao4"
+        },
+        "ou": {
+          "char": "肉",
+          "count": 6996,
+          "pinyin": "rou4"
+        },
+        "en": {
+          "char": "认",
+          "count": 54322,
+          "pinyin": "ren4"
+        },
+        "ang": {
+          "char": "让",
+          "count": 125114,
+          "pinyin": "rang4"
+        },
+        "i": {
+          "char": "日",
+          "count": 23151,
+          "pinyin": "ri4"
+        },
+        "u": {
+          "char": "入",
+          "count": 24269,
+          "pinyin": "ru4"
+        },
+        "uo": {
+          "char": "弱",
+          "count": 3499,
+          "pinyin": "ruo4"
+        },
+        "ui": {
+          "char": "瑞",
+          "count": 7937,
+          "pinyin": "rui4"
+        },
+        "un": {
+          "char": "润",
+          "count": 749,
+          "pinyin": "run4"
+        }
+      },
+      "z": {
+        "e": {
+          "char": "仄",
+          "count": 3,
+          "pinyin": "ze4"
+        },
+        "ai": {
+          "char": "在",
+          "count": 546367,
+          "pinyin": "zai4"
+        },
+        "ao": {
+          "char": "造",
+          "count": 11461,
+          "pinyin": "zao4"
+        },
+        "ou": {
+          "char": "奏",
+          "count": 2153,
+          "pinyin": "zou4"
+        },
+        "an": {
+          "char": "赞",
+          "count": 3073,
+          "pinyin": "zan4"
+        },
+        "ang": {
+          "char": "脏",
+          "count": 5786,
+          "pinyin": "zang4"
+        },
+        "eng": {
+          "char": "赠",
+          "count": 778,
+          "pinyin": "zeng4"
+        },
+        "i": {
+          "char": "自",
+          "count": 98698,
+          "pinyin": "zi4"
+        },
+        "uo": {
+          "char": "做",
+          "count": 136328,
+          "pinyin": "zuo4"
+        },
+        "ui": {
+          "char": "最",
+          "count": 75999,
+          "pinyin": "zui4"
+        },
+        "uan": {
+          "char": "攥",
+          "count": 34,
+          "pinyin": "zuan4"
+        },
+        "ong": {
+          "char": "纵",
+          "count": 1393,
+          "pinyin": "zong4"
+        }
+      },
+      "c": {
+        "e": {
+          "char": "测",
+          "count": 6709,
+          "pinyin": "ce4"
+        },
+        "ai": {
+          "char": "菜",
+          "count": 4069,
+          "pinyin": "cai4"
+        },
+        "ao": {
+          "char": "肏",
+          "count": 10,
+          "pinyin": "cao4"
+        },
+        "ou": {
+          "char": "凑",
+          "count": 675,
+          "pinyin": "cou4"
+        },
+        "an": {
+          "char": "掺",
+          "count": 271,
+          "pinyin": "can4"
+        },
+        "eng": {
+          "char": "蹭",
+          "count": 289,
+          "pinyin": "ceng4"
+        },
+        "i": {
+          "char": "次",
+          "count": 58108,
+          "pinyin": "ci4"
+        },
+        "u": {
+          "char": "促",
+          "count": 670,
+          "pinyin": "cu4"
+        },
+        "uo": {
+          "char": "错",
+          "count": 63231,
+          "pinyin": "cuo4"
+        },
+        "ui": {
+          "char": "脆",
+          "count": 1437,
+          "pinyin": "cui4"
+        },
+        "uan": {
+          "char": "窜",
+          "count": 193,
+          "pinyin": "cuan4"
+        },
+        "un": {
+          "char": "寸",
+          "count": 1462,
+          "pinyin": "cun4"
+        }
+      },
+      "s": {
+        "a": {
+          "char": "萨",
+          "count": 7690,
+          "pinyin": "sa4"
+        },
+        "e": {
+          "char": "色",
+          "count": 21624,
+          "pinyin": "se4"
+        },
+        "ai": {
+          "char": "赛",
+          "count": 20455,
+          "pinyin": "sai4"
+        },
+        "ao": {
+          "char": "瘙",
+          "count": 9,
+          "pinyin": "sao4"
+        },
+        "ou": {
+          "char": "嗽",
+          "count": 195,
+          "pinyin": "sou4"
+        },
+        "an": {
+          "char": "散",
+          "count": 4211,
+          "pinyin": "san4"
+        },
+        "ang": {
+          "char": "丧",
+          "count": 2034,
+          "pinyin": "sang4"
+        },
+        "i": {
+          "char": "四",
+          "count": 13242,
+          "pinyin": "si4"
+        },
+        "u": {
+          "char": "诉",
+          "count": 65753,
+          "pinyin": "su4"
+        },
+        "ui": {
+          "char": "岁",
+          "count": 12744,
+          "pinyin": "sui4"
+        },
+        "uan": {
+          "char": "算",
+          "count": 28149,
+          "pinyin": "suan4"
+        },
+        "ong": {
+          "char": "送",
+          "count": 17550,
+          "pinyin": "song4"
+        }
+      },
+      "": {
+        "e": {
+          "char": "呃",
+          "count": 22734,
+          "pinyin": "e4"
+        },
+        "ai": {
+          "char": "爱",
+          "count": 65256,
+          "pinyin": "ai4"
+        },
+        "ao": {
+          "char": "奥",
+          "count": 8689,
+          "pinyin": "ao4"
+        },
+        "ou": {
+          "char": "怄",
+          "count": 3,
+          "pinyin": "ou4"
+        },
+        "an": {
+          "char": "案",
+          "count": 23014,
+          "pinyin": "an4"
+        },
+        "en": {
+          "char": "摁",
+          "count": 57,
+          "pinyin": "en4"
+        },
+        "ang": {
+          "char": "盎",
+          "count": 204,
+          "pinyin": "ang4"
+        },
+        "eng": {
+          "char": "瓮",
+          "count": 44,
+          "pinyin": "weng4"
+        },
+        "i": {
+          "char": "意",
+          "count": 103354,
+          "pinyin": "yi4"
+        },
+        "ia": {
+          "char": "亚",
+          "count": 15689,
+          "pinyin": "ya4"
+        },
+        "ie": {
+          "char": "业",
+          "count": 13928,
+          "pinyin": "ye4"
+        },
+        "iao": {
+          "char": "要",
+          "count": 355730,
+          "pinyin": "yao4"
+        },
+        "iu": {
+          "char": "又",
+          "count": 35669,
+          "pinyin": "you4"
+        },
+        "ian": {
+          "char": "验",
+          "count": 8642,
+          "pinyin": "yan4"
+        },
+        "in": {
+          "char": "印",
+          "count": 6629,
+          "pinyin": "yin4"
+        },
+        "iang": {
+          "char": "样",
+          "count": 161409,
+          "pinyin": "yang4"
+        },
+        "ing": {
+          "char": "硬",
+          "count": 3248,
+          "pinyin": "ying4"
+        },
+        "iong": {
+          "char": "用",
+          "count": 79299,
+          "pinyin": "yong4"
+        },
+        "u": {
+          "char": "物",
+          "count": 30079,
+          "pinyin": "wu4"
+        },
+        "ua": {
+          "char": "袜",
+          "count": 912,
+          "pinyin": "wa4"
+        },
+        "uo": {
+          "char": "沃",
+          "count": 3761,
+          "pinyin": "wo4"
+        },
+        "uai": {
+          "char": "外",
+          "count": 31747,
+          "pinyin": "wai4"
+        },
+        "ui": {
+          "char": "为",
+          "count": 249231,
+          "pinyin": "wei4"
+        },
+        "uan": {
+          "char": "万",
+          "count": 18335,
+          "pinyin": "wan4"
+        },
+        "un": {
+          "char": "问",
+          "count": 64375,
+          "pinyin": "wen4"
+        },
+        "uang": {
+          "char": "望",
+          "count": 36791,
+          "pinyin": "wang4"
+        },
+        "ü": {
+          "char": "狱",
+          "count": 8440,
+          "pinyin": "yu4"
+        },
+        "üe": {
+          "char": "月",
+          "count": 16675,
+          "pinyin": "yue4"
+        },
+        "üan": {
+          "char": "愿",
+          "count": 17132,
+          "pinyin": "yuan4"
+        },
+        "ün": {
+          "char": "运",
+          "count": 18965,
+          "pinyin": "yun4"
+        },
+        "er": {
+          "char": "二",
+          "count": 16814,
+          "pinyin": "er4"
+        }
+      }
+    }
+  },
+  "stats": {
+    "characters_in_corpus": 5936,
+    "filled_cells": 1171,
+    "missing_pinyin": 0,
+    "bad_split": 4
+  }
+}
