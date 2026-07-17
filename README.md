@@ -12,13 +12,6 @@ Rebuild the precomputed tables with:
 python3 scripts/build_tables.py
 ```
 
-## Deploy on GitHub Pages
-
-1. Push this repository to GitHub.
-2. In **Settings → Pages**, set source to **Deploy from a branch**.
-3. Choose the `main` branch and `/ (root)`.
-4. After deploy, open `https://<user>.github.io/<repo>/`.
-
 ## Local preview
 
 ```bash

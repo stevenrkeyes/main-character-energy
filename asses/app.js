@@ -100,6 +100,32 @@ function toAccentedPinyin(numbered) {
   return accented;
 }
 
+function fitPinyinEl(el) {
+  el.style.fontSize = "";
+  const base = parseFloat(getComputedStyle(el).fontSize);
+  if (!Number.isFinite(base) || base <= 0) return;
+
+  let lo = 4;
+  let hi = base;
+  el.style.fontSize = `${hi}px`;
+  if (el.scrollWidth <= el.clientWidth) {
+    el.style.fontSize = "";
+    return;
+  }
+
+  for (let i = 0; i < 12; i++) {
+    const mid = (lo + hi) / 2;
+    el.style.fontSize = `${mid}px`;
+    if (el.scrollWidth <= el.clientWidth) lo = mid;
+    else hi = mid;
+  }
+  el.style.fontSize = `${lo}px`;
+}
+
+function fitAllPinyin(root = document) {
+  root.querySelectorAll(".cell-pinyin").forEach(fitPinyinEl);
+}
+
 let currentGlossSource = "custom";
 let currentHskFilter = "all";
 let hideLowestFreq = true;
@@ -327,8 +353,11 @@ function buildTables(data) {
     fragment.appendChild(createToneTable(tone, data, tones, logMin, logMax));
   }
   root.replaceChildren(fragment);
-  applyVisibilityFilters();
   document.getElementById("status").textContent = "";
+  requestAnimationFrame(() => {
+    fitAllPinyin(root);
+    applyVisibilityFilters();
+  });
 }
 
 function initGlossToggle() {
