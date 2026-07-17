@@ -226,7 +226,38 @@ function createCell(onset, final, cell, logMin, logMax) {
   return td;
 }
 
-function createToneTable(tone, data, tones, logMin, logMax) {
+function countFilledCharacters(tones, onsets, finals) {
+  let total = 0;
+  for (const tone of ["1", "2", "3", "4"]) {
+    for (const onset of onsets) {
+      for (const final of finals) {
+        if (tones[tone]?.[onset]?.[final]) total += 1;
+      }
+    }
+  }
+  return total;
+}
+
+function setLoadProgress(done, total) {
+  const status = document.getElementById("status");
+  if (!status) return;
+  status.hidden = false;
+  status.textContent =
+    `Loading frequency tables… [${done.toLocaleString()} / ${total.toLocaleString()} characters]`;
+}
+
+function clearLoadStatus() {
+  const status = document.getElementById("status");
+  if (!status) return;
+  status.textContent = "";
+  status.hidden = true;
+}
+
+async function yieldToBrowser() {
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+}
+
+async function createToneTable(tone, data, tones, logMin, logMax, progress) {
   const block = document.createElement("section");
   block.className = "tone-block";
   block.dataset.tone = tone;
@@ -270,6 +301,13 @@ function createToneTable(tone, data, tones, logMin, logMax) {
     for (const onset of data.onsets) {
       const cell = tones[tone]?.[onset]?.[final];
       tr.appendChild(createCell(onset, final, cell, logMin, logMax));
+      if (cell && progress) {
+        progress.done += 1;
+        if (progress.done === progress.total || progress.done % 40 === 0) {
+          setLoadProgress(progress.done, progress.total);
+          await yieldToBrowser();
+        }
+      }
     }
     tbody.appendChild(tr);
   }
@@ -343,20 +381,25 @@ function updateCellsForCurrentFilter() {
   });
 }
 
-function buildTables(data) {
+async function buildTables(data) {
   const { logMin, logMax } = ensureFreqBounds(data);
   const tones = currentTones(data);
+  const total = countFilledCharacters(tones, data.onsets, data.finals);
+  const progress = { done: 0, total };
+  setLoadProgress(0, total);
+
   const root = document.getElementById("tables");
   const fragment = document.createDocumentFragment();
   for (const tone of ["1", "2", "3", "4"]) {
-    fragment.appendChild(createToneTable(tone, data, tones, logMin, logMax));
+    fragment.appendChild(
+      await createToneTable(tone, data, tones, logMin, logMax, progress)
+    );
   }
   root.replaceChildren(fragment);
-  document.getElementById("status").textContent = "";
-  requestAnimationFrame(() => {
-    fitAllPinyin(root);
-    applyVisibilityFilters();
-  });
+  clearLoadStatus();
+  await yieldToBrowser();
+  fitAllPinyin(root);
+  applyVisibilityFilters();
 }
 
 function initGlossToggle() {
@@ -435,9 +478,10 @@ async function main() {
     const res = await fetch("./data/tables.json");
     if (!res.ok) throw new Error(`Failed to load tables.json (${res.status})`);
     loadedData = await res.json();
-    buildTables(loadedData);
+    await buildTables(loadedData);
   } catch (err) {
     console.error(err);
+    status.hidden = false;
     status.textContent =
       "Could not load data/tables.json. Serve the project over HTTP (GitHub Pages or a local static server).";
   }

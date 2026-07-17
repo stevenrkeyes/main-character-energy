@@ -404,7 +404,7 @@ html.hide-lowest-freq .pinyin-table td.filled[data-freq-step="0"]:hover {
   line-height: 1.45;
 }
 
-.load-status:empty {
+.load-status[hidden] {
   display: none;
 }
 
