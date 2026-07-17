@@ -258,6 +258,49 @@ def load_pinyin_map() -> dict[str, str]:
     return mapping
 
 
+def load_unihan_glosses() -> dict[str, str]:
+    """Map character → short English gloss from Unihan kDefinition (first sense)."""
+    mapping: dict[str, str] = {}
+    path = DATA / "Unihan_kDefinition.txt"
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split("\t")
+        if len(parts) != 3 or parts[1] != "kDefinition":
+            continue
+        code, _, definition = parts
+        try:
+            char = chr(int(code[2:], 16))
+        except ValueError:
+            continue
+        # Take the first sense; kDefinition separates senses with ";".
+        gloss = definition.split(";")[0].strip()
+        if gloss:
+            mapping[char] = gloss
+    return mapping
+
+
+def load_cedict_glosses() -> dict[str, str]:
+    """Map single character → first English definition from CC-CEDICT."""
+    mapping: dict[str, str] = {}
+    path = DATA / "cedict_ts.u8"
+    entry_re = re.compile(r"^(\S+)\s+(\S+)\s+\[[^\]]*\]\s+/(.+)/\s*$")
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line or line.startswith("#"):
+            continue
+        m = entry_re.match(line)
+        if not m:
+            continue
+        simplified = m.group(2)
+        if len(simplified) != 1:
+            continue
+        first_def = m.group(3).split("/")[0].strip()
+        # Keep the first entry seen for each character.
+        if simplified not in mapping and first_def:
+            mapping[simplified] = first_def
+    return mapping
+
+
 def load_subtlex() -> list[tuple[str, int]]:
     rows: list[tuple[str, int]] = []
     for line in (DATA / "SUBTLEX-CH-CHR.txt").read_text(encoding="utf-8").splitlines():
@@ -281,6 +324,8 @@ def load_subtlex() -> list[tuple[str, int]]:
 def main() -> None:
     pinyin_map = load_pinyin_map()
     subtlex = load_subtlex()
+    unihan_glosses = load_unihan_glosses()
+    cedict_glosses = load_cedict_glosses()
 
     # best[(tone, onset, final)] = (count, char, syllable)
     best: dict[tuple[int, str, str], tuple[int, str, str]] = {}
@@ -318,15 +363,29 @@ def main() -> None:
                 hit = best.get((tone, onset, final))
                 if hit:
                     count, char, syl = hit
-                    row[final] = {"char": char, "count": count, "pinyin": syl}
+                    row[final] = {
+                        "char": char,
+                        "count": count,
+                        "pinyin": syl,
+                        "gloss": {
+                            "unihan": unihan_glosses.get(char, ""),
+                            "cedict": cedict_glosses.get(char, ""),
+                        },
+                    }
             if row:
                 grid[onset] = row
         tones[str(tone)] = grid
+
+    filled = [cell for grid in tones.values() for row in grid.values() for cell in row.values()]
 
     out = {
         "corpus": "SUBTLEX-CH",
         "citation": "Cai, Q., & Brysbaert, M. (2010). SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles. PLoS ONE.",
         "analysis": "pinyin",
+        "gloss_sources": {
+            "unihan": "Unihan Database (kDefinition)",
+            "cedict": "CC-CEDICT (CC BY-SA 4.0)",
+        },
         "onsets": ONSETS,
         "finals": FINALS,
         "tones": tones,
@@ -335,6 +394,8 @@ def main() -> None:
             "filled_cells": len(best),
             "missing_pinyin": missing_pinyin,
             "bad_split": bad_split,
+            "missing_gloss_unihan": sum(1 for c in filled if not c["gloss"]["unihan"]),
+            "missing_gloss_cedict": sum(1 for c in filled if not c["gloss"]["cedict"]),
         },
     }
 

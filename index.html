@@ -50,7 +50,28 @@
           </label>
         </section>
 
-        <p class="panel-note" id="status">Loading frequency tables…</p>
+        <section class="panel-section">
+          <h2>Gloss</h2>
+          <label class="radio">
+            <input type="radio" name="gloss" value="unihan" checked />
+            <span>Unihan</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="gloss" value="cedict" />
+            <span>CC-CEDICT</span>
+          </label>
+        </section>
+
+        <div class="panel-footer">
+          <p class="panel-note" id="status">Loading frequency tables…</p>
+          <p class="panel-attribution">
+            Glosses:
+            <a href="https://www.unicode.org/charts/unihan.html">Unihan</a>
+            and
+            <a href="https://www.mdbg.net/chinese/dictionary?page=cc-cedict">CC-CEDICT</a>
+            (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
+          </p>
+        </div>
       </aside>
     </div>
     <script type="module" src="assets/app.js"></script>

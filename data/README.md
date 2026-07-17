@@ -1,8 +1,8 @@
 # Data provenance and licensing
 
-The project-level MIT license does not automatically relicense third-party
-data in this directory. The notes below record where each file came from and
-the licensing information that could be verified.
+The project licenses do not relicense third-party data in this directory. The
+notes below record where each file came from and the licensing information
+that could be verified.
 
 ## `SUBTLEX-CH-CHR.txt`
 
@@ -41,3 +41,29 @@ the licensing information that could be verified.
   documents the component sources merged into this file, including Unicode
   Unihan data and several dictionaries; those underlying sources may have
   their own terms.
+
+## `Unihan_kDefinition.txt`
+
+- **Contents:** the `kDefinition` lines from the Unihan database, providing a
+  short English gloss per character. Used as the "Unihan" gloss option.
+- **Source:** [Unihan database](https://www.unicode.org/charts/unihan.html),
+  extracted from `Unihan_Readings.txt` in the Unicode Character Database
+  (`https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip`). Only the
+  `kDefinition` lines are retained here.
+- **License:** distributed by Unicode, Inc. under the
+  [Unicode License](https://www.unicode.org/license.txt) (also referred to as
+  the Unicode Data Files and Software License), which permits redistribution
+  with attribution.
+
+## `cedict_ts.u8`
+
+- **Contents:** the full CC-CEDICT Chinese–English dictionary. The first
+  definition of each single-character entry is used as the "CC-CEDICT" gloss
+  option. The original file (including its license header) is kept intact.
+- **Source:** [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict),
+  published by MDBG.
+- **License:**
+  [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+  (CC BY-SA 4.0). Note the share-alike obligation: redistributing this data or
+  adaptations of it (including glosses derived from it) requires attribution
+  and the same license.

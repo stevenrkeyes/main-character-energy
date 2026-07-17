@@ -155,11 +155,27 @@ function createCell(cell, logMin, logMax) {
 
   const bottom = document.createElement("div");
   bottom.className = "cell-gloss";
-  bottom.textContent = ""; // translation placeholder
+  const gloss = cell.gloss || {};
+  bottom.dataset.unihan = gloss.unihan || "";
+  bottom.dataset.cedict = gloss.cedict || "";
+  applyGlossToEl(bottom, currentGlossSource);
 
   wrap.append(top, bottom);
   td.appendChild(wrap);
   return td;
+}
+
+let currentGlossSource = "unihan";
+
+function applyGlossToEl(el, source) {
+  const text = el.dataset[source] || "";
+  el.textContent = text;
+  el.title = text;
+}
+
+function applyGloss(source) {
+  currentGlossSource = source;
+  document.querySelectorAll(".cell-gloss").forEach((el) => applyGlossToEl(el, source));
 }
 
 function createToneTable(tone, data, logMin, logMax) {
@@ -244,8 +260,20 @@ window.addEventListener("resize", () => {
   resizeTimer = setTimeout(() => fitAllPinyin(), 100);
 });
 
+function initGlossToggle() {
+  const inputs = document.querySelectorAll('input[name="gloss"]');
+  const checked = document.querySelector('input[name="gloss"]:checked');
+  if (checked) currentGlossSource = checked.value;
+  inputs.forEach((input) => {
+    input.addEventListener("change", (e) => {
+      if (e.target.checked) applyGloss(e.target.value);
+    });
+  });
+}
+
 async function main() {
   const status = document.getElementById("status");
+  initGlossToggle();
   try {
     const res = await fetch("./data/tables.json");
     if (!res.ok) throw new Error(`Failed to load tables.json (${res.status})`);
