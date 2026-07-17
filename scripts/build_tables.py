@@ -304,6 +304,22 @@ def load_cedict_glosses() -> dict[str, str]:
     return mapping
 
 
+def load_custom_glosses() -> dict[str, str]:
+    """Map character to gloss from data/custom-glosses.json."""
+    path = DATA / "custom-glosses.json"
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    glosses = payload.get("glosses", payload)
+    if not isinstance(glosses, dict):
+        return {}
+    return {
+        str(char): str(text).strip()
+        for char, text in glosses.items()
+        if isinstance(char, str) and len(char) == 1
+    }
+
+
 def load_hsk_levels() -> dict[str, int]:
     """Map character → first HSK 3.0 band (7 represents combined 7–9)."""
     mapping: dict[str, int] = {}
@@ -346,6 +362,7 @@ def build_tones(
     best: dict[tuple[int, str, str], tuple[int, str, str]],
     unihan_glosses: dict[str, str],
     cedict_glosses: dict[str, str],
+    custom_glosses: dict[str, str],
 ) -> dict[str, dict[str, dict[str, dict]]]:
     """Convert best-hit tuples into the JSON-ready four-tone structure."""
     tones: dict[str, dict[str, dict[str, dict]]] = {}
@@ -365,6 +382,7 @@ def build_tones(
                     "gloss": {
                         "unihan": unihan_glosses.get(char, ""),
                         "cedict": cedict_glosses.get(char, ""),
+                        "custom": custom_glosses.get(char, ""),
                     },
                 }
             if row:
@@ -379,6 +397,7 @@ def main() -> None:
     hsk_levels = load_hsk_levels()
     unihan_glosses = load_unihan_glosses()
     cedict_glosses = load_cedict_glosses()
+    custom_glosses = load_custom_glosses()
 
     # Each HSK cutoff gets its own winner per (tone, onset, final).
     best_by_filter: dict[
@@ -421,9 +440,13 @@ def main() -> None:
             if previous is None or count > previous[0]:
                 best_by_filter[target][key] = hit
 
-    tones = build_tones(best_by_filter["all"], unihan_glosses, cedict_glosses)
+    tones = build_tones(
+        best_by_filter["all"], unihan_glosses, cedict_glosses, custom_glosses
+    )
     hsk_tones = {
-        level: build_tones(best_by_filter[level], unihan_glosses, cedict_glosses)
+        level: build_tones(
+            best_by_filter[level], unihan_glosses, cedict_glosses, custom_glosses
+        )
         for level in HSK_FILTERS
     }
     filled = [
@@ -438,6 +461,7 @@ def main() -> None:
         "citation": "Cai, Q., & Brysbaert, M. (2010). SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles. PLoS ONE.",
         "analysis": "pinyin",
         "gloss_sources": {
+            "custom": "simple glosses (data/custom-glosses.json)",
             "unihan": "Unihan Database (kDefinition)",
             "cedict": "CC-CEDICT (CC BY-SA 4.0)",
         },
@@ -456,6 +480,9 @@ def main() -> None:
             },
             "missing_pinyin": missing_pinyin,
             "bad_split": bad_split,
+            "missing_gloss_custom": sum(
+                1 for cell in filled if not cell["gloss"]["custom"]
+            ),
             "missing_gloss_unihan": sum(
                 1 for cell in filled if not cell["gloss"]["unihan"]
             ),

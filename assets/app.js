@@ -156,6 +156,7 @@ function createCell(cell, logMin, logMax) {
   const bottom = document.createElement("div");
   bottom.className = "cell-gloss";
   const gloss = cell.gloss || {};
+  bottom.dataset.custom = gloss.custom || "";
   bottom.dataset.unihan = gloss.unihan || "";
   bottom.dataset.cedict = gloss.cedict || "";
   applyGlossToEl(bottom, currentGlossSource);
@@ -165,7 +166,7 @@ function createCell(cell, logMin, logMax) {
   return td;
 }
 
-let currentGlossSource = "unihan";
+let currentGlossSource = "custom";
 
 function applyGlossToEl(el, source) {
   const text = el.dataset[source] || "";

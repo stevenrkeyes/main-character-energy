@@ -68,6 +68,13 @@ that could be verified.
   adaptations of it (including glosses derived from it) requires attribution
   and the same license.
 
+## `custom-glosses.json`
+
+- **Contents:** short English glosses original to this repository
+- **Source:** original work
+- **License:** project content under
+  [CC BY-SA 4.0](../LICENSE-CONTENT.md).
+
 ## `hsk30-chars.csv`
 
 - **Contents:** the 3,088-character HSK 3.0 (2025) reading syllabus, with the
