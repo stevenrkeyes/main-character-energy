@@ -7,6 +7,7 @@ const TONE_NAMES = {
 
 // When Simple gloss is selected, show a dominant multi-character word instead.
 const DOMINANT_WORD_MIN_SHARE = 0.6;
+const FREQ_STEPS = 4;
 
 function onsetLabel(onset) {
   return onset === "" ? "∅" : onset;
@@ -28,9 +29,6 @@ function collectCounts(data) {
   return counts;
 }
 
-const FREQ_STEPS = 4;
-
-/** Continuous log position in [0, 1], then snapped to 0 .. FREQ_STEPS-1. */
 function frequencyStep(count, logMin, logMax) {
   const log = Math.log(Math.max(count, 1));
   const t =
@@ -38,19 +36,13 @@ function frequencyStep(count, logMin, logMax) {
   return Math.min(FREQ_STEPS - 1, Math.floor(t * FREQ_STEPS));
 }
 
-/** Stepped white→green background and grey→black text (log space, 10 steps). */
 function frequencyColors(count, logMin, logMax) {
   const step = frequencyStep(count, logMin, logMax);
   const t = step / (FREQ_STEPS - 1);
-
-  // white → green
   const bgR = Math.round(255 - 210 * t);
   const bgG = Math.round(255 - 55 * t);
   const bgB = Math.round(255 - 175 * t);
-
-  // light grey → black
   const ink = Math.round(200 * (1 - t));
-
   return {
     background: `rgb(${bgR}, ${bgG}, ${bgB})`,
     text: `rgb(${ink}, ${ink}, ${ink})`,
@@ -67,123 +59,69 @@ const TONE_VOWELS = {
   v: ["ǖ", "ǘ", "ǚ", "ǜ"],
 };
 
-/** Convert numbered pinyin (e.g. wo3) to accented form (wǒ). */
+const accentedPinyinCache = new Map();
+
 function toAccentedPinyin(numbered) {
-  const m = String(numbered).toLowerCase().match(/^([a-züv:]+)([1-5])$/i);
-  if (!m) return numbered;
+  const key = String(numbered);
+  const cached = accentedPinyinCache.get(key);
+  if (cached !== undefined) return cached;
+
+  const m = key.toLowerCase().match(/^([a-züv:]+)([1-5])$/i);
+  if (!m) {
+    accentedPinyinCache.set(key, numbered);
+    return numbered;
+  }
 
   let base = m[1].replace(/u:/g, "ü").replace(/v/g, "ü");
   const tone = Number(m[2]);
-  if (tone < 1 || tone > 4) return base;
+  if (tone < 1 || tone > 4) {
+    accentedPinyinCache.set(key, base);
+    return base;
+  }
 
-  const vowels = [...base].map((ch, i) => ({ ch, i })).filter(({ ch }) => "aeiouü".includes(ch));
-  if (!vowels.length) return base;
+  const vowels = [...base]
+    .map((ch, i) => ({ ch, i }))
+    .filter(({ ch }) => "aeiouü".includes(ch));
+  if (!vowels.length) {
+    accentedPinyinCache.set(key, base);
+    return base;
+  }
 
   let target = vowels[0].i;
   const letters = vowels.map((v) => v.ch);
-  if (letters.includes("a")) {
-    target = base.indexOf("a");
-  } else if (letters.includes("e")) {
-    target = base.indexOf("e");
-  } else if (base.includes("ou")) {
-    target = base.indexOf("o");
-  } else {
-    target = vowels[vowels.length - 1].i;
-  }
+  if (letters.includes("a")) target = base.indexOf("a");
+  else if (letters.includes("e")) target = base.indexOf("e");
+  else if (base.includes("ou")) target = base.indexOf("o");
+  else target = vowels[vowels.length - 1].i;
 
-  const vowel = base[target];
-  const marked = TONE_VOWELS[vowel][tone - 1];
-  return base.slice(0, target) + marked + base.slice(target + 1);
-}
-
-function fitPinyinEl(el) {
-  el.style.fontSize = "";
-  const base = parseFloat(getComputedStyle(el).fontSize);
-  if (!Number.isFinite(base) || base <= 0) return;
-
-  let lo = 4;
-  let hi = base;
-  el.style.fontSize = `${hi}px`;
-  if (el.scrollWidth <= el.clientWidth) {
-    el.style.fontSize = "";
-    return;
-  }
-
-  // Binary search the largest size that fits on one line
-  for (let i = 0; i < 12; i++) {
-    const mid = (lo + hi) / 2;
-    el.style.fontSize = `${mid}px`;
-    if (el.scrollWidth <= el.clientWidth) lo = mid;
-    else hi = mid;
-  }
-  el.style.fontSize = `${lo}px`;
-}
-
-function fitAllPinyin(root = document) {
-  root.querySelectorAll(".cell-pinyin").forEach(fitPinyinEl);
-}
-
-function isCellVisible(cell, logMin, logMax) {
-  if (!cell) return false;
-  if (
-    hideLowestFreq &&
-    frequencyStep(cell.count, logMin, logMax) === 0
-  ) {
-    return false;
-  }
-  return true;
-}
-
-function createCell(cell, logMin, logMax) {
-  const td = document.createElement("td");
-  if (!isCellVisible(cell, logMin, logMax)) {
-    td.className = "empty";
-    return td;
-  }
-
-  td.className = "filled";
-  const colors = frequencyColors(cell.count, logMin, logMax);
-  td.style.backgroundColor = colors.background;
-  td.style.color = colors.text;
-  const accented = toAccentedPinyin(cell.pinyin);
-  td.title = `${accented} · frequency ${cell.count.toLocaleString()}`;
-
-  const wrap = document.createElement("div");
-  wrap.className = "cell";
-
-  const top = document.createElement("div");
-  top.className = "cell-top";
-
-  const char = document.createElement("div");
-  char.className = "cell-char";
-  const charText = document.createElement("span");
-  charText.className = "cell-char-text";
-  charText.textContent = cell.char;
-  char.appendChild(charText);
-
-  const pinyin = document.createElement("div");
-  pinyin.className = "cell-pinyin";
-  pinyin.textContent = accented;
-
-  top.append(char, pinyin);
-
-  const bottom = document.createElement("div");
-  bottom.className = "cell-gloss";
-  const gloss = cell.gloss || {};
-  bottom.dataset.custom = gloss.custom || "";
-  bottom.dataset.unihan = gloss.unihan || "";
-  bottom.dataset.cedict = gloss.cedict || "";
-  bottom.dataset.topWord = cell.top_word?.word || "";
-  bottom.dataset.topWordGloss = cell.top_word?.gloss || "";
-  bottom.dataset.topWordShare = cell.top_word?.share ?? "";
-  applyGlossToEl(bottom, currentGlossSource);
-
-  wrap.append(top, bottom);
-  td.appendChild(wrap);
-  return td;
+  const marked = TONE_VOWELS[base[target]][tone - 1];
+  const accented = base.slice(0, target) + marked + base.slice(target + 1);
+  accentedPinyinCache.set(key, accented);
+  return accented;
 }
 
 let currentGlossSource = "custom";
+let currentHskFilter = "all";
+let hideLowestFreq = true;
+let hideEmptyAxes = true;
+let loadedData = null;
+let freqBounds = null;
+
+function ensureFreqBounds(data) {
+  if (freqBounds) return freqBounds;
+  const counts = collectCounts(data);
+  freqBounds = {
+    logMin: Math.log(Math.min(...counts)),
+    logMax: Math.log(Math.max(...counts)),
+  };
+  return freqBounds;
+}
+
+function currentTones(data) {
+  return currentHskFilter === "all"
+    ? data.tones
+    : data.hsk_tones?.[currentHskFilter] || data.tones;
+}
 
 function applyGlossToEl(el, source) {
   const topWordShare = Number(el.dataset.topWordShare);
@@ -211,35 +149,61 @@ function applyGloss(source) {
   document.querySelectorAll(".cell-gloss").forEach((el) => applyGlossToEl(el, source));
 }
 
-function visibleAxes(tone, data, tones, logMin, logMax) {
-  const onsetHas = new Set();
-  const finalHas = new Set();
+function fillCellContent(td, cell, logMin, logMax) {
+  const colors = frequencyColors(cell.count, logMin, logMax);
+  const accented = toAccentedPinyin(cell.pinyin);
+  const step = frequencyStep(cell.count, logMin, logMax);
 
-  for (const onset of data.onsets) {
-    for (const final of data.finals) {
-      const cell = tones[tone]?.[onset]?.[final];
-      if (!isCellVisible(cell, logMin, logMax)) continue;
-      onsetHas.add(onset);
-      finalHas.add(final);
-    }
+  td.className = "filled";
+  td.dataset.freqStep = String(step);
+  td.style.backgroundColor = colors.background;
+  td.style.color = colors.text;
+  td.title = `${accented} · frequency ${cell.count.toLocaleString()}`;
+
+  let wrap = td.querySelector(".cell");
+  if (!wrap) {
+    wrap = document.createElement("div");
+    wrap.className = "cell";
+    wrap.innerHTML =
+      '<div class="cell-top"><div class="cell-char"><span class="cell-char-text"></span></div><div class="cell-pinyin"></div></div><div class="cell-gloss"></div>';
+    td.replaceChildren(wrap);
   }
 
-  return {
-    onsets: hideEmptyAxes
-      ? data.onsets.filter((onset) => onsetHas.has(onset))
-      : data.onsets,
-    finals: hideEmptyAxes
-      ? data.finals.filter((final) => finalHas.has(final))
-      : data.finals,
-  };
+  wrap.querySelector(".cell-char-text").textContent = cell.char;
+  wrap.querySelector(".cell-pinyin").textContent = accented;
+
+  const bottom = wrap.querySelector(".cell-gloss");
+  const gloss = cell.gloss || {};
+  bottom.dataset.custom = gloss.custom || "";
+  bottom.dataset.unihan = gloss.unihan || "";
+  bottom.dataset.cedict = gloss.cedict || "";
+  bottom.dataset.topWord = cell.top_word?.word || "";
+  bottom.dataset.topWordGloss = cell.top_word?.gloss || "";
+  bottom.dataset.topWordShare = cell.top_word?.share ?? "";
+  applyGlossToEl(bottom, currentGlossSource);
+}
+
+function clearCellContent(td) {
+  td.className = "empty";
+  delete td.dataset.freqStep;
+  td.removeAttribute("style");
+  td.removeAttribute("title");
+  td.replaceChildren();
+}
+
+function createCell(onset, final, cell, logMin, logMax) {
+  const td = document.createElement("td");
+  td.dataset.onset = onset;
+  td.dataset.final = final;
+  if (cell) fillCellContent(td, cell, logMin, logMax);
+  else clearCellContent(td);
+  return td;
 }
 
 function createToneTable(tone, data, tones, logMin, logMax) {
   const block = document.createElement("section");
   block.className = "tone-block";
-  block.id = `tone-${tone}`;
-
-  const axes = visibleAxes(tone, data, tones, logMin, logMax);
+  block.dataset.tone = tone;
 
   const heading = document.createElement("h2");
   heading.textContent = TONE_NAMES[tone];
@@ -259,8 +223,9 @@ function createToneTable(tone, data, tones, logMin, logMax) {
   corner.textContent = "coda \\ onset";
   headRow.appendChild(corner);
 
-  for (const onset of axes.onsets) {
+  for (const onset of data.onsets) {
     const th = document.createElement("th");
+    th.dataset.onset = onset;
     th.textContent = onsetLabel(onset);
     headRow.appendChild(th);
   }
@@ -268,16 +233,18 @@ function createToneTable(tone, data, tones, logMin, logMax) {
   table.appendChild(thead);
 
   const tbody = document.createElement("tbody");
-  for (const final of axes.finals) {
+  for (const final of data.finals) {
     const tr = document.createElement("tr");
+    tr.dataset.final = final;
+
     const th = document.createElement("th");
     th.scope = "row";
     th.textContent = finalLabel(final);
     tr.appendChild(th);
 
-    for (const onset of axes.onsets) {
+    for (const onset of data.onsets) {
       const cell = tones[tone]?.[onset]?.[final];
-      tr.appendChild(createCell(cell, logMin, logMax));
+      tr.appendChild(createCell(onset, final, cell, logMin, logMax));
     }
     tbody.appendChild(tr);
   }
@@ -288,36 +255,81 @@ function createToneTable(tone, data, tones, logMin, logMax) {
   return block;
 }
 
-let currentHskFilter = "all";
-let hideLowestFreq = true;
-let hideEmptyAxes = true;
-let loadedData = null;
-
-function render(data) {
-  const counts = collectCounts(data);
-  const logMin = Math.log(Math.min(...counts));
-  const logMax = Math.log(Math.max(...counts));
-  const tones =
-    currentHskFilter === "all"
-      ? data.tones
-      : data.hsk_tones?.[currentHskFilter] || data.tones;
-
-  const root = document.getElementById("tables");
-  root.replaceChildren();
-  for (const tone of ["1", "2", "3", "4"]) {
-    root.appendChild(createToneTable(tone, data, tones, logMin, logMax));
-  }
-
-  document.getElementById("status").textContent = "";
-
-  requestAnimationFrame(() => fitAllPinyin(root));
+function cellIsPresent(td) {
+  if (!td.classList.contains("filled")) return false;
+  if (hideLowestFreq && td.dataset.freqStep === "0") return false;
+  return true;
 }
 
-let resizeTimer = 0;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => fitAllPinyin(), 100);
-});
+/** Toggle row/column visibility without rebuilding the tables. */
+function applyVisibilityFilters() {
+  document.documentElement.classList.toggle("hide-lowest-freq", hideLowestFreq);
+
+  document.querySelectorAll(".tone-block").forEach((block) => {
+    const table = block.querySelector(".pinyin-table");
+    if (!table) return;
+
+    const onsetHas = new Map();
+    const finalHas = new Map();
+    for (const onset of loadedData.onsets) onsetHas.set(onset, false);
+    for (const final of loadedData.finals) finalHas.set(final, false);
+
+    table.querySelectorAll("td[data-onset]").forEach((td) => {
+      if (!cellIsPresent(td)) return;
+      onsetHas.set(td.dataset.onset, true);
+      finalHas.set(td.dataset.final, true);
+    });
+
+    table.querySelectorAll("thead th[data-onset]").forEach((th) => {
+      th.classList.toggle(
+        "axis-hidden",
+        hideEmptyAxes && !onsetHas.get(th.dataset.onset)
+      );
+    });
+
+    table.querySelectorAll("tbody tr[data-final]").forEach((tr) => {
+      tr.classList.toggle(
+        "axis-hidden",
+        hideEmptyAxes && !finalHas.get(tr.dataset.final)
+      );
+    });
+
+    table.querySelectorAll("td[data-onset]").forEach((td) => {
+      td.classList.toggle(
+        "axis-hidden",
+        hideEmptyAxes && !onsetHas.get(td.dataset.onset)
+      );
+    });
+  });
+}
+
+/** Update cell contents in place when the HSK corpus subset changes. */
+function updateCellsForCurrentFilter() {
+  const { logMin, logMax } = ensureFreqBounds(loadedData);
+  const tones = currentTones(loadedData);
+
+  document.querySelectorAll(".tone-block").forEach((block) => {
+    const tone = block.dataset.tone;
+    block.querySelectorAll("td[data-onset]").forEach((td) => {
+      const cell = tones[tone]?.[td.dataset.onset]?.[td.dataset.final];
+      if (cell) fillCellContent(td, cell, logMin, logMax);
+      else clearCellContent(td);
+    });
+  });
+}
+
+function buildTables(data) {
+  const { logMin, logMax } = ensureFreqBounds(data);
+  const tones = currentTones(data);
+  const root = document.getElementById("tables");
+  const fragment = document.createDocumentFragment();
+  for (const tone of ["1", "2", "3", "4"]) {
+    fragment.appendChild(createToneTable(tone, data, tones, logMin, logMax));
+  }
+  root.replaceChildren(fragment);
+  applyVisibilityFilters();
+  document.getElementById("status").textContent = "";
+}
 
 function initGlossToggle() {
   const inputs = document.querySelectorAll('input[name="gloss"]');
@@ -336,9 +348,10 @@ function initHskToggle() {
   if (checked) currentHskFilter = checked.value;
   inputs.forEach((input) => {
     input.addEventListener("change", (event) => {
-      if (!event.target.checked) return;
+      if (!event.target.checked || !loadedData) return;
       currentHskFilter = event.target.value;
-      if (loadedData) render(loadedData);
+      updateCellsForCurrentFilter();
+      applyVisibilityFilters();
     });
   });
 }
@@ -350,14 +363,14 @@ function initDisplayToggles() {
     hideLowestFreq = lowest.checked;
     lowest.addEventListener("change", () => {
       hideLowestFreq = lowest.checked;
-      if (loadedData) render(loadedData);
+      applyVisibilityFilters();
     });
   }
   if (emptyAxes) {
     hideEmptyAxes = emptyAxes.checked;
     emptyAxes.addEventListener("change", () => {
       hideEmptyAxes = emptyAxes.checked;
-      if (loadedData) render(loadedData);
+      applyVisibilityFilters();
     });
   }
 }
@@ -372,7 +385,6 @@ function setPanelHidden(hidden) {
   hideButton.setAttribute("aria-expanded", String(!hidden));
   showButton.setAttribute("aria-expanded", String(!hidden));
   showButton.hidden = !hidden;
-  requestAnimationFrame(() => fitAllPinyin());
 }
 
 function initPanelToggle() {
@@ -395,7 +407,7 @@ async function main() {
     const res = await fetch("./data/tables.json");
     if (!res.ok) throw new Error(`Failed to load tables.json (${res.status})`);
     loadedData = await res.json();
-    render(loadedData);
+    buildTables(loadedData);
   } catch (err) {
     console.error(err);
     status.textContent =
