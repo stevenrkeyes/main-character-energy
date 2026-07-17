@@ -246,7 +246,6 @@ function createToneTable(tone, data, tones, logMin, logMax) {
   const headRow = document.createElement("tr");
   const corner = document.createElement("th");
   corner.className = "corner";
-  corner.textContent = "coda \\ onset";
   headRow.appendChild(corner);
 
   for (const onset of data.onsets) {
