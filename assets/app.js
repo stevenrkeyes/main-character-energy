@@ -5,6 +5,9 @@ const TONE_NAMES = {
   4: "Tone 4 (falling)",
 };
 
+// When Simple gloss is selected, show a dominant multi-character word instead.
+const DOMINANT_WORD_MIN_SHARE = 0.6;
+
 function onsetLabel(onset) {
   return onset === "" ? "∅" : onset;
 }
@@ -159,6 +162,9 @@ function createCell(cell, logMin, logMax) {
   bottom.dataset.custom = gloss.custom || "";
   bottom.dataset.unihan = gloss.unihan || "";
   bottom.dataset.cedict = gloss.cedict || "";
+  bottom.dataset.topWord = cell.top_word?.word || "";
+  bottom.dataset.topWordGloss = cell.top_word?.gloss || "";
+  bottom.dataset.topWordShare = cell.top_word?.share ?? "";
   applyGlossToEl(bottom, currentGlossSource);
 
   wrap.append(top, bottom);
@@ -169,9 +175,20 @@ function createCell(cell, logMin, logMax) {
 let currentGlossSource = "custom";
 
 function applyGlossToEl(el, source) {
-  const text = el.dataset[source] || "";
+  const topWordShare = Number(el.dataset.topWordShare);
+  const useTopWord =
+    source === "custom" &&
+    el.dataset.topWord &&
+    el.dataset.topWordGloss &&
+    Number.isFinite(topWordShare) &&
+    topWordShare >= DOMINANT_WORD_MIN_SHARE;
+  const text = useTopWord
+    ? `in ${el.dataset.topWord}, ${el.dataset.topWordGloss}`
+    : el.dataset[source] || "";
   el.textContent = text;
-  el.title = text;
+  el.title = useTopWord
+    ? `${text} · ${Math.round(topWordShare * 100)}% of character uses`
+    : text;
 }
 
 function applyGloss(source) {

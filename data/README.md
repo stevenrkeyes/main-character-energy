@@ -18,6 +18,16 @@ that could be verified.
 - **License:** no explicit dataset license was found, but the official page
   makes the data available and requests citation of Cai & Brysbaert (2010).
 
+## `SUBTLEX-CH-WF.txt`
+
+- **Contents:** Chinese word frequencies from SUBTLEX-CH, used to identify the
+  most common multi-character word containing each table character.
+- **Source:** Files S1 from Cai & Brysbaert (2010), downloaded from the
+  [PLOS ONE article](https://doi.org/10.1371/journal.pone.0010729.s002) and
+  converted from GBK to UTF-8.
+- **License:** the source describes these data as freely available for
+  research purposes and requests citation of Cai & Brysbaert (2010).
+
 ## `kMandarin_8105.txt`
 
 - **Contents:** the most common pronunciation for each of the 8,105
@@ -68,12 +78,18 @@ that could be verified.
   adaptations of it (including glosses derived from it) requires attribution
   and the same license.
 
-## `custom-glosses.json`
+## `simple-glosses.json`
 
 - **Contents:** short English glosses original to this repository
 - **Source:** original work
 - **License:** project content under
   [CC BY-SA 4.0](../LICENSE-CONTENT.md).
+
+## `simple-word-glosses.json`
+
+- **Contents:** short English glosses for multi-character words, original to this repository
+- **Source:** original work
+- **License:** project content under [CC BY-SA 4.0](../LICENSE-CONTENT.md)
 
 ## `hsk30-chars.csv`
 

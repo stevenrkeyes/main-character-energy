@@ -305,8 +305,8 @@ def load_cedict_glosses() -> dict[str, str]:
 
 
 def load_custom_glosses() -> dict[str, str]:
-    """Map character to gloss from data/custom-glosses.json."""
-    path = DATA / "custom-glosses.json"
+    """Map character to gloss from data/simple-glosses.json."""
+    path = DATA / "simple-glosses.json"
     if not path.exists():
         return {}
     payload = json.loads(path.read_text(encoding="utf-8"))
@@ -358,11 +358,76 @@ def load_subtlex() -> list[tuple[str, int]]:
     return rows
 
 
+def load_subtlex_words() -> list[tuple[str, int]]:
+    """Load multi-character word counts from SUBTLEX-CH-WF."""
+    rows: list[tuple[str, int]] = []
+    path = DATA / "SUBTLEX-CH-WF.txt"
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith('"') or line.startswith("Word"):
+            continue
+        parts = line.split()
+        if len(parts) < 2:
+            continue
+        word, count_s = parts[0], parts[1]
+        if len(word) < 2:
+            continue
+        try:
+            count = int(count_s)
+        except ValueError:
+            continue
+        rows.append((word, count))
+    return rows
+
+
+def load_simple_word_glosses() -> dict[str, str]:
+    """Load concise glosses for dominant words shown in simple-gloss mode."""
+    path = DATA / "simple-word-glosses.json"
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    glosses = payload.get("glosses", payload)
+    if not isinstance(glosses, dict):
+        return {}
+    return {
+        str(word): str(text).strip()
+        for word, text in glosses.items()
+        if isinstance(word, str) and isinstance(text, str) and text.strip()
+    }
+
+
+def find_top_words(
+    words: list[tuple[str, int]],
+    character_counts: dict[str, int],
+    word_glosses: dict[str, str],
+) -> dict[str, dict]:
+    """Find the word accounting for the most corpus uses of each character."""
+    top_words: dict[str, dict] = {}
+    for word, word_count in words:
+        for char in set(word):
+            character_count = character_counts.get(char)
+            if not character_count:
+                continue
+            character_uses = word_count * word.count(char)
+            previous = top_words.get(char)
+            if previous and previous["character_uses"] >= character_uses:
+                continue
+            top_words[char] = {
+                "word": word,
+                "gloss": word_glosses.get(word, ""),
+                "word_count": word_count,
+                "character_uses": character_uses,
+                "share": character_uses / character_count,
+            }
+    return top_words
+
+
 def build_tones(
     best: dict[tuple[int, str, str], tuple[int, str, str]],
     unihan_glosses: dict[str, str],
     cedict_glosses: dict[str, str],
     custom_glosses: dict[str, str],
+    top_words: dict[str, dict],
 ) -> dict[str, dict[str, dict[str, dict]]]:
     """Convert best-hit tuples into the JSON-ready four-tone structure."""
     tones: dict[str, dict[str, dict[str, dict]]] = {}
@@ -384,6 +449,7 @@ def build_tones(
                         "cedict": cedict_glosses.get(char, ""),
                         "custom": custom_glosses.get(char, ""),
                     },
+                    "top_word": top_words.get(char),
                 }
             if row:
                 grid[onset] = row
@@ -394,6 +460,12 @@ def build_tones(
 def main() -> None:
     pinyin_map = load_pinyin_map()
     subtlex = load_subtlex()
+    simple_word_glosses = load_simple_word_glosses()
+    top_words = find_top_words(
+        load_subtlex_words(),
+        dict(subtlex),
+        simple_word_glosses,
+    )
     hsk_levels = load_hsk_levels()
     unihan_glosses = load_unihan_glosses()
     cedict_glosses = load_cedict_glosses()
@@ -441,11 +513,19 @@ def main() -> None:
                 best_by_filter[target][key] = hit
 
     tones = build_tones(
-        best_by_filter["all"], unihan_glosses, cedict_glosses, custom_glosses
+        best_by_filter["all"],
+        unihan_glosses,
+        cedict_glosses,
+        custom_glosses,
+        top_words,
     )
     hsk_tones = {
         level: build_tones(
-            best_by_filter[level], unihan_glosses, cedict_glosses, custom_glosses
+            best_by_filter[level],
+            unihan_glosses,
+            cedict_glosses,
+            custom_glosses,
+            top_words,
         )
         for level in HSK_FILTERS
     }
@@ -461,7 +541,7 @@ def main() -> None:
         "citation": "Cai, Q., & Brysbaert, M. (2010). SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles. PLoS ONE.",
         "analysis": "pinyin",
         "gloss_sources": {
-            "custom": "simple glosses (data/custom-glosses.json)",
+            "custom": "simple glosses (data/simple-glosses.json)",
             "unihan": "Unihan Database (kDefinition)",
             "cedict": "CC-CEDICT (CC BY-SA 4.0)",
         },
