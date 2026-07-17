@@ -214,13 +214,11 @@ function applyGloss(source) {
 function visibleAxes(tone, data, tones, logMin, logMax) {
   const onsetHas = new Set();
   const finalHas = new Set();
-  let filled = 0;
 
   for (const onset of data.onsets) {
     for (const final of data.finals) {
       const cell = tones[tone]?.[onset]?.[final];
       if (!isCellVisible(cell, logMin, logMax)) continue;
-      filled += 1;
       onsetHas.add(onset);
       finalHas.add(final);
     }
@@ -233,7 +231,6 @@ function visibleAxes(tone, data, tones, logMin, logMax) {
     finals: hideEmptyAxes
       ? data.finals.filter((final) => finalHas.has(final))
       : data.finals,
-    filled,
   };
 }
 
@@ -243,10 +240,9 @@ function createToneTable(tone, data, tones, logMin, logMax) {
   block.id = `tone-${tone}`;
 
   const axes = visibleAxes(tone, data, tones, logMin, logMax);
-  block.dataset.filled = String(axes.filled);
 
   const heading = document.createElement("h2");
-  heading.innerHTML = `${TONE_NAMES[tone]} <span class="tone-meta">${axes.filled} syllables</span>`;
+  heading.textContent = TONE_NAMES[tone];
   block.appendChild(heading);
 
   const scroll = document.createElement("div");
@@ -293,8 +289,8 @@ function createToneTable(tone, data, tones, logMin, logMax) {
 }
 
 let currentHskFilter = "all";
-let hideLowestFreq = false;
-let hideEmptyAxes = false;
+let hideLowestFreq = true;
+let hideEmptyAxes = true;
 let loadedData = null;
 
 function render(data) {
@@ -308,22 +304,11 @@ function render(data) {
 
   const root = document.getElementById("tables");
   root.replaceChildren();
-  let filled = 0;
   for (const tone of ["1", "2", "3", "4"]) {
-    const table = createToneTable(tone, data, tones, logMin, logMax);
-    filled += Number(table.dataset.filled || 0);
-    root.appendChild(table);
+    root.appendChild(createToneTable(tone, data, tones, logMin, logMax));
   }
 
-  document.getElementById("corpus-label").textContent = data.corpus;
-  const stats = data.stats;
-  const parts = [];
-  if (currentHskFilter !== "all") parts.push(`HSK ${currentHskFilter} and below`);
-  if (hideLowestFreq) parts.push("lowest frequency hidden");
-  if (hideEmptyAxes) parts.push("empty rows/columns hidden");
-  const filterLabel = parts.length ? `${parts.join(" · ")} · ` : "";
-  document.getElementById("status").textContent =
-    `${filterLabel}${filled} filled cells from ${stats.characters_in_corpus.toLocaleString()} corpus characters.`;
+  document.getElementById("status").textContent = "";
 
   requestAnimationFrame(() => fitAllPinyin(root));
 }
@@ -377,11 +362,35 @@ function initDisplayToggles() {
   }
 }
 
+function setPanelHidden(hidden) {
+  const app = document.querySelector(".app");
+  const hideButton = document.getElementById("hide-panel-button");
+  const showButton = document.getElementById("show-panel-button");
+  if (!app || !hideButton || !showButton) return;
+
+  app.classList.toggle("panel-hidden", hidden);
+  hideButton.setAttribute("aria-expanded", String(!hidden));
+  showButton.setAttribute("aria-expanded", String(!hidden));
+  showButton.hidden = !hidden;
+  requestAnimationFrame(() => fitAllPinyin());
+}
+
+function initPanelToggle() {
+  const hideButton = document.getElementById("hide-panel-button");
+  const showButton = document.getElementById("show-panel-button");
+  if (!hideButton || !showButton) return;
+
+  setPanelHidden(true);
+  hideButton.addEventListener("click", () => setPanelHidden(true));
+  showButton.addEventListener("click", () => setPanelHidden(false));
+}
+
 async function main() {
   const status = document.getElementById("status");
   initGlossToggle();
   initHskToggle();
   initDisplayToggles();
+  initPanelToggle();
   try {
     const res = await fetch("./data/tables.json");
     if (!res.ok) throw new Error(`Failed to load tables.json (${res.status})`);
