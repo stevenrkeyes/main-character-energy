@@ -2,6 +2,8 @@
 
 Tables showing the most common characters for each valid syllable in Mandarin Chinese.
 
+Live site: https://stevenrkeyes.github.io/main-character-energy/
+
 ## Data
 
 Character frequencies come from [SUBTLEX-CH](https://www.ugent.be/pp/experimentele-psychologie/en/research/documents/subtlexch) (Cai & Brysbaert, 2010). Readings are taken primarily from [`kMandarin_8105`](https://github.com/mozillazg/pinyin-data) (通用规范汉字表). Glosses can be toggled between a simple gloss set, the [Unihan database](https://www.unicode.org/charts/unihan.html) (`kDefinition`), or [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict) (CC BY-SA 4.0). See [`data/README.md`](data/README.md) for file-level licensing notes.
