@@ -258,11 +258,12 @@ async function yieldToBrowser() {
 }
 
 async function createToneTable(tone, data, tones, logMin, logMax, progress) {
-  const block = document.createElement("section");
+  const block = document.createElement("details");
   block.className = "tone-block";
   block.dataset.tone = tone;
+  block.open = true;
 
-  const heading = document.createElement("h2");
+  const heading = document.createElement("summary");
   heading.textContent = TONE_NAMES[tone];
   block.appendChild(heading);
 
