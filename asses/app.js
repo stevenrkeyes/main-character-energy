@@ -122,8 +122,22 @@ function fitPinyinEl(el) {
   el.style.fontSize = `${lo}px`;
 }
 
-function fitAllPinyin(root = document) {
-  root.querySelectorAll(".cell-pinyin").forEach(fitPinyinEl);
+async function fitAllPinyin(root = document) {
+  const elements = [...root.querySelectorAll(".cell-pinyin")];
+  const total = elements.length;
+  if (!total) return;
+
+  setLoadProgress(0, total, "Sizing pinyin");
+  await yieldToBrowser();
+
+  for (let i = 0; i < elements.length; i++) {
+    fitPinyinEl(elements[i]);
+    const done = i + 1;
+    if (done === total || done % 40 === 0) {
+      setLoadProgress(done, total, "Sizing pinyin");
+      await yieldToBrowser();
+    }
+  }
 }
 
 let currentGlossSource = "custom";
@@ -238,12 +252,12 @@ function countFilledCharacters(tones, onsets, finals) {
   return total;
 }
 
-function setLoadProgress(done, total) {
+function setLoadProgress(done, total, label = "Loading frequency tables") {
   const status = document.getElementById("status");
   if (!status) return;
   status.hidden = false;
   status.textContent =
-    `Loading frequency tables… [${done.toLocaleString()} / ${total.toLocaleString()} characters]`;
+    `${label}… [${done.toLocaleString()} / ${total.toLocaleString()} characters]`;
 }
 
 function clearLoadStatus() {
@@ -397,10 +411,10 @@ async function buildTables(data) {
     );
   }
   root.replaceChildren(fragment);
-  clearLoadStatus();
   await yieldToBrowser();
-  fitAllPinyin(root);
+  await fitAllPinyin(root);
   applyVisibilityFilters();
+  clearLoadStatus();
 }
 
 function initGlossToggle() {
