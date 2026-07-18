@@ -13,6 +13,7 @@
   /* A 1.3× centered tile extends 15% of one column past either edge. */
   --tile-hover-overhang: calc(var(--table-column-width) * 0.15);
   --font-ui: "IBM Plex Sans", sans-serif;
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
   --font-han: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
@@ -51,7 +52,7 @@ body {
 
 .page-header {
   margin-bottom: 1.25rem;
-  max-width: 48rem;
+  max-width: 60rem;
 }
 
 .page-header h1 {
@@ -66,6 +67,56 @@ body {
   margin: 0;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.about {
+  margin-top: 0.85rem;
+}
+
+.about > summary {
+  width: fit-content;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  user-select: none;
+}
+
+.about > summary::-webkit-details-marker {
+  display: none;
+}
+
+.about > summary::before {
+  content: "▾";
+  display: inline-block;
+  width: 1em;
+  transition: transform 140ms ease;
+}
+
+.about:not([open]) > summary::before {
+  transform: rotate(-90deg);
+}
+
+.about-body {
+  margin-top: 0.75rem;
+  max-width: 60rem;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+}
+
+.about-body p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.65;
+  text-indent: 1.5em;
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
 }
 
 .tables {
