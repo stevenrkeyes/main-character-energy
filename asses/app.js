@@ -175,13 +175,24 @@ function applyGlossToEl(el, source) {
     topWordShare >= DOMINANT_WORD_MIN_SHARE;
   const showSimpleWithWord =
     simpleGloss && simpleGloss.toLowerCase() !== topWordGloss.toLowerCase();
-  const text = useTopWord
-    ? `${showSimpleWithWord ? `${simpleGloss}, ` : ""}in ${el.dataset.topWord}, ${topWordGloss}`
-    : el.dataset[source] || "";
+
+  if (useTopWord) {
+    const word = el.dataset.topWord;
+    const text = `${showSimpleWithWord ? `${simpleGloss}, ` : ""}in ${word}, ${topWordGloss}`;
+    el.replaceChildren();
+    if (showSimpleWithWord) el.append(`${simpleGloss}, `);
+    el.append("in ");
+    const zh = document.createElement("span");
+    zh.className = "gloss-zh";
+    zh.textContent = word;
+    el.append(zh, `, ${topWordGloss}`);
+    el.title = `${text} · ${Math.round(topWordShare * 100)}% of character uses`;
+    return;
+  }
+
+  const text = el.dataset[source] || "";
   el.textContent = text;
-  el.title = useTopWord
-    ? `${text} · ${Math.round(topWordShare * 100)}% of character uses`
-    : text;
+  el.title = text;
 }
 
 function applyGloss(source) {

@@ -302,6 +302,12 @@ html.hide-lowest-freq .pinyin-table td.filled[data-freq-step="0"]:hover {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.gloss-zh {
+  white-space: nowrap;
 }
 
 .panel {
