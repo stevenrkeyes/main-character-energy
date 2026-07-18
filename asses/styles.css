@@ -229,6 +229,10 @@ table.pinyin-table {
   background: #f3f3f3;
   font-weight: 600;
   color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .pinyin-table tbody th {

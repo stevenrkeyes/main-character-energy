@@ -142,10 +142,22 @@ async function fitAllPinyin(root = document) {
 
 let currentGlossSource = "custom";
 let currentHskFilter = "all";
+let currentAnalysis = "merge-palatal-retroflex";
 let hideLowestFreq = true;
 let hideEmptyAxes = true;
 let loadedData = null;
 let freqBounds = null;
+let analysisRebuildInFlight = false;
+
+const APICAL_ONSETS = new Set(["zh", "ch", "sh", "r", "z", "c", "s"]);
+const MERGED_ONSET = {
+  j: "j/zh",
+  zh: "j/zh",
+  q: "q/ch",
+  ch: "q/ch",
+  x: "x/sh",
+  sh: "x/sh",
+};
 
 function ensureFreqBounds(data) {
   if (freqBounds) return freqBounds;
@@ -161,6 +173,73 @@ function currentTones(data) {
   return currentHskFilter === "all"
     ? data.tones
     : data.hsk_tones?.[currentHskFilter] || data.tones;
+}
+
+function mapOnsetForAnalysis(onset) {
+  if (currentAnalysis !== "merge-palatal-retroflex") return onset;
+  return MERGED_ONSET[onset] ?? onset;
+}
+
+function mapFinalForAnalysis(onset, final) {
+  if (currentAnalysis !== "merge-palatal-retroflex") return final;
+  if (final === "i" && APICAL_ONSETS.has(onset)) return "ih";
+  return final;
+}
+
+function mergedOnsetList(onsets) {
+  const out = [];
+  const seen = new Set();
+  for (const onset of onsets) {
+    const mapped = mapOnsetForAnalysis(onset);
+    if (seen.has(mapped)) continue;
+    seen.add(mapped);
+    out.push(mapped);
+  }
+  return out;
+}
+
+function mergedFinalList(finals) {
+  const out = [];
+  for (const final of finals) {
+    if (final === "i") out.push("ih");
+    out.push(final);
+  }
+  return out;
+}
+
+function remapToneGrid(tones) {
+  if (currentAnalysis === "pinyin") return tones;
+
+  const out = {};
+  for (const [tone, grid] of Object.entries(tones)) {
+    const newGrid = {};
+    for (const [onset, row] of Object.entries(grid)) {
+      for (const [final, cell] of Object.entries(row)) {
+        const mappedOnset = mapOnsetForAnalysis(onset);
+        const mappedFinal = mapFinalForAnalysis(onset, final);
+        if (!newGrid[mappedOnset]) newGrid[mappedOnset] = {};
+        const previous = newGrid[mappedOnset][mappedFinal];
+        if (!previous || cell.count > previous.count) {
+          newGrid[mappedOnset][mappedFinal] = cell;
+        }
+      }
+    }
+    out[tone] = newGrid;
+  }
+  return out;
+}
+
+/** Onsets, finals, and tone grids for the current analysis + HSK filter. */
+function activeLayout(data) {
+  const tones = remapToneGrid(currentTones(data));
+  if (currentAnalysis === "pinyin") {
+    return { onsets: data.onsets, finals: data.finals, tones };
+  }
+  return {
+    onsets: mergedOnsetList(data.onsets),
+    finals: mergedFinalList(data.finals),
+    tones,
+  };
 }
 
 function applyGlossToEl(el, source) {
@@ -353,6 +432,9 @@ function cellIsPresent(td) {
 /** Toggle row/column visibility without rebuilding the tables. */
 function applyVisibilityFilters() {
   document.documentElement.classList.toggle("hide-lowest-freq", hideLowestFreq);
+  if (!loadedData) return;
+
+  const layout = activeLayout(loadedData);
 
   document.querySelectorAll(".tone-block").forEach((block) => {
     const table = block.querySelector(".pinyin-table");
@@ -360,8 +442,8 @@ function applyVisibilityFilters() {
 
     const onsetHas = new Map();
     const finalHas = new Map();
-    for (const onset of loadedData.onsets) onsetHas.set(onset, false);
-    for (const final of loadedData.finals) finalHas.set(final, false);
+    for (const onset of layout.onsets) onsetHas.set(onset, false);
+    for (const final of layout.finals) finalHas.set(final, false);
 
     table.querySelectorAll("td[data-onset]").forEach((td) => {
       if (!cellIsPresent(td)) return;
@@ -395,7 +477,7 @@ function applyVisibilityFilters() {
 /** Update cell contents in place when the HSK corpus subset changes. */
 function updateCellsForCurrentFilter() {
   const { logMin, logMax } = ensureFreqBounds(loadedData);
-  const tones = currentTones(loadedData);
+  const { tones } = activeLayout(loadedData);
 
   document.querySelectorAll(".tone-block").forEach((block) => {
     const tone = block.dataset.tone;
@@ -409,8 +491,12 @@ function updateCellsForCurrentFilter() {
 
 async function buildTables(data) {
   const { logMin, logMax } = ensureFreqBounds(data);
-  const tones = currentTones(data);
-  const total = countFilledCharacters(tones, data.onsets, data.finals);
+  const layout = activeLayout(data);
+  const total = countFilledCharacters(
+    layout.tones,
+    layout.onsets,
+    layout.finals
+  );
   const progress = { done: 0, total };
   setLoadProgress(0, total);
 
@@ -418,7 +504,14 @@ async function buildTables(data) {
   const fragment = document.createDocumentFragment();
   for (const tone of ["1", "2", "3", "4"]) {
     fragment.appendChild(
-      await createToneTable(tone, data, tones, logMin, logMax, progress)
+      await createToneTable(
+        tone,
+        layout,
+        layout.tones,
+        logMin,
+        logMax,
+        progress
+      )
     );
   }
   root.replaceChildren(fragment);
@@ -449,6 +542,36 @@ function initHskToggle() {
       currentHskFilter = event.target.value;
       updateCellsForCurrentFilter();
       applyVisibilityFilters();
+    });
+  });
+}
+
+function initAnalysisToggle() {
+  const inputs = document.querySelectorAll('input[name="analysis"]');
+  const checked = document.querySelector('input[name="analysis"]:checked');
+  if (checked) currentAnalysis = checked.value;
+
+  async function rebuildForAnalysis() {
+    if (analysisRebuildInFlight) {
+      analysisRebuildInFlight = "pending";
+      return;
+    }
+    analysisRebuildInFlight = true;
+    try {
+      do {
+        analysisRebuildInFlight = true;
+        await buildTables(loadedData);
+      } while (analysisRebuildInFlight === "pending");
+    } finally {
+      analysisRebuildInFlight = false;
+    }
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener("change", (event) => {
+      if (!event.target.checked || !loadedData) return;
+      currentAnalysis = event.target.value;
+      rebuildForAnalysis();
     });
   });
 }
@@ -498,6 +621,7 @@ async function main() {
   const status = document.getElementById("status");
   initGlossToggle();
   initHskToggle();
+  initAnalysisToggle();
   initDisplayToggles();
   initPanelToggle();
   try {
