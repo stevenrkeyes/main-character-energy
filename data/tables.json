@@ -788,7 +788,7 @@
           },
           "top_word": {
             "word": "非常",
-            "gloss": "very",
+            "gloss": "uncommonly",
             "word_count": 26976,
             "character_uses": 26976,
             "share": 0.683923636640215
@@ -1515,7 +1515,7 @@
           "gloss": {
             "unihan": "bad",
             "cedict": "(dialect) contracted form of 不好[bu4 hao3]",
-            "custom": "bad"
+            "custom": ""
           },
           "top_word": {
             "word": "孬种",
@@ -1647,7 +1647,7 @@
           "gloss": {
             "unihan": "ribs",
             "cedict": "(bound form) rib",
-            "custom": "rib"
+            "custom": ""
           },
           "top_word": {
             "word": "肋骨",
@@ -2056,7 +2056,7 @@
           "gloss": {
             "unihan": "frontier pass",
             "cedict": "surname Guan",
-            "custom": "frontier"
+            "custom": "close"
           },
           "top_word": {
             "word": "关系",
@@ -2109,7 +2109,7 @@
           "gloss": {
             "unihan": "coffee",
             "cedict": "used in 咖喱[ga1 li2]",
-            "custom": "(phonetic)"
+            "custom": ""
           },
           "top_word": {
             "word": "咖啡",
@@ -2428,7 +2428,7 @@
           "gloss": {
             "unihan": "mugwort, artemisia",
             "cedict": "celery wormwood (Artemisia carvifolia)",
-            "custom": "mugwort"
+            "custom": ""
           },
           "top_word": {
             "word": "龙蒿",
@@ -2445,7 +2445,7 @@
           "gloss": {
             "unihan": "snore loudly",
             "cedict": "snore",
-            "custom": "snore"
+            "custom": ""
           },
           "top_word": {
             "word": "打鼾",
@@ -4279,7 +4279,7 @@
           "gloss": {
             "unihan": "name of an ancient state",
             "cedict": "surname Zou",
-            "custom": "(surname)"
+            "custom": ""
           },
           "top_word": {
             "word": "邹易",
@@ -4296,7 +4296,7 @@
           "gloss": {
             "unihan": "hairpin, clasp",
             "cedict": "hairpin",
-            "custom": "hairpin"
+            "custom": ""
           },
           "top_word": {
             "word": "发簪",
@@ -5021,7 +5021,7 @@
           "gloss": {
             "unihan": "dirty",
             "cedict": "used in 骯髒|肮脏[ang1 zang1]",
-            "custom": "dirty"
+            "custom": ""
           },
           "top_word": {
             "word": "肮脏",
@@ -8322,7 +8322,7 @@
           },
           "top_word": {
             "word": "非常",
-            "gloss": "very",
+            "gloss": "uncommonly",
             "word_count": 26976,
             "character_uses": 26976,
             "share": 0.581592393764957
@@ -14414,7 +14414,7 @@
           "gloss": {
             "unihan": "passive indicator 'by'",
             "cedict": "quilt",
-            "custom": "passive marker"
+            "custom": "(passive marker)"
           },
           "top_word": {
             "word": "被捕",
@@ -14886,7 +14886,7 @@
           },
           "top_word": {
             "word": "妹妹",
-            "gloss": "sister",
+            "gloss": "younger sister",
             "word_count": 3262,
             "character_uses": 6524,
             "share": 0.7096704013923637
@@ -17027,7 +17027,7 @@
           "gloss": {
             "unihan": "Chinese people",
             "cedict": "Han ethnic group",
-            "custom": "Han Chinese"
+            "custom": "Han"
           },
           "top_word": {
             "word": "汉堡",
@@ -20010,7 +20010,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.683923636640215
@@ -20182,7 +20182,7 @@
             "gloss": {
               "unihan": "frontier pass",
               "cedict": "surname Guan",
-              "custom": "frontier"
+              "custom": "close"
             },
             "top_word": {
               "word": "关系",
@@ -21326,7 +21326,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.581592393764957
@@ -22494,7 +22494,7 @@
             },
             "top_word": {
               "word": "妹妹",
-              "gloss": "sister",
+              "gloss": "younger sister",
               "word_count": 3262,
               "character_uses": 6524,
               "share": 0.7096704013923637
@@ -22846,7 +22846,7 @@
             "gloss": {
               "unihan": "Chinese people",
               "cedict": "Han ethnic group",
-              "custom": "Han Chinese"
+              "custom": "Han"
             },
             "top_word": {
               "word": "汉堡",
@@ -23666,7 +23666,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.683923636640215
@@ -23889,7 +23889,7 @@
             "gloss": {
               "unihan": "frontier pass",
               "cedict": "surname Guan",
-              "custom": "frontier"
+              "custom": "close"
             },
             "top_word": {
               "word": "关系",
@@ -23925,7 +23925,7 @@
             "gloss": {
               "unihan": "coffee",
               "cedict": "used in 咖喱[ga1 li2]",
-              "custom": "(phonetic)"
+              "custom": ""
             },
             "top_word": {
               "word": "咖啡",
@@ -25407,7 +25407,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.581592393764957
@@ -27148,7 +27148,7 @@
             },
             "top_word": {
               "word": "妹妹",
-              "gloss": "sister",
+              "gloss": "younger sister",
               "word_count": 3262,
               "character_uses": 6524,
               "share": 0.7096704013923637
@@ -27653,7 +27653,7 @@
             "gloss": {
               "unihan": "Chinese people",
               "cedict": "Han ethnic group",
-              "custom": "Han Chinese"
+              "custom": "Han"
             },
             "top_word": {
               "word": "汉堡",
@@ -28915,7 +28915,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.683923636640215
@@ -29308,7 +29308,7 @@
             "gloss": {
               "unihan": "frontier pass",
               "cedict": "surname Guan",
-              "custom": "frontier"
+              "custom": "close"
             },
             "top_word": {
               "word": "关系",
@@ -29344,7 +29344,7 @@
             "gloss": {
               "unihan": "coffee",
               "cedict": "used in 咖喱[ga1 li2]",
-              "custom": "(phonetic)"
+              "custom": ""
             },
             "top_word": {
               "word": "咖啡",
@@ -31663,7 +31663,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.581592393764957
@@ -34131,7 +34131,7 @@
             "gloss": {
               "unihan": "passive indicator 'by'",
               "cedict": "quilt",
-              "custom": "passive marker"
+              "custom": "(passive marker)"
             },
             "top_word": {
               "word": "被捕",
@@ -34343,7 +34343,7 @@
             },
             "top_word": {
               "word": "妹妹",
-              "gloss": "sister",
+              "gloss": "younger sister",
               "word_count": 3262,
               "character_uses": 6524,
               "share": 0.7096704013923637
@@ -35222,7 +35222,7 @@
             "gloss": {
               "unihan": "Chinese people",
               "cedict": "Han ethnic group",
-              "custom": "Han Chinese"
+              "custom": "Han"
             },
             "top_word": {
               "word": "汉堡",
@@ -36977,7 +36977,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.683923636640215
@@ -37542,7 +37542,7 @@
             "gloss": {
               "unihan": "frontier pass",
               "cedict": "surname Guan",
-              "custom": "frontier"
+              "custom": "close"
             },
             "top_word": {
               "word": "关系",
@@ -37595,7 +37595,7 @@
             "gloss": {
               "unihan": "coffee",
               "cedict": "used in 咖喱[ga1 li2]",
-              "custom": "(phonetic)"
+              "custom": ""
             },
             "top_word": {
               "word": "咖啡",
@@ -41006,7 +41006,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.581592393764957
@@ -44464,7 +44464,7 @@
             "gloss": {
               "unihan": "passive indicator 'by'",
               "cedict": "quilt",
-              "custom": "passive marker"
+              "custom": "(passive marker)"
             },
             "top_word": {
               "word": "被捕",
@@ -44761,7 +44761,7 @@
             },
             "top_word": {
               "word": "妹妹",
-              "gloss": "sister",
+              "gloss": "younger sister",
               "word_count": 3262,
               "character_uses": 6524,
               "share": 0.7096704013923637
@@ -46076,7 +46076,7 @@
             "gloss": {
               "unihan": "Chinese people",
               "cedict": "Han ethnic group",
-              "custom": "Han Chinese"
+              "custom": "Han"
             },
             "top_word": {
               "word": "汉堡",
@@ -48341,7 +48341,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.683923636640215
@@ -49008,7 +49008,7 @@
             "gloss": {
               "unihan": "frontier pass",
               "cedict": "surname Guan",
-              "custom": "frontier"
+              "custom": "close"
             },
             "top_word": {
               "word": "关系",
@@ -49061,7 +49061,7 @@
             "gloss": {
               "unihan": "coffee",
               "cedict": "used in 咖喱[ga1 li2]",
-              "custom": "(phonetic)"
+              "custom": ""
             },
             "top_word": {
               "word": "咖啡",
@@ -53356,7 +53356,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.581592393764957
@@ -57505,7 +57505,7 @@
             "gloss": {
               "unihan": "passive indicator 'by'",
               "cedict": "quilt",
-              "custom": "passive marker"
+              "custom": "(passive marker)"
             },
             "top_word": {
               "word": "被捕",
@@ -57870,7 +57870,7 @@
             },
             "top_word": {
               "word": "妹妹",
-              "gloss": "sister",
+              "gloss": "younger sister",
               "word_count": 3262,
               "character_uses": 6524,
               "share": 0.7096704013923637
@@ -59372,7 +59372,7 @@
             "gloss": {
               "unihan": "Chinese people",
               "cedict": "Han ethnic group",
-              "custom": "Han Chinese"
+              "custom": "Han"
             },
             "top_word": {
               "word": "汉堡",
@@ -62062,7 +62062,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.683923636640215
@@ -62882,7 +62882,7 @@
             "gloss": {
               "unihan": "frontier pass",
               "cedict": "surname Guan",
-              "custom": "frontier"
+              "custom": "close"
             },
             "top_word": {
               "word": "关系",
@@ -62935,7 +62935,7 @@
             "gloss": {
               "unihan": "coffee",
               "cedict": "used in 咖喱[ga1 li2]",
-              "custom": "(phonetic)"
+              "custom": ""
             },
             "top_word": {
               "word": "咖啡",
@@ -67723,7 +67723,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.581592393764957
@@ -72280,7 +72280,7 @@
             "gloss": {
               "unihan": "passive indicator 'by'",
               "cedict": "quilt",
-              "custom": "passive marker"
+              "custom": "(passive marker)"
             },
             "top_word": {
               "word": "被捕",
@@ -72679,7 +72679,7 @@
             },
             "top_word": {
               "word": "妹妹",
-              "gloss": "sister",
+              "gloss": "younger sister",
               "word_count": 3262,
               "character_uses": 6524,
               "share": 0.7096704013923637
@@ -74436,7 +74436,7 @@
             "gloss": {
               "unihan": "Chinese people",
               "cedict": "Han ethnic group",
-              "custom": "Han Chinese"
+              "custom": "Han"
             },
             "top_word": {
               "word": "汉堡",
@@ -77466,7 +77466,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.683923636640215
@@ -78514,7 +78514,7 @@
             "gloss": {
               "unihan": "frontier pass",
               "cedict": "surname Guan",
-              "custom": "frontier"
+              "custom": "close"
             },
             "top_word": {
               "word": "关系",
@@ -78567,7 +78567,7 @@
             "gloss": {
               "unihan": "coffee",
               "cedict": "used in 咖喱[ga1 li2]",
-              "custom": "(phonetic)"
+              "custom": ""
             },
             "top_word": {
               "word": "咖啡",
@@ -84431,7 +84431,7 @@
             },
             "top_word": {
               "word": "非常",
-              "gloss": "very",
+              "gloss": "uncommonly",
               "word_count": 26976,
               "character_uses": 26976,
               "share": 0.581592393764957
@@ -90019,7 +90019,7 @@
             "gloss": {
               "unihan": "passive indicator 'by'",
               "cedict": "quilt",
-              "custom": "passive marker"
+              "custom": "(passive marker)"
             },
             "top_word": {
               "word": "被捕",
@@ -90452,7 +90452,7 @@
             },
             "top_word": {
               "word": "妹妹",
-              "gloss": "sister",
+              "gloss": "younger sister",
               "word_count": 3262,
               "character_uses": 6524,
               "share": 0.7096704013923637
@@ -92464,7 +92464,7 @@
             "gloss": {
               "unihan": "Chinese people",
               "cedict": "Han ethnic group",
-              "custom": "Han Chinese"
+              "custom": "Han"
             },
             "top_word": {
               "word": "汉堡",
@@ -95138,7 +95138,7 @@
     },
     "missing_pinyin": 0,
     "bad_split": 4,
-    "missing_gloss_custom": 20,
+    "missing_gloss_custom": 28,
     "missing_gloss_unihan": 2,
     "missing_gloss_cedict": 3
   }
